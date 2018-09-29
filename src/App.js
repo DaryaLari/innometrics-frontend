@@ -1,19 +1,21 @@
 import React from "react";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import AuthorizationPage from "./components/AuthorizationPage";
+import DashboardPage from "./components/DashboardPage";
 import styles from "./style.css";
 
 class App extends React.Component {
-  state = {
-    opened: true
-  }
   render() {
       return (
-          <div>
+          <React.Fragment>
             <Header/>
-            {this.state.opened && <h2 className={styles.colored}>App</h2>}
-            <h3 onClick={() => this.setState({opened: !this.state.opened})}>Click me</h3>
-          </div>
-
+            <main>
+              <AuthorizationPage/>
+              {/*<DashboardPage/>*/}
+            </main>
+            <Footer/>
+          </React.Fragment>
       )
   }
 }

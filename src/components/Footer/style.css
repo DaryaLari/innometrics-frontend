@@ -1,0 +1,5 @@
+.footer {
+    background-color: #f0ffff;
+    height: calc(var(--cell-size) * 2);
+    padding: 0 var(--page-padding);
+}

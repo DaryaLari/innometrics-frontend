@@ -1,0 +1,11 @@
+.menu {
+    display: flex;
+
+}
+
+.menuItem {
+    width: var(--cell-size);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

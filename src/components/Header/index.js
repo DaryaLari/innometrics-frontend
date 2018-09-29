@@ -1,13 +1,15 @@
 import React from "react";
+import Logo from "../Logo";
+import Menu from "./Menu";
 import styles from "./style.css";
 
 class Header extends React.Component {
   render() {
-    return (
-        <div>
-          <h1 className={styles.colored}>Header</h1>
+    return (<header className={styles.header}>
+          <Logo/>
+          <Menu/>
 
-        </div>
+        </header>
 
     )
   }

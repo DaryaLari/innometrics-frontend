@@ -4,7 +4,7 @@
 }
 
 .menuItem {
-    width: var(--cell-size);
+    width: calc(var(--cell-size)*2);
     display: flex;
     flex-direction: column;
     justify-content: center;

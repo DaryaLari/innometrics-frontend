@@ -1,4 +1,5 @@
 import React from "react";
+import {Link, HashRouter as Router} from "react-router-dom";
 import Logo from "../Logo";
 import Menu from "./Menu";
 import styles from "./style.css";
@@ -6,7 +7,9 @@ import styles from "./style.css";
 class Header extends React.Component {
   render() {
     return (<header className={styles.header}>
-          <Logo/>
+          <Router>
+          <Link to="/"><Logo/></Link>
+          </Router>
           <Menu/>
 
         </header>

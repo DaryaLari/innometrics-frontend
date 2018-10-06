@@ -1,53 +1,62 @@
 import React from "react";
+import {Link, HashRouter as Router} from "react-router-dom";
 import styles from "./style.css";
 
 class AuthorizationPage extends React.Component {
   render() {
     return (
         <div className={styles.content}>
-          <LoginForm/>
+          {this.props.children}
         </div>
 
     )
   }
 }
 
-class LoginForm extends React.Component {
+class LoginPage extends React.Component {
   render() {
     return (
-        <div className={styles.form}>
-          <h1>Login</h1>
-          <div className={styles.inputRow}>
-            <input placeholder="email"/>
-          </div>
-          <div className={styles.inputRow}>
-            <input placeholder="password"/>
-          </div>
+        <AuthorizationPage>
+          <div className={styles.form}>
+            <h1>Login</h1>
+            <div className={styles.inputRow}>
+              <input placeholder="email"/>
+            </div>
+            <div className={styles.inputRow}>
+              <input placeholder="password"/>
+            </div>
             <p>Don't have account yet?
-            <a href="/register">Register</a>
-          </p>
-        </div>
+              <Router>
+                <Link to="/register">Register</Link>
+              </Router>
+            </p>
+          </div>
+        </AuthorizationPage>
     )
   }
 }
 
-class RegisterForm extends React.Component {
+class RegisterPage extends React.Component {
   render() {
     return (
-        <div className={styles.form}>
-          <h1>Register</h1>
-          <div className={styles.inputRow}>
-            <input placeholder="email"/>
+        <AuthorizationPage>
+          <div className={styles.form}>
+            <h1>Register</h1>
+            <div className={styles.inputRow}>
+              <input placeholder="email"/>
+            </div>
+            <div className={styles.inputRow}>
+              <input placeholder="password"/>
+            </div>
+            <p>Have account already?
+              <Router>
+                <Link to="/login">Login</Link>
+              </Router>
+            </p>
           </div>
-          <div className={styles.inputRow}>
-            <input placeholder="password"/>
-          </div>
-          <p>Have account already?
-            <a href="/login">Login</a>
-          </p>
-        </div>
+        </AuthorizationPage>
     )
   }
 }
 
-export default AuthorizationPage;
+export {LoginPage, RegisterPage};

@@ -1,18 +1,19 @@
 import React from "react";
+import {Link, HashRouter as Router} from "react-router-dom";
 import styles from "./style.css";
 
 class Menu extends React.Component {
   items = [
-    {name: "1", path: "/1"},
+    {name: "Dashboard", path: "/dashboard"},
     {name: "2", path: "/2"},
     {name: "3", path: "/3"},
   ]
   render() {
     return (
-        <div className={styles.menu}>
+        <nav className={styles.menu}>
           {this.items.map((i) => {return <MenuItem name={i.name} path={i.path} key={i.name}/>})}
           <MenuItem name={"Login/\nRegister"} path="/login"/>
-        </div>
+        </nav>
 
     )
   }
@@ -22,8 +23,7 @@ class MenuItem extends React.Component {
   render() {
     return (
         <div className={styles.menuItem}>
-          <a href={this.props.path}>{this.props.name}</a>
-
+            <Link to={this.props.path}>{this.props.name}</Link>
         </div>
 
     )

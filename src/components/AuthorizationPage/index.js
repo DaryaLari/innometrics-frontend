@@ -1,5 +1,6 @@
 import React from "react";
-import {Link, HashRouter as Router} from "react-router-dom";
+import {Link} from "react-router-dom";
+import PropTypes from 'prop-types';
 import styles from "./style.css";
 
 class AuthorizationPage extends React.Component {
@@ -11,6 +12,10 @@ class AuthorizationPage extends React.Component {
 
     )
   }
+}
+
+AuthorizationPage.propTypes = {
+  children: PropTypes.element.isRequired
 }
 
 class LoginPage extends React.Component {
@@ -26,9 +31,7 @@ class LoginPage extends React.Component {
               <input placeholder="password"/>
             </div>
             <p>Don't have account yet?
-              <Router>
-                <Link to="/register">Register</Link>
-              </Router>
+              <Link to="/register">Register</Link>
             </p>
           </div>
         </AuthorizationPage>
@@ -49,9 +52,7 @@ class RegisterPage extends React.Component {
               <input placeholder="password"/>
             </div>
             <p>Have account already?
-              <Router>
-                <Link to="/login">Login</Link>
-              </Router>
+              <Link to="/login">Login</Link>
             </p>
           </div>
         </AuthorizationPage>

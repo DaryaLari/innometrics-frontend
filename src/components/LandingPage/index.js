@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, HashRouter as Router} from "react-router-dom";
+import {Link} from "react-router-dom";
 import styles from "./style.css";
 
 class LandingPage extends React.Component {
@@ -7,13 +7,11 @@ class LandingPage extends React.Component {
     return (
         <div className={styles.content}>
           Landing page
-          <Router>
-            <ul>
-              <li><Link to="/dashboard">Dashboard</Link></li>
-              <li><Link to="/login">Login</Link></li>
-              <li><Link to="/register">Register</Link></li>
-            </ul>
-          </Router>
+          <ul>
+            <li><Link to="/dashboard">Dashboard</Link></li>
+            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/register">Register</Link></li>
+          </ul>
         </div>
 
     )

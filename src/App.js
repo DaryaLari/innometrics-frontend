@@ -2,7 +2,7 @@ import React from "react";
 import {HashRouter as Router, Redirect, Route, Switch} from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import {LoginPage, RegisterPage} from "./components/AuthorizationPage";
+import {LoginPage, RegisterPage} from "./components/Authorization";
 import DashboardPage from "./components/DashboardPage";
 import LandingPage from "./components/LandingPage";
 import styles from "./style.css";

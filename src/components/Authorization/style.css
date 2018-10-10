@@ -14,3 +14,8 @@
 .inputRow {
     height: calc(var(--cell-size) / 2);
 }
+
+.submitBtn {
+    height: calc(var(--cell-size)/2);
+    width: var(--cell-size);
+}

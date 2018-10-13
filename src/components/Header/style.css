@@ -1,3 +1,7 @@
-.colored {
-    color: blue;
+.header {
+    height: var(--header-height);
+    padding: 0 var(--page-padding);
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
 }

@@ -1,0 +1,8 @@
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: var(--cell-size);
+    height: var(--cell-size);
+}

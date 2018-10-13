@@ -1,0 +1,21 @@
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    background-color: rgba(255, 255, 255, 1);
+    padding: 0 var(--cell-size);
+}
+
+.inputRow {
+    height: calc(var(--cell-size) / 2);
+}
+
+.submitBtn {
+    height: calc(var(--cell-size)/2);
+    width: var(--cell-size);
+}

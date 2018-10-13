@@ -1,3 +1,20 @@
-.colored {
-    color: red;
+:root {
+    --cell-size: 60px;
+    --page-padding: calc(var(--cell-size)/2);
+    --header-height: calc(var(--cell-size));
+    --footer-height: calc(var(--cell-size)*2);
+}
+
+body {
+    margin: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    width: calc(100% - calc(var(--page-padding) * 2));
+    min-height: calc(100% - calc(var(--page-padding) * 2) - var(--header-height) - var(--footer-height));
+    padding: var(--page-padding);
+    background-color: rgba(230, 230, 230, 1);
 }

@@ -4,7 +4,8 @@
   "description": "Visualisation of users' working activity statistics",
   "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon ./startServer.js",
+    "with-dev-server": "nodemon ./startServer.js",
+    "dev": "webpack-serve",
     "build": "webpack",
     "prod": "webpack --mode production"
   },
@@ -44,6 +45,9 @@
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-form": "^7.4.2",
+    "redux-thunk": "^2.3.0"
   }
 }

@@ -1,13 +1,13 @@
 import React from "react";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
+import {Field, reduxForm} from "redux-form";
+import {loginRequest, registerRequest} from "../../store/user/actionCreators";
 import styles from "./style.css";
-import {register} from "../../api/authorization";
-import {Field, formValueSelector, reduxForm} from "redux-form";
 
 class LoginPage extends React.Component {
   onSubmit = () => {
-    console.log()
+    this.props.login()
   }
   render() {
     return (
@@ -44,18 +44,10 @@ class LoginPage extends React.Component {
 
 class RegisterPage extends React.Component {
   onSubmit = () => {
-    console.log(this.state.email, this.state.name, this.state.surname, this.state.password)
-    const response = register(this.state.email, this.state.name, this.state.surname, this.state.password)
-        .then((res) => {
-          // TODO
-        })
-        .catch((error) => {
-          console.log(error)
-          this.setState({errorMsg: error.statusText})
-        })
+    this.props.register()
   }
   render() {
-    console.log(this.props.authFormValues, this.props.email)
+    console.log(this.props.authFormValues, this.props.userCredentials)
     return (
         <div className={styles.form}>
           <h1>Register</h1>
@@ -114,7 +106,7 @@ class AuthorizationPage extends React.Component {
     return (
         <div className={styles.content}>
           {(this.props.match.path === "/login") ?
-             <LoginPage/> : <RegisterPage/>
+             <LoginPage {...this.props}/> : <RegisterPage {...this.props}/>
           }
         </div>
     )
@@ -133,11 +125,15 @@ AuthorizationPage = reduxForm({
   initialValues: initialValues
 })(AuthorizationPage)
 
-const selector = formValueSelector('authorization')
 AuthorizationPage = connect(
     (state) => ({
-      authFormValues: state.form.authorization,
-      email: selector(state, 'email'),
+      authFormState: state.form.authorization,
+      userCredentials: selector(state, 'email', 'password', 'name', 'surname'),
+    }),
+
+    (dispatch) => ({
+      login: () => dispatch(loginRequest()),
+      register: () => dispatch(registerRequest())
     })
 )(AuthorizationPage)
 

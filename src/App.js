@@ -9,6 +9,7 @@ import LandingPage from "./components/LandingPage";
 import styles from "./style.css";
 
 import {store} from "./store";
+import {userAuthorized} from "./utils";
 
 class App extends React.Component {
   render() {
@@ -20,10 +21,9 @@ class App extends React.Component {
                   <main>
                     <Switch>
                       <Route exact path="/" component={LandingPage}/>
-                      <Route path="/dashboard" component={DashboardPage}/>
+                      <AuthorizedRoute path="/dashboard" component={DashboardPage}/>
                       <Route path="/login" component={AuthorizationPage}/>
                       <Route path="/register" component={AuthorizationPage}/>
-                      <Route path="/auth" component={AuthorizationPage}/>
                       <Redirect to="/dashboard"/>
                     </Switch>
                   </main>
@@ -33,6 +33,25 @@ class App extends React.Component {
           </Provider>
       )
   }
+}
+
+const AuthorizedRoute = ({ component: Component, ...rest }) => {
+  return (
+      <Route {...rest}
+          render={(props) =>
+              userAuthorized() ? (
+                  <Component {...props} />
+              ) : (
+                  <Redirect
+                      to={{
+                        pathname: "/login",
+                        state: { from: props.location }
+                      }}
+                  />
+              )
+          }
+      />
+  )
 }
 
 export default App;

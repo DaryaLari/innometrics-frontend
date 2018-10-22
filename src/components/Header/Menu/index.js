@@ -1,7 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import styles from "./style.css";
-import {userAuthorized} from "../../../utils";
 import {connect} from "react-redux";
 import {logoutRequest} from "../../../store/user/actionCreators";
 
@@ -16,7 +15,7 @@ class Menu extends React.Component {
     {name: "Logout", path: "/logout"},
   ]
   render() {
-    const navigation = userAuthorized() ? this.userNavigation : this.guestNavigation
+    const navigation = this.props.authorized ? this.userNavigation : this.guestNavigation
     return (
         <nav className={styles.menu}>
           {navigation.map((i) => {return <MenuItem name={i.name} path={i.path} key={i.name}/>})}
@@ -38,7 +37,7 @@ class MenuItem extends React.Component {
 }
 
 Menu = connect(
-    () => ({}),
+    (state) => ({authorized: state.user.authorized}),
     (dispatch) => ({
       logout: () => dispatch(logoutRequest())
     })

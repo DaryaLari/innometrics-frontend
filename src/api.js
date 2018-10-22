@@ -12,34 +12,38 @@ export function postRequest (url, params={}, headers=defaultHeaders, domain=DOMA
   const formData = new FormData()
   Object.keys(params).forEach(key => formData.append(key, params[key]))
 
-  return axios.post(
-      `${domain}${url}`,
-      formData,
-      {headers: headers}
-  )
-      .then((response) => {
-        return response
-      })
-      .catch((error) => {
-        console.log(error.response)
-        return error.response
-      });
-};
+  return new Promise((resolve, reject) => {
+    axios.post(
+        `${domain}${url}`,
+        formData,
+        {headers: headers}
+    )
+        .then((response) => {
+          resolve(response)
+        })
+        .catch((error) => {
+          console.log(error, error.response)
+          reject(error.response)
+        })
+  })
+}
 
 export function getRequest (url, params={}, headers=defaultHeaders, domain=DOMAIN_ADDRESS) {
 
-  return axios.get(
-      `${domain}${url}`,
-      {
-        params: params,
-        headers: headers
-      }
-  )
-      .then((response) => {
-        return response
-      })
-      .catch((error) => {
-        console.log(error.response)
-        return error.response
-      });
-};
+  return new Promise((resolve, reject) => {
+    axios.get(
+        `${domain}${url}`,
+        {
+          params: params,
+          headers: headers
+        }
+    )
+        .then((response) => {
+          resolve(response)
+        })
+        .catch((error) => {
+          console.log(error.response)
+          reject(error.response)
+        })
+  })
+}

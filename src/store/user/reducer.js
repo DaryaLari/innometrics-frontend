@@ -1,5 +1,5 @@
 import {TYPES as USER_TYPES} from "./actionTypes";
-import {userAuthorized} from "../../selectors";
+import {userAuthorized} from "../../helpers/selectors";
 
 const initialState = {
   authorized: userAuthorized(),

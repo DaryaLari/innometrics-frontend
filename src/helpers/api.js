@@ -16,13 +16,15 @@ export function postRequest (url, params={}, headers=defaultHeaders, domain=DOMA
     axios.post(
         `${domain}${url}`,
         formData,
-        {headers: headers}
+        {
+          headers: headers,
+          withCredentials: true
+        }
     )
         .then((response) => {
           resolve(response)
         })
         .catch((error) => {
-          console.log(error, error.response)
           reject(error.response)
         })
   })
@@ -35,14 +37,14 @@ export function getRequest (url, params={}, headers=defaultHeaders, domain=DOMAI
         `${domain}${url}`,
         {
           params: params,
-          headers: headers
+          headers: headers,
+          withCredentials: true
         }
     )
         .then((response) => {
           resolve(response)
         })
         .catch((error) => {
-          console.log(error.response)
           reject(error.response)
         })
   })

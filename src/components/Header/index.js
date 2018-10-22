@@ -1,20 +1,19 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {withRouter} from "react-router";
 import Logo from "../Logo";
 import Menu from "./Menu";
 import styles from "./style.css";
 
-class Header extends React.Component {
-  render() {
-    return (
-        <header className={styles.header}>
-          <Link to="/"><Logo/></Link>
-          <Menu/>
+const Header = ({history}) => {
+  return (
+      <header className={styles.header}>
+        <div className={styles.logoItem} onClick={() => {history.push('/')}}>
+          <Logo/>
+        </div>
+        <Menu/>
+      </header>
 
-        </header>
-
-    )
-  }
+  )
 }
 
-export default Header;
+export default withRouter(Header);

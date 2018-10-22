@@ -9,7 +9,7 @@ import LandingPage from "./components/LandingPage";
 import styles from "./style.css";
 
 import {store} from "./store";
-import {userAuthorized} from "./utils";
+import {userAuthorized} from "./selectors";
 
 class App extends React.Component {
   render() {

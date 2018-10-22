@@ -6,8 +6,8 @@ export const loginRequest = () => (dispatch, getState) => {
 
   const userData = getState().form.authorization.values
   const params = {
-    email: userData.email,
-    password: userData.password
+    email: userData.email.trim(),
+    password: userData.password.trim()
   }
 
   postRequest('/login', params)
@@ -16,7 +16,7 @@ export const loginRequest = () => (dispatch, getState) => {
         dispatch({type: USER_TYPES.LOGIN_SUCCESS})
       })
       .catch((error) => {
-        dispatch({type: USER_TYPES.LOGIN_FAIL, error: error})
+        dispatch({type: USER_TYPES.LOGIN_FAILURE, error: error})
       })
 }
 
@@ -25,10 +25,10 @@ export const registerRequest = () => (dispatch, getState) => {
 
   const userData = getState().form.authorization.values
   const params = {
-    email: userData.email,
-    password: userData.password,
-    name: userData.name,
-    surname: userData.surname
+    email: userData.email.trim(),
+    password: userData.password.trim(),
+    name: userData.name.trim(),
+    surname: userData.surname.trim()
   }
 
   postRequest('/user', params)
@@ -37,7 +37,7 @@ export const registerRequest = () => (dispatch, getState) => {
         dispatch({type: USER_TYPES.REGISTER_SUCCESS})
       })
       .catch((error) => {
-        dispatch({type: USER_TYPES.REGISTER_FAIL, error: error})
+        dispatch({type: USER_TYPES.REGISTER_FAILURE, error: error})
       })
 }
 
@@ -46,10 +46,12 @@ export const logoutRequest = () => (dispatch, getState) => {
 
   postRequest('/logout', {})
       .then((result) => {
-        localStorage.removeItem("user")
         dispatch({type: USER_TYPES.LOGOUT_SUCCESS})
       })
       .catch((error) => {
-        dispatch({type: USER_TYPES.LOGOUT_FAIL, error: error})
+        dispatch({type: USER_TYPES.LOGOUT_FAILURE, error: error})
       })
+  debugger
+  localStorage.removeItem("user")
+  debugger
 }

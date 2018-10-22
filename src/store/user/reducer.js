@@ -1,5 +1,5 @@
 import {TYPES as USER_TYPES} from "./actionTypes";
-import {userAuthorized} from "../../utils";
+import {userAuthorized} from "../../selectors";
 
 const initialState = {
   authorized: userAuthorized(),
@@ -28,8 +28,8 @@ export const reducer = (state = initialState, action) => {
         error: null
       }
 
-    case USER_TYPES.LOGIN_FAIL:
-    case USER_TYPES.REGISTER_FAIL:
+    case USER_TYPES.LOGIN_FAILURE:
+    case USER_TYPES.REGISTER_FAILURE:
       return {
         authorized: false,
         activeRequest: false,
@@ -37,7 +37,28 @@ export const reducer = (state = initialState, action) => {
         error: action.error
       }
 
-    // TODO: describe logout actions
+    case USER_TYPES.LOGOUT_REQUEST:
+      return {
+        authorized: true,
+        activeRequest: true,
+        failed: false,
+        error: null
+      }
+
+    case USER_TYPES.LOGOUT_SUCCESS:
+      return {
+        authorized: false,
+        activeRequest: false,
+        failed: false,
+        error: null
+      }
+    case USER_TYPES.LOGOUT_FAILURE:
+      return {
+        authorized: false,
+        activeRequest: false,
+        failed: true,
+        error: action.error
+      }
     default:
       return state;
   }

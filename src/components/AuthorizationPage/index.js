@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
-import {Field, reduxForm} from "redux-form";
+import {Field, isInvalid, reduxForm} from "redux-form";
 import {loginRequest, registerRequest} from "../../store/user/actionCreators";
 import styles from "./style.css";
 
@@ -11,7 +11,9 @@ class LoginPage extends React.Component {
   }
   render() {
     return (
-        <div className={styles.form}>
+        <form className={styles.form}
+              onSubmit={this.props.handleSubmit(this.onSubmit)}
+        >
           <h1>Login</h1>
           <div className={styles.inputRow}>
             <Field
@@ -30,14 +32,15 @@ class LoginPage extends React.Component {
             />
           </div>
           <button className={styles.submitBtn}
-                  onClick={this.onSubmit}
+                  type="submit"
+                  disabled={this.props.isInvalidForm}
           >
             Login
           </button>
           <p>Don't have account yet?
             <Link to="/register">Register</Link>
           </p>
-        </div>
+        </form>
     )
   }
 }
@@ -47,9 +50,11 @@ class RegisterPage extends React.Component {
     this.props.register()
   }
   render() {
-    console.log(this.props.authFormValues, this.props.userCredentials)
+    console.log(this.props)
     return (
-        <div className={styles.form}>
+        <form className={styles.form}
+              onSubmit={this.props.handleSubmit(this.onSubmit)}
+        >
           <h1>Register</h1>
           <div className={styles.inputRow}>
             <Field
@@ -85,23 +90,21 @@ class RegisterPage extends React.Component {
           </div>
           <p className={styles.errorMsg}>{}</p>
           <button className={styles.submitBtn}
-                  onClick={this.onSubmit}
+                  type="submit"
+                  disabled={this.props.isInvalidForm}
           >
             Register
           </button>
           <p>Have account already?
             <Link to="/login">Login</Link>
           </p>
-        </div>
+        </form>
     )
   }
 }
 
 
 class AuthorizationPage extends React.Component {
-  shouldComponentUpdate = (nextProps, nextState) => {
-    return this.props.match != nextProps.match;
-  }
   render(){
     return (
         <div className={styles.content}>
@@ -120,15 +123,35 @@ const initialValues = {
   surname: ""
 }
 
+const validate = values => {
+  const errors = {}
+  if(!values.email.trim()){
+    errors.email = "required"
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = 'Invalid email address'
+  }
+  if(!values.password.trim()){
+    errors.password = "required"
+  }
+  if(!values.name.trim()){
+    errors.name = "required"
+  }
+  if(!values.surname.trim()){
+    errors.surname = "required"
+  }
+  return errors
+}
+
 AuthorizationPage = reduxForm({
   form: 'authorization',
-  initialValues: initialValues
+  initialValues: initialValues,
+  validate: validate
 })(AuthorizationPage)
 
 AuthorizationPage = connect(
     (state) => ({
       authFormState: state.form.authorization,
-      userCredentials: selector(state, 'email', 'password', 'name', 'surname'),
+      isInvalidForm: isInvalid('authorization')(state)
     }),
 
     (dispatch) => ({

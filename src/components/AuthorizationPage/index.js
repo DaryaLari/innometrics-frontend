@@ -50,7 +50,6 @@ class RegisterPage extends React.Component {
     this.props.register()
   }
   render() {
-    console.log(this.props)
     return (
         <form className={styles.form}
               onSubmit={this.props.handleSubmit(this.onSubmit)}

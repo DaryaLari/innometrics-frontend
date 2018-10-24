@@ -1,5 +1,6 @@
 .footer {
-    background-color: rgba(200, 200, 200, 1);
+    background-color: rgba(100, 100, 100, 1);
+    color: rgba(255, 255, 255, 1);;
     height: var(--footer-height);
-    padding: 0 var(--page-padding);
+    padding: calc(var(--page-padding)/2) var(--page-padding);
 }

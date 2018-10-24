@@ -5,3 +5,8 @@
     align-items: stretch;
     justify-content: space-between;
 }
+
+.logoItem {
+    height: 100%;
+    cursor: pointer;
+}

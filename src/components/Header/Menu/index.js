@@ -23,21 +23,6 @@ class Menu extends React.Component {
                       {i.name}
                     </div>
           })}
-          {this.props.authorized ?
-              (
-                  <div className={styles.authMenu}
-                       onClick={this.props.logout}
-                  >
-                    <div className={styles.authItem}>Logout</div>
-                  </div>
-              )
-              :
-              (
-                  <div className={styles.authMenu}>
-                    <div className={styles.authItem} onClick={() => this.props.history.push("/login")}>Login</div>/
-                    <div className={styles.authItem} onClick={() => this.props.history.push("/register")}>Register</div>
-                  </div>
-              )}
         </nav>
 
     )
@@ -46,9 +31,7 @@ class Menu extends React.Component {
 
 Menu = connect(
     (state) => ({authorized: state.user.authorized}),
-    (dispatch) => ({
-      logout: () => dispatch(logoutRequest())
-    })
+    (dispatch) => ({})
 )(Menu)
 
 export default withRouter(Menu);

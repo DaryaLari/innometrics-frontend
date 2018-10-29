@@ -1,12 +1,18 @@
 .header {
     height: var(--header-height);
-    padding: 0 var(--page-padding);
+    padding: 10px var(--page-padding);
     display: flex;
-    align-items: stretch;
-    justify-content: space-between;
+    align-items: baseline;
+    justify-content: flex-start;
+    color: rgba(255, 255, 255, 1);
+    background-color: var(--header-color);
+}
+
+.headerItem {
+    cursor: pointer;
 }
 
 .logoItem {
-    height: 100%;
-    cursor: pointer;
+    composes: headerItem;
+    padding-right: 10px;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import {withRouter} from "react-router";
 import Logo from "../Logo";
 import Menu from "./Menu";
+import AuthorizationMenu from "./AuthorizationMenu";
 import styles from "./style.css";
 
 const Header = ({history}) => {
@@ -11,6 +12,7 @@ const Header = ({history}) => {
           <Logo/>
         </div>
         <Menu/>
+        <AuthorizationMenu/>
       </header>
 
   )

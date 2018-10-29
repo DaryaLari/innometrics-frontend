@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getToken } from './user'
 
 export const DOMAIN_ADDRESS = 'http://188.130.155.81:8120'
 

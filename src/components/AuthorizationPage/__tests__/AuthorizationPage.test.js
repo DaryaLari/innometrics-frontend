@@ -5,8 +5,11 @@ import { shallow } from 'enzyme'
 import AuthorizationPage from "../index"
 import TestRenderer from 'react-test-renderer'
 
-jest.mock('../LoginForm', () => ()=> <div>Login</div>)
-jest.mock('../RegistrationForm', () => ()=> <div>Register</div>)
+const MockLoginForm = () => <div>Login</div>
+const MockRegistrationForm = () => <div>Register</div>
+
+jest.mock('../LoginForm', () => () => MockLoginForm())
+jest.mock('../RegistrationForm', () => () => MockRegistrationForm())
 
 describe('Test AuthorizationPage component', () => {
 

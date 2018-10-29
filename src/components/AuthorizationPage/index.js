@@ -33,6 +33,7 @@ let AuthorizationPage = reduxForm({
 AuthorizationPage = connect(
     (state) => ({
       authFormState: state.form.authorization,
+      formError: state.user.error,
       submitDisabled: isInvalid('authorization')(state) || state.user.activeRequest
     }),
 

@@ -1,6 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { Field } from 'redux-form'
+import Button from '../Button'
 import Input from '../Input'
 import { email, required } from '../../helpers/formValidators'
+import styles from './style.css'
 
 class LoginForm extends React.Component {
   onSubmit = () => {
@@ -33,6 +37,7 @@ class LoginForm extends React.Component {
                 type="submit"
                 disabled={this.props.submitDisabled}
         />
+        <p className={styles.formError}>{this.props.formError}</p>
         <p>Don&#39;t have account yet?&nbsp;
           <Link to="/register">Register</Link>
         </p>

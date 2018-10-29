@@ -23,3 +23,10 @@
 .errorMsg {
     color: rgba(255, 0, 0, 1)
 }
+
+.formError {
+    composes: errorMsg;
+    height: calc(var(--cell-size)/4);
+    width: 100%;
+    text-align: center;
+}

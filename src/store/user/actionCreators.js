@@ -19,7 +19,7 @@ export const loginRequest = () => (dispatch, getState) => {
         dispatch({type: USER_TYPES.LOGIN_SUCCESS})
       })
       .catch((error) => {
-        dispatch({type: USER_TYPES.LOGIN_FAILURE, error: error})
+        dispatch({type: USER_TYPES.LOGIN_FAILURE, error: error.data.message})
       })
 }
 
@@ -42,7 +42,7 @@ export const registerRequest = () => (dispatch, getState) => {
         dispatch({type: USER_TYPES.REGISTER_SUCCESS})
       })
       .catch((error) => {
-        dispatch({type: USER_TYPES.REGISTER_FAILURE, error: error})
+        dispatch({type: USER_TYPES.REGISTER_FAILURE, error: error.data.message})
       })
 }
 
@@ -54,7 +54,7 @@ export const logoutRequest = () => (dispatch, getState) => {
         dispatch({type: USER_TYPES.LOGOUT_SUCCESS})
       })
       .catch((error) => {
-        dispatch({type: USER_TYPES.LOGOUT_FAILURE, error: error})
+        dispatch({type: USER_TYPES.LOGOUT_FAILURE, error: error.data.message})
       })
   localStorage.removeItem("user")
 }

@@ -4,7 +4,7 @@ export const userAuthorized = createSelector(
   (state) => {
     return state.user
   },
-  (user) => {console.log("selector " + user.authorized)
+  (user) => {
     return user.authorized
   }
 )

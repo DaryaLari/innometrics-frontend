@@ -4,7 +4,7 @@ import {withRouter} from "react-router";
 import {userAuthorized} from "../../../helpers/selectors";
 import styles from "./style.css";
 
-class Menu extends React.Component {
+class HeaderMenu extends React.Component {
   guestNavigation = [
     {name: "Main Page", path: "/"}
   ]
@@ -29,9 +29,9 @@ class Menu extends React.Component {
   }
 }
 
-Menu = connect(
+const Menu = connect(
   (state) => ({authorized: userAuthorized(state)}),
-  (dispatch) => ({})
-)(Menu)
+  () => ({})
+)(HeaderMenu)
 
 export default withRouter(Menu);

@@ -57,5 +57,4 @@ export const logoutRequest = () => (dispatch, getState) => {
         dispatch({type: USER_TYPES.LOGOUT_FAILURE, error: error})
       })
   localStorage.removeItem("user")
-  history.push(history.location.pathname)
 }

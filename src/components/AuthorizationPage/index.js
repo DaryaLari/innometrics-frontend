@@ -38,7 +38,7 @@ class LoginPage extends React.Component {
                   type="submit"
                   disabled={this.props.submitDisabled}
           />
-          <p>Don't have account yet?
+          <p>Don&#39;t have account yet?&nbsp;
             <Link to="/register">Register</Link>
           </p>
         </form>
@@ -101,7 +101,7 @@ class RegisterPage extends React.Component {
 }
 
 
-class AuthorizationPage extends React.Component {
+class AuthPage extends React.Component {
   render(){
     return (
         <div className={styles.content}>
@@ -120,10 +120,10 @@ const initialValues = {
   surname: ""
 }
 
-AuthorizationPage = reduxForm({
+let AuthorizationPage = reduxForm({
   form: 'authorization',
   initialValues: initialValues
-})(AuthorizationPage)
+})(AuthPage)
 
 AuthorizationPage = connect(
     (state) => ({

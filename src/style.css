@@ -5,15 +5,20 @@
     --footer-height: calc(var(--cell-size)*2);
 }
 
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 body {
     margin: 0;
-    box-sizing: border-box;
     width: 100vw;
     height: 100vh;
 }
 
 main {
-    box-sizing: border-box;
     width: 100%;
     min-height: calc(100% - var(--header-height) - var(--footer-height));
     padding: var(--page-padding);

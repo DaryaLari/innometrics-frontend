@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import {Field, isInvalid, reduxForm} from "redux-form";
 import Input from "../Input";
+import Button from "../Button";
 import {loginRequest, registerRequest} from "../../store/user/actionCreators";
 import {email, required} from "../../helpers/formValidators";
 import styles from "./style.css";
@@ -33,12 +34,10 @@ class LoginPage extends React.Component {
             type="password"
             validate={required}
           />
-          <button className={styles.submitBtn}
+          <Button name="Login"
                   type="submit"
                   disabled={this.props.submitDisabled}
-          >
-            Login
-          </button>
+          />
           <p>Don't have account yet?
             <Link to="/register">Register</Link>
           </p>
@@ -89,12 +88,10 @@ class RegisterPage extends React.Component {
             type="password"
             validate={required}
           />
-          <button className={styles.submitBtn}
+          <Button name="Register"
                   type="submit"
                   disabled={this.props.submitDisabled}
-          >
-            Register
-          </button>
+          />
           <p>Have account already?
             <Link to="/login">Login</Link>
           </p>

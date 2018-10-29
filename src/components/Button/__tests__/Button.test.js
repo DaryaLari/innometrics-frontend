@@ -8,7 +8,7 @@ describe('Test Button component', () => {
 
     const props = {
       name: "Button",
-      style: "primary",
+      styleType: "primary",
       disabled: false
     }
 

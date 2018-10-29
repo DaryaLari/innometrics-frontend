@@ -4,9 +4,10 @@ import styles from "./style.css";
 
 class Button extends React.Component {
   render() {
-    const {name, style, disabled, ...restProps} = this.props
+    const {name, styleType, style, disabled, ...restProps} = this.props
     return (
-        <button className={styles[style]}
+        <button className={styles[styleType]}
+                style={style}
                 disabled={disabled}
                 {...restProps}
         >
@@ -19,13 +20,15 @@ class Button extends React.Component {
 
 Button.propTypes = {
   name: PropTypes.string.isRequired,
-  style: PropTypes.oneOf(["primary", "secondary"]),
-  disabled: PropTypes.bool
+  styleType: PropTypes.oneOf(["primary", "secondary"]),
+  disabled: PropTypes.bool,
+  style: PropTypes.object
 }
 
 Button.defaultProps = {
-  style: "primary",
-  disabled: false
+  styleType: "primary",
+  disabled: false,
+  style: {}
 }
 
 export default Button;

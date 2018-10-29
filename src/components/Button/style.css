@@ -1,11 +1,11 @@
 .button {
-    width: 100%;
+    width: calc(var(--cell-size)*3);
     height: calc(var(--cell-size)*0.75);
     border: none;
     border-radius: 5px;
     font-size: larger;
     box-shadow: 0 0 5px 0px rgba(100, 100, 100, 0.5);
-
+    cursor: pointer;
 }
 
 .button:disabled {

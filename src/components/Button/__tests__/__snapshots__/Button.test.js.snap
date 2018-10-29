@@ -3,6 +3,7 @@
 exports[`Test Button component Test render Button component 1`] = `
 <button
   disabled={false}
+  style={Object {}}
 >
   Button
 </button>

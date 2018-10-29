@@ -51,7 +51,7 @@ class RegistrationForm extends React.Component {
         />
         <Button name="Register"
                 type="submit"
-                btnStyle={{width: '100%'}}
+                style={{width: '100%'}}
                 disabled={this.props.submitDisabled}
         />
         <p className={styles.formError}>{this.props.formError}</p>

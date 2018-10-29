@@ -3,7 +3,6 @@ import axios from "axios";
 export const DOMAIN_ADDRESS = 'http://188.130.155.81:8120'
 
 const defaultHeaders = {
-  'accept': 'application/json',
   'Content-Type': 'multipart/form-data'
 }
 

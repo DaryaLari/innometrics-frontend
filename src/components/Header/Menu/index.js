@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import {withRouter} from "react-router";
-import {logoutRequest} from "../../../store/user/actionCreators";
+import {userAuthorized} from "../../../helpers/selectors";
 import styles from "./style.css";
 
 class Menu extends React.Component {
@@ -30,8 +30,8 @@ class Menu extends React.Component {
 }
 
 Menu = connect(
-    (state) => ({authorized: state.user.authorized}),
-    (dispatch) => ({})
+  (state) => ({authorized: userAuthorized(state)}),
+  (dispatch) => ({})
 )(Menu)
 
 export default withRouter(Menu);

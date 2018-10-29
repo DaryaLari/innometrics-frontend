@@ -49,7 +49,7 @@ export const registerRequest = () => (dispatch, getState) => {
 export const logoutRequest = () => (dispatch, getState) => {
   dispatch({type: USER_TYPES.LOGOUT_REQUEST})
 
-  getRequest('/logout', {})
+  postRequest('/logout', {})
       .then((result) => {
         dispatch({type: USER_TYPES.LOGOUT_SUCCESS})
       })

@@ -1,8 +1,7 @@
 import {TYPES as USER_TYPES} from "./actionTypes";
-import {userAuthorized} from "../../helpers/selectors";
 
 const initialState = {
-  authorized: userAuthorized(),
+  authorized: !(null == localStorage.getItem("user")),
   activeRequest: false,
   failed: false,
   error: null
@@ -21,6 +20,7 @@ export const reducer = (state = initialState, action) => {
 
     case USER_TYPES.LOGIN_SUCCESS:
     case USER_TYPES.REGISTER_SUCCESS:
+    case USER_TYPES.LOGOUT_FAILURE:
       return {
         authorized: true,
         activeRequest: false,
@@ -52,13 +52,7 @@ export const reducer = (state = initialState, action) => {
         failed: false,
         error: null
       }
-    case USER_TYPES.LOGOUT_FAILURE:
-      return {
-        authorized: false,
-        activeRequest: false,
-        failed: true,
-        error: action.error
-      }
+
     default:
       return state;
   }

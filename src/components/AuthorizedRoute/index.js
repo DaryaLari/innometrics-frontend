@@ -1,10 +1,14 @@
+import React from "react";
+import {Redirect, Route} from "react-router-dom";
 import { userAuthorized } from '../../helpers/selectors'
+import {logoutRequest} from "../../store/user/actionCreators";
+import {connect} from "react-redux";
 
-const AuthorizedRoute = ({component: Component, ...rest}) => {
+const AuthRoute = ({component: Component, authorized, ...rest}) => {
   return (
     <Route {...rest}
            render={(props) =>
-             userAuthorized() ? (
+             authorized ? (
                <Component {...props} />
              ) : (
                <Redirect
@@ -18,5 +22,14 @@ const AuthorizedRoute = ({component: Component, ...rest}) => {
     />
   )
 }
+
+const AuthorizedRoute = connect(
+  (state) => ({
+    authorized: userAuthorized(state)
+  }),
+  (dispatch) => ({
+    logout: () => dispatch(logoutRequest())
+  })
+)(AuthRoute)
 
 export default AuthorizedRoute;

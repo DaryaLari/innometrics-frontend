@@ -1,16 +1,16 @@
-import React from "react";
-import {Provider} from "react-redux";
-import {Router, Redirect, Route, Switch} from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import AuthorizationPage from "./components/AuthorizationPage";
-import DashboardPage from "./components/DashboardPage";
-import LandingPage from "./components/LandingPage";
-import styles from "./style.css";
+import React from 'react'
+import { Provider } from 'react-redux'
+import { Redirect, Route, Router, Switch } from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import AuthorizationPage from './components/AuthorizationPage'
+import DashboardPage from './components/DashboardPage'
+import LandingPage from './components/LandingPage'
+import AuthorizedRoute from './components/AuthorizedRoute'
+import styles from "./style.css"
 
-import {store} from "./store";
-import {userAuthorized} from "./helpers/selectors";
-import {history} from "./helpers/history"
+import { store } from './store'
+import { history } from './helpers/history'
 
 class App extends React.Component {
   render() {
@@ -36,23 +36,6 @@ class App extends React.Component {
   }
 }
 
-const AuthorizedRoute = ({ component: Component, ...rest }) => {
-  return (
-      <Route {...rest}
-          render={(props) =>
-              userAuthorized() ? (
-                  <Component {...props} />
-              ) : (
-                  <Redirect
-                      to={{
-                        pathname: "/login",
-                        state: { from: props.location }
-                      }}
-                  />
-              )
-          }
-      />
-  )
-}
+
 
 export default App;

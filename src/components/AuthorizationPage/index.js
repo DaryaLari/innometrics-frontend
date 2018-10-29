@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import {Field, isInvalid, reduxForm} from "redux-form";
 import {loginRequest, registerRequest} from "../../store/user/actionCreators";
+import {email, required} from "../../helpers/formValidators";
 import styles from "./style.css";
 
 class LoginPage extends React.Component {
@@ -21,6 +22,7 @@ class LoginPage extends React.Component {
                 component="input"
                 placeholder="email"
                 type="email"
+                validate={[required, email]}
             />
           </div>
           <div className={styles.inputRow}>
@@ -29,11 +31,12 @@ class LoginPage extends React.Component {
                 component="input"
                 placeholder="password"
                 type="password"
+                validate={required}
             />
           </div>
           <button className={styles.submitBtn}
                   type="submit"
-                  disabled={this.props.isInvalidForm}
+                  disabled={this.props.submitDisabled}
           >
             Login
           </button>
@@ -61,6 +64,7 @@ class RegisterPage extends React.Component {
                 component="input"
                 placeholder="email"
                 type="email"
+                validate={[required, email]}
             />
           </div>
           <div className={styles.inputRow}>
@@ -69,6 +73,7 @@ class RegisterPage extends React.Component {
                 component="input"
                 placeholder="name"
                 type="text"
+                validate={required}
             />
           </div>
           <div className={styles.inputRow}>
@@ -77,6 +82,7 @@ class RegisterPage extends React.Component {
                 component="input"
                 placeholder="surname"
                 type="text"
+                validate={required}
             />
           </div>
           <div className={styles.inputRow}>
@@ -85,12 +91,13 @@ class RegisterPage extends React.Component {
                 component="input"
                 placeholder="password"
                 type="password"
+                validate={required}
             />
           </div>
           <p className={styles.errorMsg}>{}</p>
           <button className={styles.submitBtn}
                   type="submit"
-                  disabled={this.props.isInvalidForm}
+                  disabled={this.props.submitDisabled}
           >
             Register
           </button>
@@ -122,35 +129,15 @@ const initialValues = {
   surname: ""
 }
 
-const validate = values => {
-  const errors = {}
-  if(!values.email.trim()){
-    errors.email = "required"
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address'
-  }
-  if(!values.password.trim()){
-    errors.password = "required"
-  }
-  if(!values.name.trim()){
-    errors.name = "required"
-  }
-  if(!values.surname.trim()){
-    errors.surname = "required"
-  }
-  return errors
-}
-
 AuthorizationPage = reduxForm({
   form: 'authorization',
-  initialValues: initialValues,
-  validate: validate
+  initialValues: initialValues
 })(AuthorizationPage)
 
 AuthorizationPage = connect(
     (state) => ({
       authFormState: state.form.authorization,
-      isInvalidForm: isInvalid('authorization')(state)
+      submitDisabled: isInvalid('authorization')(state) || state.user.activeRequest
     }),
 
     (dispatch) => ({

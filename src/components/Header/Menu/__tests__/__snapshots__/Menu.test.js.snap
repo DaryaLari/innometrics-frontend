@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test AuthorizationMenu component Test render menu with 'Dashboard' when authenticated 1`] = `
+<nav>
+  <div
+    onClick={[Function]}
+  >
+    Dashboard
+  </div>
+  <div
+    onClick={[Function]}
+  >
+    Main Page
+  </div>
+</nav>
+`;
+
+exports[`Test AuthorizationMenu component Test render menu without 'Dashboard' when not authenticated 1`] = `
+<nav>
+  <div
+    onClick={[Function]}
+  >
+    Main Page
+  </div>
+</nav>
+`;

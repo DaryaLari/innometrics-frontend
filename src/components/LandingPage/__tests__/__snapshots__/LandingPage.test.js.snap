@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test LandingPage component Test render LandingPage component 1`] = `
+<div>
+  Landing page
+  <ul>
+    <li>
+      <a
+        href="#/dashboard"
+        onClick={[Function]}
+      >
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a
+        href="#/login"
+        onClick={[Function]}
+      >
+        Login
+      </a>
+    </li>
+    <li>
+      <a
+        href="#/register"
+        onClick={[Function]}
+      >
+        Register
+      </a>
+    </li>
+  </ul>
+</div>
+`;

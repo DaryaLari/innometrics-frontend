@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test DashboardPage component Test shallow render DashboardPage component 1`] = `<Connect(DBPage) />`;

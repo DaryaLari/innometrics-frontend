@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { isInvalid, reduxForm } from 'redux-form'
 import { loginRequest, registerRequest } from '../../store/user/actionCreators'
+import { userAuthorized } from '../../helpers/selectors'
 import RegistrationForm from './RegistrationForm'
 import LoginForm from './LoginForm'
 import styles from './style.css'
@@ -32,6 +33,7 @@ let AuthorizationPage = reduxForm({
 
 AuthorizationPage = connect(
     (state) => ({
+      authorized: userAuthorized(state),
       authFormState: state.form.authorization,
       formError: state.user.error,
       submitDisabled: isInvalid('authorization')(state) || state.user.activeRequest

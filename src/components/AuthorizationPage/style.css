@@ -6,6 +6,23 @@
     justify-content: center;
 }
 
+.msgTitle {
+    margin: 0;
+    height: calc(var(--cell-size));
+}
+
+.description {
+    width: 100%;
+    height: calc(var(--cell-size));
+    margin: 0;
+}
+
+.buttonsRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
 .form {
     background-color: rgba(255, 255, 255, 1);
     padding: 0 var(--cell-size);
@@ -22,4 +39,11 @@
 
 .errorMsg {
     color: rgba(255, 0, 0, 1)
+}
+
+.formError {
+    composes: errorMsg;
+    height: calc(var(--cell-size)/4);
+    width: 100%;
+    text-align: center;
 }

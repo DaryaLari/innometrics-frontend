@@ -1,0 +1,13 @@
+.authMenu {
+    padding: 0 0 0 10px;
+    display: flex;
+    align-items: baseline;
+    margin-left: auto;
+}
+
+.authItem {
+    composes: headerItem from '../style.css';
+    cursor: pointer;
+    font-size: larger;
+    font-weight: bolder;
+}

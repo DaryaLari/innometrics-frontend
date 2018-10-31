@@ -1,25 +1,28 @@
 import axios from "axios";
+import { getToken } from './user'
 
 export const DOMAIN_ADDRESS = 'http://188.130.155.81:8120'
 
-const defaultHeaders = {
-  'accept': 'application/json',
-  'Content-Type': 'multipart/form-data'
-}
+const request = axios.create({
+  baseURL: DOMAIN_ADDRESS,
+  headers: {
+    'Content-Type': 'multipart/form-data'
+  }
+})
 
-export function postRequest (url, params={}, headers=defaultHeaders, domain=DOMAIN_ADDRESS) {
+export function postRequest (url, params={}, withToken=false) {
 
   const formData = new FormData()
   Object.keys(params).forEach(key => formData.append(key, params[key]))
 
   return new Promise((resolve, reject) => {
-    axios.post(
-        `${domain}${url}`,
-        formData,
-        {
-          headers: headers,
-          withCredentials: true
-        }
+    request.post(
+      url,
+      formData,
+      {
+        headers: additionalHeaders(withToken),
+        withCredentials: true
+      }
     )
         .then((response) => {
           resolve(response)
@@ -30,16 +33,16 @@ export function postRequest (url, params={}, headers=defaultHeaders, domain=DOMA
   })
 }
 
-export function getRequest (url, params={}, headers=defaultHeaders, domain=DOMAIN_ADDRESS) {
+export function getRequest (url, params={}, withToken=false) {
 
   return new Promise((resolve, reject) => {
-    axios.get(
-        `${domain}${url}`,
-        {
-          params: params,
-          headers: headers,
-          withCredentials: true
-        }
+    request.get(
+      url,
+      {
+        params: params,
+        headers: additionalHeaders(withToken),
+        withCredentials: true
+      }
     )
         .then((response) => {
           resolve(response)
@@ -49,3 +52,5 @@ export function getRequest (url, params={}, headers=defaultHeaders, domain=DOMAI
         })
   })
 }
+
+const additionalHeaders = (isWithToken) => isWithToken ? {'X-API-Key': getToken()} : {}

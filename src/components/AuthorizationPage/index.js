@@ -1,114 +1,44 @@
-import React from "react";
-import {connect} from "react-redux";
-import {Link} from "react-router-dom";
-import {Field, isInvalid, reduxForm} from "redux-form";
-import {loginRequest, registerRequest} from "../../store/user/actionCreators";
-import styles from "./style.css";
+import React from 'react'
+import { connect } from 'react-redux'
+import { isInvalid, reduxForm } from 'redux-form'
+import { loginRequest, logoutRequest, registerRequest } from '../../store/user/actionCreators'
+import { userAuthorized } from '../../helpers/selectors'
+import RegistrationForm from './RegistrationForm'
+import LoginForm from './LoginForm'
+import Button from '../Button'
+import styles from './style.css'
 
-class LoginPage extends React.Component {
-  onSubmit = () => {
-    this.props.login()
+class AuthPage extends React.Component {
+  onLogout = () => {
+    this.props.logout()
   }
-  render() {
-    return (
-        <form className={styles.form}
-              onSubmit={this.props.handleSubmit(this.onSubmit)}
-        >
-          <h1>Login</h1>
-          <div className={styles.inputRow}>
-            <Field
-                name="email"
-                component="input"
-                placeholder="email"
-                type="email"
-            />
-          </div>
-          <div className={styles.inputRow}>
-            <Field
-                name="password"
-                component="input"
-                placeholder="password"
-                type="password"
-            />
-          </div>
-          <button className={styles.submitBtn}
-                  type="submit"
-                  disabled={this.props.isInvalidForm}
-          >
-            Login
-          </button>
-          <p>Don't have account yet?
-            <Link to="/register">Register</Link>
-          </p>
-        </form>
-    )
+  onStayTheSame = () => {
+    this.props.history.push("/")
   }
-}
-
-class RegisterPage extends React.Component {
-  onSubmit = () => {
-    this.props.register()
-  }
-  render() {
-    return (
-        <form className={styles.form}
-              onSubmit={this.props.handleSubmit(this.onSubmit)}
-        >
-          <h1>Register</h1>
-          <div className={styles.inputRow}>
-            <Field
-                name="email"
-                component="input"
-                placeholder="email"
-                type="email"
-            />
-          </div>
-          <div className={styles.inputRow}>
-            <Field
-                name="name"
-                component="input"
-                placeholder="name"
-                type="text"
-            />
-          </div>
-          <div className={styles.inputRow}>
-            <Field
-                name="surname"
-                component="input"
-                placeholder="surname"
-                type="text"
-            />
-          </div>
-          <div className={styles.inputRow}>
-            <Field
-                name="password"
-                component="input"
-                placeholder="password"
-                type="password"
-            />
-          </div>
-          <p className={styles.errorMsg}>{}</p>
-          <button className={styles.submitBtn}
-                  type="submit"
-                  disabled={this.props.isInvalidForm}
-          >
-            Register
-          </button>
-          <p>Have account already?
-            <Link to="/login">Login</Link>
-          </p>
-        </form>
-    )
-  }
-}
-
-
-class AuthorizationPage extends React.Component {
   render(){
     return (
         <div className={styles.content}>
-          {(this.props.match.path === "/login") ?
-             <LoginPage {...this.props}/> : <RegisterPage {...this.props}/>
+          {this.props.authorized ?
+            <div>
+              <h2 className={styles.msgTitle}>Logout confirmation</h2>
+              <p className={styles.description}>
+                You are logged in already.
+                Would you like to keep the same session or
+                login to another account?
+              </p>
+              <div className={styles.buttonsRow}>
+                <Button name="Stay the same"
+                        styleType="primary"
+                        onClick={this.onStayTheSame}
+                />
+                <Button name="Logout anyway"
+                        styleType="secondary"
+                        onClick={this.onLogout}
+                />
+              </div>
+            </div>
+            : (this.props.match.path === "/login") ?
+              <LoginForm {...this.props}/> : <RegistrationForm {...this.props}/>
           }
         </div>
     )
@@ -122,38 +52,21 @@ const initialValues = {
   surname: ""
 }
 
-const validate = values => {
-  const errors = {}
-  if(!values.email.trim()){
-    errors.email = "required"
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address'
-  }
-  if(!values.password.trim()){
-    errors.password = "required"
-  }
-  if(!values.name.trim()){
-    errors.name = "required"
-  }
-  if(!values.surname.trim()){
-    errors.surname = "required"
-  }
-  return errors
-}
-
-AuthorizationPage = reduxForm({
+let AuthorizationPage = reduxForm({
   form: 'authorization',
-  initialValues: initialValues,
-  validate: validate
-})(AuthorizationPage)
+  initialValues: initialValues
+})(AuthPage)
 
 AuthorizationPage = connect(
     (state) => ({
+      authorized: userAuthorized(state),
       authFormState: state.form.authorization,
-      isInvalidForm: isInvalid('authorization')(state)
+      formError: state.user.error,
+      submitDisabled: isInvalid('authorization')(state) || state.user.activeRequest
     }),
 
     (dispatch) => ({
+      logout: () => dispatch(logoutRequest()),
       login: () => dispatch(loginRequest()),
       register: () => dispatch(registerRequest())
     })

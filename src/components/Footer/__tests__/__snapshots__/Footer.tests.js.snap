@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Footer component Test render Footer component 1`] = `
+<footer>
+  Here would be some info about us
+</footer>
+`;

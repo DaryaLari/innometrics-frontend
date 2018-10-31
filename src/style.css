@@ -3,19 +3,29 @@
     --page-padding: calc(var(--cell-size)/2);
     --header-height: calc(var(--cell-size));
     --footer-height: calc(var(--cell-size)*2);
+
+    --header-color: rgba(60, 60, 60, 1);
+    --footer-color: rgba(60, 60, 60, 1);
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 body {
     margin: 0;
-    box-sizing: border-box;
     width: 100vw;
     height: 100vh;
+
+    /*font-family: 'PT Serif', serif;*/
+    font-family: 'PT Sans', sans-serif;
 }
 
 main {
-    box-sizing: border-box;
     width: 100%;
     min-height: calc(100% - var(--header-height) - var(--footer-height));
     padding: var(--page-padding);
-    background-color: rgba(230, 230, 230, 1);
 }

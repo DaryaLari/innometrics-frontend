@@ -1,8 +1,15 @@
 .logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    font-size: x-large;
+}
 
-    width: var(--cell-size);
-    height: var(--cell-size);
+.name {
+    letter-spacing: -1px;
+}
+
+.inno {
+    color: rgba(250, 150, 50, 1);
+}
+
+.metrics {
+    color: rgba(25, 255, 255, 1);
 }

@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import TableView from './TableView'
 import {getActivitiesRequest} from "../../store/activities/actionCreators";
 import styles from "./style.css";
+import ChartView from './ChartView'
 
 class DBPage extends React.Component {
   componentDidMount(){
@@ -15,8 +16,11 @@ class DBPage extends React.Component {
           {this.props.activeRequest ? "Loading ... " :
             (this.props.activities.length === 0 ?
                 "There is nothing to show yet" :
-                <TableView activities={this.props.activities}/>
-            )}
+                <div className={styles.commonView}>
+                  <ChartView activities={this.props.activities}/>
+                  <TableView activities={this.props.activities}/>
+                </div>
+                )}
         </div>
 
     )

@@ -44,8 +44,8 @@ describe('Test AuthorizationPage component', () => {
       </Provider>
     )
 
-    expect(!!instance.root.find(element => element.children && element.children.includes('Logout confirmation')))
-      .toEqual(true)
+    expect(instance.root.find(element => element.children && element.children.includes('Logout confirmation')))
+      .toBeDefined()
     expect(instance.toJSON()).toMatchSnapshot()
   })
 
@@ -71,8 +71,8 @@ describe('Test AuthorizationPage component', () => {
       </Provider>
     )
 
-    expect(!!instance.root.find(element => element.children && element.children.includes('Login')))
-      .toEqual(true)
+    expect(instance.root.find(element => element.children && element.children.includes('Login')))
+      .toBeDefined()
     expect(instance.toJSON()).toMatchSnapshot()
   })
 
@@ -98,8 +98,8 @@ describe('Test AuthorizationPage component', () => {
       </Provider>
     )
 
-    expect(!!instance.root.find(element => element.children && element.children.includes('Register')))
-      .toEqual(true)
+    expect(instance.root.find(element => element.children && element.children.includes('Register')))
+      .toBeDefined()
     expect(instance.toJSON()).toMatchSnapshot()
   })
 

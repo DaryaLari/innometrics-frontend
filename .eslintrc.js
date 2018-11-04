@@ -22,6 +22,9 @@ module.exports = {
       }
     }
   },
+  globals: {
+    DOMAIN_ADDRESS: false
+  },
   rules: {
     'no-confusing-arrow': 'off',
     'react/prop-types': 'off',

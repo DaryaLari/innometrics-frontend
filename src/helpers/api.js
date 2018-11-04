@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getToken } from './user'
 
-export const DOMAIN_ADDRESS = 'http://188.130.155.81:8120'
+/* DOMAIN_ADDRESS initialized by process.env in 'webpack.config.js' */
 
 const request = axios.create({
   baseURL: DOMAIN_ADDRESS,
@@ -14,7 +14,7 @@ export function postRequest (url, params={}, withToken=false) {
 
   const formData = new FormData()
   Object.keys(params).forEach(key => formData.append(key, params[key]))
-
+ 
   return new Promise((resolve, reject) => {
     request.post(
       url,

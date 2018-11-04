@@ -8,10 +8,10 @@ class Input extends React.Component {
     let containerProps = {
       style: {}
     }
-    if(width != undefined){
+    if(width !== undefined){
       containerProps.style.width = width
     }
-    if(height != undefined){
+    if(height !== undefined){
       containerProps.style.height = height
     }
     let inputProps = {

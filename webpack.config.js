@@ -1,12 +1,11 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const webpack = require("webpack")
 
 const outputDirectory = "dist";
 
-function srcPath(subdir) {
-  return path.join(__dirname, "src", subdir);
-}
+const DOMAIN_ADDRESS = process.env.DOMAIN_ADDRESS || '"http://188.130.155.81:8120"'
 
 module.exports = {
   mode: "development",
@@ -50,6 +49,9 @@ module.exports = {
       title: "Activity Dashboard",
       hash: true,
       template: "public/index.html"
+    }),
+    new webpack.DefinePlugin({
+      DOMAIN_ADDRESS: DOMAIN_ADDRESS
     })
   ]
 };

@@ -7,7 +7,7 @@ import styles from "./style.css";
 
 class AuthMenu  extends React.Component {
   shouldComponentUpdate(nextProps, nextState){
-    return nextProps.authorized !== this.props.authorized ? true : false
+    return nextProps.authorized !== this.props.authorized
   }
   render(){
     return this.props.authorized ?

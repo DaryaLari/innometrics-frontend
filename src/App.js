@@ -7,6 +7,7 @@ import DashboardPage from './components/DashboardPage'
 import LandingPage from './components/LandingPage'
 import AuthorizedRoute from './components/AuthorizedRoute'
 import styles from "./style.css"
+import PersonalStatistics from './components/PersonalStatistics'
 
 class App extends React.Component {
   render() {
@@ -19,6 +20,7 @@ class App extends React.Component {
                 <AuthorizedRoute path="/dashboard" component={DashboardPage}/>
                 <Route path="/login" component={AuthorizationPage}/>
                 <Route path="/register" component={AuthorizationPage}/>
+                <Route path="/stat" component={PersonalStatistics}/>
                 <Redirect to="/dashboard"/>
               </Switch>
             </main>

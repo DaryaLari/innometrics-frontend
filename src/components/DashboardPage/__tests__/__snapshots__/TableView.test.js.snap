@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test TableView component Test render TableView component 1`] = `
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          start_time
+        </th>
+        <th>
+          end_time
+        </th>
+        <th>
+          executable_name
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <span>
+            2018-10-25 11:29:33
+          </span>
+        </td>
+        <td>
+          <span>
+            2018-10-25 11:28:59
+          </span>
+        </td>
+        <td>
+          <span>
+            file:///Users/&lt;username&gt;/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>
+            2018-10-25 11:33:50
+          </span>
+        </td>
+        <td>
+          <span>
+            2018-10-25 11:33:47
+          </span>
+        </td>
+        <td>
+          <span>
+            file:///Users/&lt;username&gt;/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>
+            2018-10-25 11:35:11
+          </span>
+        </td>
+        <td>
+          <span>
+            2018-10-25 11:33:50
+          </span>
+        </td>
+        <td>
+          <span>
+            file:///Applications/Xcode.app/Contents/MacOS/Xcode
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>
+            2018-10-25 11:33:45
+          </span>
+        </td>
+        <td>
+          <span>
+            2018-10-25 11:33:40
+          </span>
+        </td>
+        <td>
+          <span>
+            file:///Users/&lt;username&gt;/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>
+            2018-10-25 11:29:56
+          </span>
+        </td>
+        <td>
+          <span>
+            2018-10-25 11:29:54
+          </span>
+        </td>
+        <td>
+          <span>
+            file:///Applications/Safari.app/Contents/MacOS/Safari
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>
+            2018-10-25 11:29:54
+          </span>
+        </td>
+        <td>
+          <span>
+            2018-10-25 11:29:45
+          </span>
+        </td>
+        <td>
+          <span>
+            file:///Users/&lt;username&gt;/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>
+            2018-10-25 11:29:45
+          </span>
+        </td>
+        <td>
+          <span>
+            2018-10-25 11:29:33
+          </span>
+        </td>
+        <td>
+          <span>
+            file:///Applications/Safari.app/Contents/MacOS/Safari
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>
+            2018-10-25 11:30:00
+          </span>
+        </td>
+        <td>
+          <span>
+            2018-10-25 11:29:56
+          </span>
+        </td>
+        <td>
+          <span>
+            file:///Applications/PyCharm.app/Contents/MacOS/pycharm
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>
+            2018-10-25 11:33:40
+          </span>
+        </td>
+        <td>
+          <span>
+            2018-10-25 11:30:00
+          </span>
+        </td>
+        <td>
+          <span>
+            file:///Applications/Telegram.app/Contents/MacOS/Telegram
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>
+            2018-10-25 11:33:47
+          </span>
+        </td>
+        <td>
+          <span>
+            2018-10-25 11:33:45
+          </span>
+        </td>
+        <td>
+          <span>
+            file:///Applications/Xcode.app/Contents/MacOS/Xcode
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

@@ -1,29 +1,48 @@
 import React from "react";
-import styles from "./style.css";
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { activitiesSummarized } from '../../helpers/selectors'
+import styles from "./style.css";
 
 class ChartView extends React.Component {
-  state = {
-    activities: this.props.activities.map(a => {
-      return {
-        actName: a.executable_name,
-        duration: Date.parse(a.start_time) - Date.parse(a.end_time)
-      }})
-  }
   render() {
+    const activities = activitiesSummarized(this.props.activities)
     return (
       <div className={styles.chartView}>
         <ResponsiveContainer width={'100%'} aspect={2}>
-          <BarChart data={this.state.activities}
-                         margin={{ top: 25, right: 50, left: 50, bottom: 25 }}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="actName" label={{ offset: 0, value: "Activity", position: 'bottom' }} height={10}  axisLine={false} tickLine={false} tick={false} />
-          <YAxis label={{ offset: 13, value: "Duration (sec)", position: 'top' }} dataKey="duration" />
-          <Tooltip payload={this.state.activities} />
-          <Bar dataKey="duration" barSize={30} fill="#8884d8" />
+          <BarChart data={activities}
+                    margin={{ top: 25, right: 50, left: 50, bottom: 25 }}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="executable_name"
+                   label={{ offset: 0, value: "Activity", position: 'bottom' }}
+                   height={25}
+                   axisLine={false}
+                   tickLine={false}
+                   interval={0}
+                   tick={<CustomTick amount={activities.length}/>}
+            />
+            <YAxis label={{ offset: 13, value: "Duration (sec)", position: 'top' }} dataKey="duration" />
+            <Tooltip payload={activities} />
+            <Bar dataKey="duration" barSize={30} fill="#8884d8" />
         </BarChart>
         </ResponsiveContainer>
       </div>
+    )
+  }
+}
+
+class CustomTick extends React.Component{
+  render(){
+    const {x, y, payload, ...rest} = this.props
+    console.log(rest)
+    let width = rest.width/rest.amount - 5
+    return (
+      <foreignObject className={styles.truncated}
+                     x={x-width/2} y={y-10}
+                     width={width} height={20}
+      >
+        <span title={payload.value}>{payload.value}</span>
+      </foreignObject>
+
     )
   }
 }

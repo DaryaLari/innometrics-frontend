@@ -1,9 +1,10 @@
 import React from "react";
 import {connect} from "react-redux";
 import TableView from './TableView'
+import ChartView from './ChartView'
+import { getActivities } from '../../helpers/selectors'
 import {getActivitiesRequest} from "../../store/activities/actionCreators";
 import styles from "./style.css";
-import ChartView from './ChartView'
 
 class DBPage extends React.Component {
   componentDidMount(){
@@ -29,7 +30,7 @@ class DBPage extends React.Component {
 
 const DashboardPage = connect(
   (state) => ({
-    activities: state.activities.activities,
+    activities: getActivities(state),
     activeRequest: state.activities.activeRequest
   }),
 

@@ -27,7 +27,7 @@ th,td:nth-child(1){
 
 .tableView {
     width: 50%;
-    /*overflow: scroll;*/
+    overflow: scroll;
 }
 
 .chartView {

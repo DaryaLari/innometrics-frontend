@@ -14,44 +14,24 @@ exports[`Test ChartView component Test shallow render ChartView component 1`] = 
       data={
         Array [
           Object {
-            "actName": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
-            "duration": 34000,
+            "duration": -51000,
+            "executable_name": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
           },
           Object {
-            "actName": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
-            "duration": 3000,
+            "duration": -83000,
+            "executable_name": "file:///Applications/Xcode.app/Contents/MacOS/Xcode",
           },
           Object {
-            "actName": "file:///Applications/Xcode.app/Contents/MacOS/Xcode",
-            "duration": 81000,
+            "duration": -14000,
+            "executable_name": "file:///Applications/Safari.app/Contents/MacOS/Safari",
           },
           Object {
-            "actName": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
-            "duration": 5000,
+            "duration": -4000,
+            "executable_name": "file:///Applications/PyCharm.app/Contents/MacOS/pycharm",
           },
           Object {
-            "actName": "file:///Applications/Safari.app/Contents/MacOS/Safari",
-            "duration": 2000,
-          },
-          Object {
-            "actName": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
-            "duration": 9000,
-          },
-          Object {
-            "actName": "file:///Applications/Safari.app/Contents/MacOS/Safari",
-            "duration": 12000,
-          },
-          Object {
-            "actName": "file:///Applications/PyCharm.app/Contents/MacOS/pycharm",
-            "duration": 4000,
-          },
-          Object {
-            "actName": "file:///Applications/Telegram.app/Contents/MacOS/Telegram",
-            "duration": 220000,
-          },
-          Object {
-            "actName": "file:///Applications/Xcode.app/Contents/MacOS/Xcode",
-            "duration": 2000,
+            "duration": -220000,
+            "executable_name": "file:///Applications/Telegram.app/Contents/MacOS/Telegram",
           },
         ]
       }
@@ -83,15 +63,16 @@ exports[`Test ChartView component Test shallow render ChartView component 1`] = 
         allowDecimals={true}
         allowDuplicatedCategory={true}
         axisLine={false}
-        dataKey="actName"
+        dataKey="executable_name"
         domain={
           Array [
             0,
             "auto",
           ]
         }
-        height={10}
+        height={25}
         hide={false}
+        interval={0}
         label={
           Object {
             "offset": 0,
@@ -109,7 +90,11 @@ exports[`Test ChartView component Test shallow render ChartView component 1`] = 
         }
         reversed={false}
         scale="auto"
-        tick={false}
+        tick={
+          <CustomTick
+            amount={5}
+          />
+        }
         tickCount={5}
         tickLine={false}
         type="category"
@@ -173,44 +158,24 @@ exports[`Test ChartView component Test shallow render ChartView component 1`] = 
         payload={
           Array [
             Object {
-              "actName": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
-              "duration": 34000,
+              "duration": -51000,
+              "executable_name": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
             },
             Object {
-              "actName": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
-              "duration": 3000,
+              "duration": -83000,
+              "executable_name": "file:///Applications/Xcode.app/Contents/MacOS/Xcode",
             },
             Object {
-              "actName": "file:///Applications/Xcode.app/Contents/MacOS/Xcode",
-              "duration": 81000,
+              "duration": -14000,
+              "executable_name": "file:///Applications/Safari.app/Contents/MacOS/Safari",
             },
             Object {
-              "actName": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
-              "duration": 5000,
+              "duration": -4000,
+              "executable_name": "file:///Applications/PyCharm.app/Contents/MacOS/pycharm",
             },
             Object {
-              "actName": "file:///Applications/Safari.app/Contents/MacOS/Safari",
-              "duration": 2000,
-            },
-            Object {
-              "actName": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
-              "duration": 9000,
-            },
-            Object {
-              "actName": "file:///Applications/Safari.app/Contents/MacOS/Safari",
-              "duration": 12000,
-            },
-            Object {
-              "actName": "file:///Applications/PyCharm.app/Contents/MacOS/pycharm",
-              "duration": 4000,
-            },
-            Object {
-              "actName": "file:///Applications/Telegram.app/Contents/MacOS/Telegram",
-              "duration": 220000,
-            },
-            Object {
-              "actName": "file:///Applications/Xcode.app/Contents/MacOS/Xcode",
-              "duration": 2000,
+              "duration": -220000,
+              "executable_name": "file:///Applications/Telegram.app/Contents/MacOS/Telegram",
             },
           ]
         }

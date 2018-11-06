@@ -1,17 +1,26 @@
 import React from 'react'
-import TestRenderer from 'react-test-renderer'
+import { Provider } from 'react-redux'
 import {activities} from '../../../../___mocks___/activities'
 import TableView from '../TableView'
+import { shallow } from 'enzyme/build/index'
+import createStore from 'redux-mock-store'
 
 describe('Test TableView component', () => {
 
   it('Test render TableView component', () => {
 
-    const instance = TestRenderer.create(
-      <TableView activities={activities} />
+
+
+    const mockStore = createStore([]);
+    const store = mockStore({})
+
+    const wrapper = shallow(
+      <Provider store={store}>
+        <TableView activities={activities} />
+      </Provider>
     )
 
-    expect(instance.toJSON()).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 
 })

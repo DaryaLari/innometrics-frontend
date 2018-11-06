@@ -13,7 +13,7 @@ export const userAuthorized = createSelector(
 export const getActivities = createSelector(state => state.activities, actStore => actStore.activities)
 
 export const activitiesSummarized = createSelector(
-  (activities) => activities,
+  (state) => getActivities(state),
   (activities) => {
     let actObj = _(activities).chain()
       .reduce(
@@ -23,6 +23,7 @@ export const activitiesSummarized = createSelector(
         }, {})
       .reduce(
       (result, value, key) => _.concat(result, {duration: value, executable_name: key}), [])
+      .sortBy('duration')
       .value()
     return actObj
   }

@@ -7,8 +7,16 @@ import {getActivitiesRequest} from "../../store/activities/actionCreators";
 import styles from "./style.css";
 
 class DBPage extends React.Component {
+  state = {
+    selectedActivity: null
+  }
   componentDidMount(){
     this.props.getActivities()
+  }
+  onSelectActivity = (data) => {
+    this.state.selectedActivity === data.executable_name ?
+      this.setState({selectedActivity: null}):
+      this.setState({selectedActivity: data.executable_name})
   }
   render() {
     return (
@@ -18,8 +26,8 @@ class DBPage extends React.Component {
             (this.props.activities.length === 0 ?
                 "There is nothing to show yet" :
                 <div className={styles.commonView}>
-                  <ChartView activities={this.props.activities}/>
-                  <TableView activities={this.props.activities}/>
+                  <ChartView onBarClick={this.onSelectActivity} />
+                  <TableView selectedActivity={this.state.selectedActivity} />
                 </div>
                 )}
         </div>

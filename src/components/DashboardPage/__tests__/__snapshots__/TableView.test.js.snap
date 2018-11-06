@@ -1,153 +1,120 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test TableView component Test render TableView component 1`] = `
-<div>
-  <table>
-    <thead>
-      <tr>
-        <th>
-          Start time
-        </th>
-        <th>
-          End time
-        </th>
-        <th>
-          File name
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          2018-10-25 11:29:33
-        </td>
-        <td>
-          2018-10-25 11:28:59
-        </td>
-        <td
-          title="file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer"
-        >
-          file:///Users/&lt;username&gt;/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer
-        </td>
-      </tr>
-      <tr>
-        <td>
-          2018-10-25 11:33:50
-        </td>
-        <td>
-          2018-10-25 11:33:47
-        </td>
-        <td
-          title="file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer"
-        >
-          file:///Users/&lt;username&gt;/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer
-        </td>
-      </tr>
-      <tr>
-        <td>
-          2018-10-25 11:35:11
-        </td>
-        <td>
-          2018-10-25 11:33:50
-        </td>
-        <td
-          title="file:///Applications/Xcode.app/Contents/MacOS/Xcode"
-        >
-          file:///Applications/Xcode.app/Contents/MacOS/Xcode
-        </td>
-      </tr>
-      <tr>
-        <td>
-          2018-10-25 11:33:45
-        </td>
-        <td>
-          2018-10-25 11:33:40
-        </td>
-        <td
-          title="file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer"
-        >
-          file:///Users/&lt;username&gt;/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer
-        </td>
-      </tr>
-      <tr>
-        <td>
-          2018-10-25 11:29:56
-        </td>
-        <td>
-          2018-10-25 11:29:54
-        </td>
-        <td
-          title="file:///Applications/Safari.app/Contents/MacOS/Safari"
-        >
-          file:///Applications/Safari.app/Contents/MacOS/Safari
-        </td>
-      </tr>
-      <tr>
-        <td>
-          2018-10-25 11:29:54
-        </td>
-        <td>
-          2018-10-25 11:29:45
-        </td>
-        <td
-          title="file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer"
-        >
-          file:///Users/&lt;username&gt;/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer
-        </td>
-      </tr>
-      <tr>
-        <td>
-          2018-10-25 11:29:45
-        </td>
-        <td>
-          2018-10-25 11:29:33
-        </td>
-        <td
-          title="file:///Applications/Safari.app/Contents/MacOS/Safari"
-        >
-          file:///Applications/Safari.app/Contents/MacOS/Safari
-        </td>
-      </tr>
-      <tr>
-        <td>
-          2018-10-25 11:30:00
-        </td>
-        <td>
-          2018-10-25 11:29:56
-        </td>
-        <td
-          title="file:///Applications/PyCharm.app/Contents/MacOS/pycharm"
-        >
-          file:///Applications/PyCharm.app/Contents/MacOS/pycharm
-        </td>
-      </tr>
-      <tr>
-        <td>
-          2018-10-25 11:33:40
-        </td>
-        <td>
-          2018-10-25 11:30:00
-        </td>
-        <td
-          title="file:///Applications/Telegram.app/Contents/MacOS/Telegram"
-        >
-          file:///Applications/Telegram.app/Contents/MacOS/Telegram
-        </td>
-      </tr>
-      <tr>
-        <td>
-          2018-10-25 11:33:47
-        </td>
-        <td>
-          2018-10-25 11:33:45
-        </td>
-        <td
-          title="file:///Applications/Xcode.app/Contents/MacOS/Xcode"
-        >
-          file:///Applications/Xcode.app/Contents/MacOS/Xcode
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<Connect(TableView)
+  activities={
+    Array [
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9d0",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:28:59",
+        "executable_name": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:29:33",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9c8",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:33:47",
+        "executable_name": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:33:50",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9c7",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:33:50",
+        "executable_name": "file:///Applications/Xcode.app/Contents/MacOS/Xcode",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:35:11",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9ca",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:33:40",
+        "executable_name": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:33:45",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9cd",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:29:54",
+        "executable_name": "file:///Applications/Safari.app/Contents/MacOS/Safari",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:29:56",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9ce",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:29:45",
+        "executable_name": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:29:54",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9cf",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:29:33",
+        "executable_name": "file:///Applications/Safari.app/Contents/MacOS/Safari",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:29:45",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9cc",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:29:56",
+        "executable_name": "file:///Applications/PyCharm.app/Contents/MacOS/pycharm",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:30:00",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9cb",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:30:00",
+        "executable_name": "file:///Applications/Telegram.app/Contents/MacOS/Telegram",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:33:40",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9c9",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:33:45",
+        "executable_name": "file:///Applications/Xcode.app/Contents/MacOS/Xcode",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:33:47",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+    ]
+  }
+/>
 `;

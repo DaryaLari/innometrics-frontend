@@ -1,215 +1,120 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test ChartView component Test shallow render ChartView component 1`] = `
-<div>
-  <ResponsiveContainer
-    aspect={2}
-    debounce={0}
-    height="100%"
-    width="100%"
-  >
-    <BarChart
-      barCategoryGap="10%"
-      barGap={4}
-      data={
-        Array [
-          Object {
-            "duration": -51000,
-            "executable_name": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
-          },
-          Object {
-            "duration": -83000,
-            "executable_name": "file:///Applications/Xcode.app/Contents/MacOS/Xcode",
-          },
-          Object {
-            "duration": -14000,
-            "executable_name": "file:///Applications/Safari.app/Contents/MacOS/Safari",
-          },
-          Object {
-            "duration": -4000,
-            "executable_name": "file:///Applications/PyCharm.app/Contents/MacOS/pycharm",
-          },
-          Object {
-            "duration": -220000,
-            "executable_name": "file:///Applications/Telegram.app/Contents/MacOS/Telegram",
-          },
-        ]
-      }
-      layout="horizontal"
-      margin={
-        Object {
-          "bottom": 25,
-          "left": 50,
-          "right": 50,
-          "top": 25,
-        }
-      }
-      reverseStackOrder={false}
-      stackOffset="none"
-    >
-      <CartesianGrid
-        fill="none"
-        horizontal={true}
-        horizontalFill={Array []}
-        horizontalPoints={Array []}
-        stroke="#ccc"
-        strokeDasharray="3 3"
-        vertical={true}
-        verticalFill={Array []}
-        verticalPoints={Array []}
-      />
-      <XAxis
-        allowDataOverflow={false}
-        allowDecimals={true}
-        allowDuplicatedCategory={true}
-        axisLine={false}
-        dataKey="executable_name"
-        domain={
-          Array [
-            0,
-            "auto",
-          ]
-        }
-        height={25}
-        hide={false}
-        interval={0}
-        label={
-          Object {
-            "offset": 0,
-            "position": "bottom",
-            "value": "Activity",
-          }
-        }
-        mirror={false}
-        orientation="bottom"
-        padding={
-          Object {
-            "left": 0,
-            "right": 0,
-          }
-        }
-        reversed={false}
-        scale="auto"
-        tick={
-          <CustomTick
-            amount={5}
-          />
-        }
-        tickCount={5}
-        tickLine={false}
-        type="category"
-        width={0}
-        xAxisId={0}
-      />
-      <YAxis
-        allowDataOverflow={false}
-        allowDecimals={true}
-        allowDuplicatedCategory={true}
-        dataKey="duration"
-        domain={
-          Array [
-            0,
-            "auto",
-          ]
-        }
-        height={0}
-        hide={false}
-        label={
-          Object {
-            "offset": 13,
-            "position": "top",
-            "value": "Duration (sec)",
-          }
-        }
-        mirror={false}
-        orientation="left"
-        padding={
-          Object {
-            "bottom": 0,
-            "top": 0,
-          }
-        }
-        reversed={false}
-        scale="auto"
-        tickCount={5}
-        type="number"
-        width={60}
-        yAxisId={0}
-      />
-      <Tooltip
-        active={false}
-        animationDuration={400}
-        animationEasing="ease"
-        contentStyle={Object {}}
-        coordinate={
-          Object {
-            "x": 0,
-            "y": 0,
-          }
-        }
-        cursor={true}
-        cursorStyle={Object {}}
-        filterNull={true}
-        isAnimationActive={true}
-        itemSorter={[Function]}
-        itemStyle={Object {}}
-        labelStyle={Object {}}
-        offset={10}
-        payload={
-          Array [
-            Object {
-              "duration": -51000,
-              "executable_name": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
-            },
-            Object {
-              "duration": -83000,
-              "executable_name": "file:///Applications/Xcode.app/Contents/MacOS/Xcode",
-            },
-            Object {
-              "duration": -14000,
-              "executable_name": "file:///Applications/Safari.app/Contents/MacOS/Safari",
-            },
-            Object {
-              "duration": -4000,
-              "executable_name": "file:///Applications/PyCharm.app/Contents/MacOS/pycharm",
-            },
-            Object {
-              "duration": -220000,
-              "executable_name": "file:///Applications/Telegram.app/Contents/MacOS/Telegram",
-            },
-          ]
-        }
-        separator=" : "
-        useTranslate3d={false}
-        viewBox={
-          Object {
-            "x1": 0,
-            "x2": 0,
-            "y1": 0,
-            "y2": 0,
-          }
-        }
-        wrapperStyle={Object {}}
-      />
-      <Bar
-        animationBegin={0}
-        animationDuration={400}
-        animationEasing="ease"
-        barSize={30}
-        data={Array []}
-        dataKey="duration"
-        fill="#8884d8"
-        hide={false}
-        isAnimationActive={true}
-        layout="vertical"
-        legendType="rect"
-        minPointSize={0}
-        onAnimationEnd={[Function]}
-        onAnimationStart={[Function]}
-        xAxisId={0}
-        yAxisId={0}
-      />
-    </BarChart>
-  </ResponsiveContainer>
-</div>
+<Connect(ChartView)
+  activities={
+    Array [
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9d0",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:28:59",
+        "executable_name": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:29:33",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9c8",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:33:47",
+        "executable_name": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:33:50",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9c7",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:33:50",
+        "executable_name": "file:///Applications/Xcode.app/Contents/MacOS/Xcode",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:35:11",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9ca",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:33:40",
+        "executable_name": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:33:45",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9cd",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:29:54",
+        "executable_name": "file:///Applications/Safari.app/Contents/MacOS/Safari",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:29:56",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9ce",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:29:45",
+        "executable_name": "file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:29:54",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9cf",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:29:33",
+        "executable_name": "file:///Applications/Safari.app/Contents/MacOS/Safari",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:29:45",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9cc",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:29:56",
+        "executable_name": "file:///Applications/PyCharm.app/Contents/MacOS/pycharm",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:30:00",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9cb",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:30:00",
+        "executable_name": "file:///Applications/Telegram.app/Contents/MacOS/Telegram",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:33:40",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+      Object {
+        "_id": "5bd1aa255f627d1a8324f9c9",
+        "browser_title": "",
+        "browser_url": "",
+        "end_time": "2018-10-25 11:33:45",
+        "executable_name": "file:///Applications/Xcode.app/Contents/MacOS/Xcode",
+        "ip_address": "192.168.1.253",
+        "mac_address": "34:36:3b:c4:85:70",
+        "start_time": "2018-10-25 11:33:47",
+        "user": "5bbe21f95f627d8c7a5754ac",
+      },
+    ]
+  }
+/>
 `;

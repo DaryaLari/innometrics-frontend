@@ -4,8 +4,8 @@
     --header-height: calc(var(--cell-size));
     --footer-height: calc(var(--cell-size)*2);
 
-    --header-color: rgba(60, 60, 60, 1);
-    --footer-color: rgba(60, 60, 60, 1);
+    --header-color: 60, 60, 60;
+    --footer-color: 60, 60, 60;
 }
 
 html {
@@ -17,8 +17,10 @@ html {
 
 body {
     margin: 0;
-    width: 100vw;
+    /*width: 100vw;*/
+    min-width: 750px;
     height: 100vh;
+    overflow-y: scroll;
 
     /*font-family: 'PT Serif', serif;*/
     font-family: 'PT Sans', sans-serif;

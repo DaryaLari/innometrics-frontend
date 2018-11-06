@@ -1,17 +1,30 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import styles from "./style.css";
+import Button from '../Button'
 
 class LandingPage extends React.Component {
   render() {
+    console.log(document.getElementsByTagName('body')[0])
+    const bodyWidth = document.getElementsByTagName('body')[0].offsetWidth
+    const bodyHeight = document.getElementsByTagName('body')[0].offsetHeight
+    console.log(bodyWidth, bodyHeight)
     return (
         <div className={styles.content}>
-          Landing page
-          <ul>
-            <li><Link to="/dashboard">Dashboard</Link></li>
-            <li><Link to="/login">Login</Link></li>
-            <li><Link to="/register">Register</Link></li>
-          </ul>
+          <div className={styles.mainImg}>
+            <div className={styles.descriptionBox}>
+              <h1 className={styles.secondaryPhrase}>Analyze your activity</h1>
+              <h1 className={styles.articlePhrase}>and </h1>
+              <h1 className={styles.primaryPhrase}>Improve Productivity</h1>
+              <Button name="Get Started"/>
+            </div>
+          </div>
+          <div className={styles.screenBlock}>
+            <h2 className={styles.heading}>Download links</h2>
+            <p className={styles.blockDescription}>
+              Coming soon...
+            </p>
+          </div>
+
         </div>
 
     )

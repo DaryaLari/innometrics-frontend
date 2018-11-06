@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test TableView component Test render TableView component 1`] = `
+exports[`Test TableView component Test shallow render TableView component 1`] = `
 <Connect(TableView)
   activities={
     Array [

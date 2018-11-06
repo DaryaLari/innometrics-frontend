@@ -8,7 +8,7 @@ import createStore from 'redux-mock-store'
 describe('Test TableView component', () => {
 
   it('Test shallow render TableView component', () => {
-    
+
     const mockStore = createStore([]);
     const store = mockStore({})
 

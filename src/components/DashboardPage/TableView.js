@@ -4,32 +4,20 @@ import styles from "./style.css";
 const TableView = ({activities}) => {
   return (
     <div className={styles.tableView}>
-      <table>
+      <table className={styles.table}>
         <thead>
-        <tr>
-          {/*<th>id</th>*/}
-          {/*<th>user</th>*/}
-          {/*<th>browser_title</th>*/}
-          {/*<th>browser_url</th>*/}
-          <th>start_time</th>
-          <th>end_time</th>
-          {/*<th>ip_address</th>*/}
-          {/*<th>mac_address</th>*/}
-          <th>executable_name</th>
+        <tr className={styles.row}>
+          <th className={styles.cell}>Start time</th>
+          <th className={styles.cell}>End time</th>
+          <th className={styles.cell}>File name</th>
         </tr>
         </thead>
         <tbody>
         {activities.map(a => (
-          <tr key={a._id}>
-            {/*<td>{a._id}</td>*/}
-            {/*<td>{a.user}</td>*/}
-            {/*<td>{a.browser_title}</td>*/}
-            {/*<td>{a.browser_url}</td>*/}
-            <td><span className={styles.truncated}>{a.start_time}</span></td>
-            <td><span className={styles.truncated}>{a.end_time}</span></td>
-            {/*<td>{a.ip_address}</td>*/}
-            {/*<td>{a.mac_address}</td>*/}
-            <td><span className={styles.truncated}>{a.executable_name}</span></td>
+          <tr className={styles.row} key={a._id}>
+            <td className={styles.cell}>{a.start_time}</td>
+            <td className={styles.cell}>{a.end_time}</td>
+            <td className={styles.cell} title={a.executable_name}>{a.executable_name}</td>
           </tr>
         ))}
         </tbody>

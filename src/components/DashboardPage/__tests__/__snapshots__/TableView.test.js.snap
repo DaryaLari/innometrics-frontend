@@ -6,185 +6,145 @@ exports[`Test TableView component Test render TableView component 1`] = `
     <thead>
       <tr>
         <th>
-          start_time
+          Start time
         </th>
         <th>
-          end_time
+          End time
         </th>
         <th>
-          executable_name
+          File name
         </th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>
-          <span>
-            2018-10-25 11:29:33
-          </span>
+          2018-10-25 11:29:33
         </td>
         <td>
-          <span>
-            2018-10-25 11:28:59
-          </span>
+          2018-10-25 11:28:59
         </td>
-        <td>
-          <span>
-            file:///Users/&lt;username&gt;/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer
-          </span>
+        <td
+          title="file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer"
+        >
+          file:///Users/&lt;username&gt;/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer
         </td>
       </tr>
       <tr>
         <td>
-          <span>
-            2018-10-25 11:33:50
-          </span>
+          2018-10-25 11:33:50
         </td>
         <td>
-          <span>
-            2018-10-25 11:33:47
-          </span>
+          2018-10-25 11:33:47
         </td>
-        <td>
-          <span>
-            file:///Users/&lt;username&gt;/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer
-          </span>
+        <td
+          title="file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer"
+        >
+          file:///Users/&lt;username&gt;/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer
         </td>
       </tr>
       <tr>
         <td>
-          <span>
-            2018-10-25 11:35:11
-          </span>
+          2018-10-25 11:35:11
         </td>
         <td>
-          <span>
-            2018-10-25 11:33:50
-          </span>
+          2018-10-25 11:33:50
         </td>
-        <td>
-          <span>
-            file:///Applications/Xcode.app/Contents/MacOS/Xcode
-          </span>
+        <td
+          title="file:///Applications/Xcode.app/Contents/MacOS/Xcode"
+        >
+          file:///Applications/Xcode.app/Contents/MacOS/Xcode
         </td>
       </tr>
       <tr>
         <td>
-          <span>
-            2018-10-25 11:33:45
-          </span>
+          2018-10-25 11:33:45
         </td>
         <td>
-          <span>
-            2018-10-25 11:33:40
-          </span>
+          2018-10-25 11:33:40
         </td>
-        <td>
-          <span>
-            file:///Users/&lt;username&gt;/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer
-          </span>
+        <td
+          title="file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer"
+        >
+          file:///Users/&lt;username&gt;/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer
         </td>
       </tr>
       <tr>
         <td>
-          <span>
-            2018-10-25 11:29:56
-          </span>
+          2018-10-25 11:29:56
         </td>
         <td>
-          <span>
-            2018-10-25 11:29:54
-          </span>
+          2018-10-25 11:29:54
         </td>
-        <td>
-          <span>
-            file:///Applications/Safari.app/Contents/MacOS/Safari
-          </span>
+        <td
+          title="file:///Applications/Safari.app/Contents/MacOS/Safari"
+        >
+          file:///Applications/Safari.app/Contents/MacOS/Safari
         </td>
       </tr>
       <tr>
         <td>
-          <span>
-            2018-10-25 11:29:54
-          </span>
+          2018-10-25 11:29:54
         </td>
         <td>
-          <span>
-            2018-10-25 11:29:45
-          </span>
+          2018-10-25 11:29:45
         </td>
-        <td>
-          <span>
-            file:///Users/&lt;username&gt;/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer
-          </span>
+        <td
+          title="file:///Users/<username>/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer"
+        >
+          file:///Users/&lt;username&gt;/Library/Developer/Xcode/DerivedData/InnometricsTransfer-ftpzsieukjkaktfvhcxnjxjwyjwi/Build/Products/Debug/InnometricsTransfer.app/Contents/MacOS/InnometricsTransfer
         </td>
       </tr>
       <tr>
         <td>
-          <span>
-            2018-10-25 11:29:45
-          </span>
+          2018-10-25 11:29:45
         </td>
         <td>
-          <span>
-            2018-10-25 11:29:33
-          </span>
+          2018-10-25 11:29:33
         </td>
-        <td>
-          <span>
-            file:///Applications/Safari.app/Contents/MacOS/Safari
-          </span>
+        <td
+          title="file:///Applications/Safari.app/Contents/MacOS/Safari"
+        >
+          file:///Applications/Safari.app/Contents/MacOS/Safari
         </td>
       </tr>
       <tr>
         <td>
-          <span>
-            2018-10-25 11:30:00
-          </span>
+          2018-10-25 11:30:00
         </td>
         <td>
-          <span>
-            2018-10-25 11:29:56
-          </span>
+          2018-10-25 11:29:56
         </td>
-        <td>
-          <span>
-            file:///Applications/PyCharm.app/Contents/MacOS/pycharm
-          </span>
+        <td
+          title="file:///Applications/PyCharm.app/Contents/MacOS/pycharm"
+        >
+          file:///Applications/PyCharm.app/Contents/MacOS/pycharm
         </td>
       </tr>
       <tr>
         <td>
-          <span>
-            2018-10-25 11:33:40
-          </span>
+          2018-10-25 11:33:40
         </td>
         <td>
-          <span>
-            2018-10-25 11:30:00
-          </span>
+          2018-10-25 11:30:00
         </td>
-        <td>
-          <span>
-            file:///Applications/Telegram.app/Contents/MacOS/Telegram
-          </span>
+        <td
+          title="file:///Applications/Telegram.app/Contents/MacOS/Telegram"
+        >
+          file:///Applications/Telegram.app/Contents/MacOS/Telegram
         </td>
       </tr>
       <tr>
         <td>
-          <span>
-            2018-10-25 11:33:47
-          </span>
+          2018-10-25 11:33:47
         </td>
         <td>
-          <span>
-            2018-10-25 11:33:45
-          </span>
+          2018-10-25 11:33:45
         </td>
-        <td>
-          <span>
-            file:///Applications/Xcode.app/Contents/MacOS/Xcode
-          </span>
+        <td
+          title="file:///Applications/Xcode.app/Contents/MacOS/Xcode"
+        >
+          file:///Applications/Xcode.app/Contents/MacOS/Xcode
         </td>
       </tr>
     </tbody>

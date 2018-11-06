@@ -33,7 +33,6 @@ class ChartView extends React.Component {
 class CustomTick extends React.Component{
   render(){
     const {x, y, payload, ...rest} = this.props
-    console.log(rest)
     let width = rest.width/rest.amount - 5
     return (
       <foreignObject className={styles.truncated}

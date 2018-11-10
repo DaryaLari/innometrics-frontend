@@ -24,6 +24,7 @@ export const activitiesSummarized = createSelector(
       .reduce(
       (result, value, key) => _.concat(result, {duration: value, executable_name: key}), [])
       .sortBy('duration')
+      .reverse()
       .value()
     return actObj
   }

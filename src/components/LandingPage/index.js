@@ -4,10 +4,9 @@ import Button from '../Button'
 
 class LandingPage extends React.Component {
   render() {
-    console.log(document.getElementsByTagName('body')[0])
-    const bodyWidth = document.getElementsByTagName('body')[0].offsetWidth
-    const bodyHeight = document.getElementsByTagName('body')[0].offsetHeight
-    console.log(bodyWidth, bodyHeight)
+    // const bodyWidth = document.getElementsByTagName('body')[0].offsetWidth
+    // const bodyHeight = document.getElementsByTagName('body')[0].offsetHeight
+    // console.log(bodyWidth, bodyHeight)
     return (
         <div className={styles.content}>
           <div className={styles.mainImg}>

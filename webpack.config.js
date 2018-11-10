@@ -19,6 +19,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpe?g)$/,
+        loader: 'url-loader'
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {

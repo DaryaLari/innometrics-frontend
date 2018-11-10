@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "with-dev-server": "set DOMAIN_ADDRESS='http://localhost:8090' && nodemon ./startServer.js",
-    "dev": "webpack-serve",
+    "dev": "webpack-dev-server",
     "build": "webpack",
     "prod": "webpack --mode production",
     "test": "jest",
@@ -49,11 +49,12 @@
     "redux-devtools-extension": "^2.13.5",
     "redux-mock-store": "^1.5.3",
     "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
     "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-middleware": "^3.4.0",
-    "webpack-hot-client": "^4.1.1",
-    "webpack-serve": "^2.0.2"
+    "webpack-dev-server": "^3.1.10",
+    "webpack-hot-client": "^4.1.1"
   },
   "optionalDependencies": {
     "nodemon": "^1.18.4"
@@ -96,9 +97,6 @@
     ],
     "moduleNameMapper": {
       "\\.(css|less)$": "<rootDir>/___mocks___/styleMock.js"
-    },
-    "globals": {
-      "DOMAIN_ADDRESS": "http://localhost:8090"
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js|jsx)?$"
   }

@@ -6,7 +6,7 @@
     height: 540px;
     margin: calc(var(--cell-size)/(-2));
     margin-bottom: 0;
-    background: rgba(142, 218, 190, 1) url("/public/statistika.jpg") no-repeat center center;
+    background: rgba(142, 218, 190, 1) url("../../media/images/statistika.jpg") no-repeat center center;
     background-size: contain;
 
     display: flex;
@@ -23,7 +23,7 @@
     width: 100%;
     height: 100%;
     padding: calc(var(--cell-size)/2);
-    background-color: rgba(var(--header-color), 0.9);
+    background-color: rgba(var(--header-color), 0.80);
 
     display: flex;
     flex-direction: column;

@@ -98,6 +98,9 @@
     "moduleNameMapper": {
       "\\.(css|less)$": "<rootDir>/___mocks___/styleMock.js"
     },
+    "globals": {
+      "DOMAIN_ADDRESS": "http://localhost:8090"
+    },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js|jsx)?$"
   }
 }

@@ -16,6 +16,9 @@ module.exports = {
     path: path.join(__dirname, outputDirectory),
     filename: "[name].js"
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       {

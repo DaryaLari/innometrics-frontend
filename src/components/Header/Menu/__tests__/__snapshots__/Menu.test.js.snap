@@ -10,17 +10,9 @@ exports[`Test AuthorizationMenu component Test render menu with 'Dashboard' when
   <div
     onClick={[Function]}
   >
-    Main Page
+    Projects
   </div>
 </nav>
 `;
 
-exports[`Test AuthorizationMenu component Test render menu without 'Dashboard' when not authenticated 1`] = `
-<nav>
-  <div
-    onClick={[Function]}
-  >
-    Main Page
-  </div>
-</nav>
-`;
+exports[`Test AuthorizationMenu component Test render menu without 'Dashboard' when not authenticated 1`] = `<nav />`;

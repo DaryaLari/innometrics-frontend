@@ -12,10 +12,6 @@ exports[`Test Input component Test render Input component 1`] = `
     placeholder="Input your text here"
     type="text"
   />
-  <div>
-    <span>
-      
-    </span>
-  </div>
+  <div />
 </div>
 `;

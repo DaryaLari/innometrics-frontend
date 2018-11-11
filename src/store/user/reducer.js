@@ -1,7 +1,7 @@
 import {TYPES as USER_TYPES} from "./actionTypes";
 
 const initialState = {
-  authorized: !(null == localStorage.getItem("user")),
+  authorized: !(null === localStorage.getItem("user")),
   activeRequest: false,
   failed: false,
   error: null

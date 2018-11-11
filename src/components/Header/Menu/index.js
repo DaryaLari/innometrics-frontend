@@ -6,11 +6,12 @@ import styles from "./style.css";
 
 class HeaderMenu extends React.Component {
   guestNavigation = [
-    {name: "Main Page", path: "/"}
+    // {name: "Main Page", path: "/"}
   ]
   userNavigation = [
     {name: "Dashboard", path: "/dashboard"},
-    {name: "Main Page", path: "/"}
+    // {name: "Main Page", path: "/"},
+    {name: "Projects", path: "/projects"}
   ]
   render() {
     const navigation = this.props.authorized ? this.userNavigation : this.guestNavigation

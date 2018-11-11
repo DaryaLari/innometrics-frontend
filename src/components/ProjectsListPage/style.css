@@ -1,0 +1,16 @@
+.content {
+
+}
+
+.projectsList {
+
+}
+
+.project {
+    height: var(--cell-size);
+    width: calc(var(--cell-size) * 7);
+    box-shadow: 0 0 5px 0px rgba(100, 100, 100, 0.15);
+    margin: 15px 0;
+
+    cursor: pointer;
+}

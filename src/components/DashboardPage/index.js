@@ -1,12 +1,22 @@
 import React from "react";
 import {connect} from "react-redux";
 import TableView from './TableView'
+import ChartView from './ChartView'
+import { getActivities } from '../../helpers/selectors'
 import {getActivitiesRequest} from "../../store/activities/actionCreators";
 import styles from "./style.css";
 
-class DBPage extends React.Component {
+class _DashboardPage extends React.Component {
+  state = {
+    selectedActivity: null
+  }
   componentDidMount(){
     this.props.getActivities()
+  }
+  onSelectActivity = (data) => {
+    this.state.selectedActivity === data.executable_name ?
+      this.setState({selectedActivity: null}):
+      this.setState({selectedActivity: data.executable_name})
   }
   render() {
     return (
@@ -15,8 +25,11 @@ class DBPage extends React.Component {
           {this.props.activeRequest ? "Loading ... " :
             (this.props.activities.length === 0 ?
                 "There is nothing to show yet" :
-                <TableView activities={this.props.activities}/>
-            )}
+                <div className={styles.commonView}>
+                  <ChartView onBarClick={this.onSelectActivity} />
+                  <TableView selectedActivity={this.state.selectedActivity} />
+                </div>
+                )}
         </div>
 
     )
@@ -25,13 +38,13 @@ class DBPage extends React.Component {
 
 const DashboardPage = connect(
   (state) => ({
-    activities: state.activities.activities,
+    activities: getActivities(state),
     activeRequest: state.activities.activeRequest
   }),
 
   (dispatch) => ({
     getActivities: () => dispatch(getActivitiesRequest())
   })
-)(DBPage)
+)(_DashboardPage)
 
 export default DashboardPage;

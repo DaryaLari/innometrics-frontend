@@ -5,10 +5,6 @@ describe('Test \'required\' validator', () => {
     expect(required('')).toBe("Required")
   })
 
-  it('Rejects \'\' string', () => {
-    expect(required('')).toBe("Required")
-  })
-
   it('Rejects \'   \' string', () => {
     expect(required('   ')).toBe("Required")
   })

@@ -16,13 +16,7 @@ exports[`Test Header component Test render Header component 1`] = `
       </span>
     </div>
   </div>
-  <nav>
-    <div
-      onClick={[Function]}
-    >
-      Main Page
-    </div>
-  </nav>
+  <nav />
   <div>
     <div
       onClick={[Function]}

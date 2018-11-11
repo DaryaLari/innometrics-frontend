@@ -33,7 +33,7 @@ class Input extends React.Component {
           </label>
           <input className={styles.input} {...inputProps}/>
           <div className={styles.messages}>
-            {meta.touched && <span className={styles.error}>{displayedError}</span>}
+            {_.get(meta, 'touched') && <span className={styles.error}>{displayedError}</span>}
           </div>
         </div>
 

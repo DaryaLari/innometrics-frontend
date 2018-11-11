@@ -70,36 +70,5 @@
     "redux-form": "^7.4.2",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0"
-  },
-  "jest": {
-    "roots": [
-      "<rootDir>/src"
-    ],
-    "collectCoverageFrom": [
-      "**/src/**/*.{js,jsx}"
-    ],
-    "testEnvironment": "enzyme",
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
-    "testEnvironmentOptions": {
-      "enzymeAdapter": "react16"
-    },
-    "testPathIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "json"
-    ],
-    "moduleNameMapper": {
-      "\\.(css|less)$": "<rootDir>/___mocks___/styleMock.js"
-    },
-    "globals": {
-      "DOMAIN_ADDRESS": "http://localhost:8090"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js|jsx)?$"
   }
 }

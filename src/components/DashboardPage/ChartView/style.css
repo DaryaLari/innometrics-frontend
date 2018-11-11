@@ -1,0 +1,9 @@
+.chartView {
+    width: 50%;
+}
+
+.truncated {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

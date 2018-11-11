@@ -1,9 +1,9 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import {activities} from '../../../../___mocks___/activities'
-import TableView from '../TableView'
-import { shallow } from 'enzyme/build/index'
 import createStore from 'redux-mock-store'
+import { shallow } from 'enzyme/build/index'
+import {activities} from '../../../../../___mocks___/activities'
+import TableView from '../index'
 
 describe('Test TableView component', () => {
 

@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from 'react-redux'
-import { getActivities } from '../../helpers/selectors'
-import styles from "./style.css";
 import _ from 'lodash'
+import { getActivities } from '../../../helpers/selectors'
+import styles from "./style.css";
 
 class TableView extends React.Component {
   state = {

@@ -6,6 +6,8 @@ import AuthorizationPage from './components/AuthorizationPage'
 import DashboardPage from './components/DashboardPage'
 import LandingPage from './components/LandingPage'
 import AuthorizedRoute from './components/AuthorizedRoute'
+import ProjectsListPage from './components/ProjectsListPage'
+import ProjectPage from './components/ProjectPage'
 import styles from "./style.css"
 import PersonalStatistics from './components/PersonalStatistics'
 
@@ -20,6 +22,10 @@ class App extends React.Component {
                 <AuthorizedRoute path="/dashboard" component={DashboardPage}/>
                 <Route path="/login" component={AuthorizationPage}/>
                 <Route path="/register" component={AuthorizationPage}/>
+                {/*<Route exact path="/projects">*/}
+                  <Route exact path="/projects" component={ProjectsListPage}/>
+                  <Route path="/projects/:projectName" component={ProjectPage}/>
+                {/*</Route>*/}
                 <Route path="/stat" component={PersonalStatistics}/>
                 <Redirect to="/dashboard"/>
               </Switch>

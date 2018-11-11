@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux'
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
-import { activitiesSummarized } from '../../helpers/selectors'
+import { activitiesSummarized } from '../../../helpers/selectors'
 import styles from "./style.css";
 
 class ChartView extends React.Component {

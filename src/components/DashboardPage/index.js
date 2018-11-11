@@ -6,7 +6,7 @@ import { getActivities } from '../../helpers/selectors'
 import {getActivitiesRequest} from "../../store/activities/actionCreators";
 import styles from "./style.css";
 
-class DBPage extends React.Component {
+class _DashboardPage extends React.Component {
   state = {
     selectedActivity: null
   }
@@ -45,6 +45,6 @@ const DashboardPage = connect(
   (dispatch) => ({
     getActivities: () => dispatch(getActivitiesRequest())
   })
-)(DBPage)
+)(_DashboardPage)
 
 export default DashboardPage;

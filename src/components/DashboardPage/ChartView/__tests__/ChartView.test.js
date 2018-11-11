@@ -1,9 +1,9 @@
 import React from 'react'
-import { shallow } from 'enzyme/build/index'
-import {activities} from '../../../../___mocks___/activities'
-import ChartView from '../ChartView'
-import createStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
+import createStore from 'redux-mock-store'
+import { shallow } from 'enzyme/build'
+import {activities} from '../../../../../___mocks___/activities'
+import ChartView from '../index'
 
 describe('Test ChartView component', () => {
 

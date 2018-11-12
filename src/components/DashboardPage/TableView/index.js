@@ -7,7 +7,7 @@ import styles from "./style.css";
 class TableView extends React.Component {
   state = {
     sortKey: null,
-    order: null
+    order: null // ['asc' | 'desc']
   }
   sortBy = (key) => {
     if(this.state.order === null || this.state.order === 'desc'){
@@ -17,11 +17,9 @@ class TableView extends React.Component {
       this.setState({sortKey: key, order: 'desc'})
     }
   }
-  /*
-  * @param { string } key - key of activities, by which the array should be sorted
-  * @param { ['asc' | 'desc'] } order - for [ ascending or descending ] sorting order
-  * */
-  sortActivities = (key=this.state.key, order=this.state.order) => {
+  getSortedActivities = () => {
+    const key = this.state.key
+    const order = this.state.order
     if(key === null) {
       return this.props.activities
     }
@@ -49,7 +47,7 @@ class TableView extends React.Component {
     return <i className={`${"material-icons"} ${styles.sortDirection}`}>arrow_drop_down</i>
   }
   render(){
-    let activities = this.sortActivities()
+    let activities = this.getSortedActivities()
     return (
       <div className={styles.tableView}>
         <table className={styles.table}>

@@ -5,7 +5,6 @@ import styles from "./style.css";
 
 class ProjectPage extends React.Component {
   render() {
-    console.log(this.props)
     const projectName = this.props.match.params.projectName
     return (
       <div className={styles.content}>

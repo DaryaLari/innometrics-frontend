@@ -13,8 +13,9 @@ module.exports = {
     app: ["./src/index.js"]
   },
   output: {
-    path: path.join(__dirname, outputDirectory),
-    filename: "[name].js"
+    path: path.resolve(__dirname, outputDirectory),
+    filename: "js/[name].js",
+    publicPath: '/'
   },
   devServer: {
     historyApiFallback: true,
@@ -22,28 +23,43 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpe?g)$/,
-        loader: 'url-loader'
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
-      },
-      {
-        test: /\.css$/,
-        use: [
+        oneOf: [
           {
-            loader: "style-loader"
+            test: /\.(png|jpe?g)$/,
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: 'media/[name].[ext]',
+            },
           },
           {
-            loader: "css-loader",
-            query: {
-              modules: true,
-              localIdentName: "[name]__[local]___[hash:base64:5]"
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            use: {
+              loader: "babel-loader"
             }
+          },
+          {
+            test: /\.css$/,
+            use: [
+              {
+                loader: "style-loader"
+              },
+              {
+                loader: "css-loader",
+                query: {
+                  modules: true,
+                  localIdentName: "[name]__[local]___[hash:base64:5]"
+                }
+              }
+            ]
+          },
+          {
+            loader: require.resolve('file-loader'),
+            exclude: [/\.(jsx?|html)$/],
+            options: {
+              name: 'media/[name].[ext]',
+            },
           }
         ]
       }

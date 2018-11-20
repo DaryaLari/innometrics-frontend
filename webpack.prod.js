@@ -29,10 +29,6 @@ module.exports = merge(common, {
         minifyCSS: true,
         minifyURLs: true,
       },
-    }),
-    new CompressionPlugin({
-      algorithm: 'gzip',
-      test: /\.js$|\.css$|\.html$/
     })
   ]
 });

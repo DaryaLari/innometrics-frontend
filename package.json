@@ -2,13 +2,14 @@
   "name": "activity_dashboard",
   "version": "0.1.0",
   "description": "Visualisation of users' working activity statistics",
+  "private": true,
   "main": "src/index.js",
   "scripts": {
-    "with-dev-server": "set DOMAIN_ADDRESS='http://localhost:8090' && nodemon ./startServer.js",
+    "with-dev-server": "set DOMAIN_ADDRESS='http://localhost:8090' && nodemon ./stub/startServer.js",
     "dev": "webpack-dev-server",
-    "prod": "webpack --mode production",
+    "build": "webpack --mode production --config webpack.prod.js",
     "test": "jest",
-    "lint": "eslint --ext .js,.jsx ./src"
+    "lint": "eslint ./src"
   },
   "keywords": [
     "dashboard",
@@ -29,6 +30,7 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "clean-webpack-plugin": "^0.1.19",
+    "compression-webpack-plugin": "^2.0.0",
     "css-loader": "^1.0.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
@@ -36,6 +38,7 @@
     "eslint-plugin-jest": "^21.26.2",
     "eslint-plugin-react": "^7.11.1",
     "express": "^4.16.4",
+    "file-loader": "^2.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^23.6.0",
@@ -53,7 +56,8 @@
     "webpack-cli": "^3.1.2",
     "webpack-dev-middleware": "^3.4.0",
     "webpack-dev-server": "^3.1.10",
-    "webpack-hot-client": "^4.1.1"
+    "webpack-hot-client": "^4.1.1",
+    "webpack-merge": "^4.1.4"
   },
   "optionalDependencies": {
     "nodemon": "^1.18.4"

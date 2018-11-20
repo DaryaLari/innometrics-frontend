@@ -19,10 +19,17 @@ export const reducer = (state = initialState, action) => {
       }
 
     case USER_TYPES.LOGIN_SUCCESS:
-    case USER_TYPES.REGISTER_SUCCESS:
     case USER_TYPES.LOGOUT_FAILURE:
       return {
         authorized: true,
+        activeRequest: false,
+        failed: false,
+        error: null
+      }
+
+    case USER_TYPES.REGISTER_SUCCESS:
+      return {
+        authorized: false,
         activeRequest: false,
         failed: false,
         error: null

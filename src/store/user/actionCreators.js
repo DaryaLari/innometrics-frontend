@@ -38,7 +38,7 @@ export const registerRequest = () => (dispatch, getState) => {
       .then((result) => {
         localStorage.setItem("user", JSON.stringify({}))
         dispatch({type: USER_TYPES.REGISTER_SUCCESS})
-        redirectFromAuth()
+        loginRequest()(dispatch, getState)
       })
       .catch((error) => {
         dispatch({type: USER_TYPES.REGISTER_FAILURE, error: error.data.message})

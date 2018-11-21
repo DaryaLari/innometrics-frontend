@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./style.css";
+import React from 'react'
+import styles from './style.css'
 
 class Logo extends React.Component {
   render() {
@@ -15,4 +15,4 @@ class Logo extends React.Component {
   }
 }
 
-export default Logo;
+export default Logo

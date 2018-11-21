@@ -1,5 +1,5 @@
-import {TYPES as ACTIVITIES_TYPES} from "./actionTypes";
-import {TYPES as USER_TYPES} from "../user/actionTypes";
+import {TYPES as ACTIVITIES_TYPES} from './actionTypes'
+import {TYPES as USER_TYPES} from '../user/actionTypes'
 
 const initialState = {
   activities: [],
@@ -47,6 +47,6 @@ export const reducer = (state = initialState, action) => {
       }
 
     default:
-      return state;
+      return state
   }
 }

@@ -9,7 +9,7 @@ describe('Test TableView component', () => {
 
   it('Test shallow render TableView component', () => {
 
-    const mockStore = createStore([]);
+    const mockStore = createStore([])
     const store = mockStore({})
 
     const wrapper = shallow(

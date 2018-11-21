@@ -9,7 +9,7 @@ describe('Test ChartView component', () => {
 
   it('Test shallow render ChartView component', () => {
 
-    const mockStore = createStore([]);
+    const mockStore = createStore([])
     const store = mockStore({})
 
     const wrapper = shallow(

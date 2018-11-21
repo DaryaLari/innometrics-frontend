@@ -9,7 +9,7 @@ describe('Test RegistrationForm component', () => {
   it('Test shallow render RegistrationForm component', () => {
 
     const props = {}
-    const mockStore = createStore([]);
+    const mockStore = createStore([])
     const store = mockStore({})
 
     const wrapper = shallow(

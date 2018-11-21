@@ -1,9 +1,9 @@
-import React from "react";
-import {connect} from "react-redux";
-import {withRouter} from "react-router";
-import {logoutRequest} from "../../../store/user/actionCreators";
-import {userAuthorized} from "../../../helpers/selectors";
-import styles from "./style.css";
+import React from 'react'
+import {connect} from 'react-redux'
+import {withRouter} from 'react-router'
+import {logoutRequest} from '../../../store/user/actionCreators'
+import {userAuthorized} from '../../../helpers/selectors'
+import styles from './style.css'
 
 class AuthMenu  extends React.Component {
   shouldComponentUpdate(nextProps, nextState){
@@ -21,9 +21,9 @@ class AuthMenu  extends React.Component {
         :
         (
             <div className={styles.authMenu}>
-              <div className={styles.authItem} onClick={() => this.props.history.push("/login")}>Login</div>
-              <span style={{padding: "0 5px 0 5px"}}> or </span>
-              <div className={styles.authItem} onClick={() => this.props.history.push("/register")}>Register</div>
+              <div className={styles.authItem} onClick={() => this.props.history.push('/login')}>Login</div>
+              <span style={{padding: '0 5px 0 5px'}}> or </span>
+              <div className={styles.authItem} onClick={() => this.props.history.push('/register')}>Register</div>
             </div>
         )
   }
@@ -36,4 +36,4 @@ const AuthorizationMenu = connect(
     })
 )(AuthMenu)
 
-export default withRouter(AuthorizationMenu);
+export default withRouter(AuthorizationMenu)

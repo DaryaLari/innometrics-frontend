@@ -1,8 +1,8 @@
-import React from "react";
-import {Redirect, Route} from "react-router-dom";
+import React from 'react'
+import {Redirect, Route} from 'react-router-dom'
 import { userAuthorized } from '../../helpers/selectors'
-import {logoutRequest} from "../../store/user/actionCreators";
-import {connect} from "react-redux";
+import {logoutRequest} from '../../store/user/actionCreators'
+import {connect} from 'react-redux'
 
 const AuthRoute = ({component: Component, authorized, ...rest}) => {
   return (
@@ -32,4 +32,4 @@ const AuthorizedRoute = connect(
   })
 )(AuthRoute)
 
-export default AuthorizedRoute;
+export default AuthorizedRoute

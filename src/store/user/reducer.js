@@ -1,8 +1,8 @@
-import {TYPES as USER_TYPES} from "./actionTypes";
+import {TYPES as USER_TYPES} from './actionTypes'
 import { removeUserFromLocalStorage, saveUserToLocalStorage } from '../../helpers/authenticationUtils'
 
 const initialState = {
-  authorized: !(null === localStorage.getItem("user")),
+  authorized: !(null === localStorage.getItem('user')),
   activeRequest: false,
   failed: false,
   error: null
@@ -81,6 +81,6 @@ export const reducer = (state = initialState, action) => {
       }
 
     default:
-      return state;
+      return state
   }
 }

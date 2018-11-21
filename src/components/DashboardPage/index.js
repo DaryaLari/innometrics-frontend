@@ -1,10 +1,10 @@
-import React from "react";
-import {connect} from "react-redux";
+import React from 'react'
+import {connect} from 'react-redux'
 import TableView from './TableView'
 import ChartView from './ChartView'
 import { getActivities } from '../../helpers/selectors'
-import {getActivitiesRequest} from "../../store/activities/actionCreators";
-import styles from "./style.css";
+import {getActivitiesRequest} from '../../store/activities/actionCreators'
+import styles from './style.css'
 
 class _DashboardPage extends React.Component {
   state = {
@@ -22,9 +22,9 @@ class _DashboardPage extends React.Component {
     return (
         <div className={styles.content}>
           <h1>Dashboard: Activities</h1>
-          {this.props.activeRequest ? "Loading ... " :
+          {this.props.activeRequest ? 'Loading ... ' :
             (this.props.activities.length === 0 ?
-                "There is nothing to show yet" :
+                'There is nothing to show yet' :
                 <div className={styles.commonView}>
                   <ChartView onBarClick={this.onSelectActivity} />
                   <TableView selectedActivity={this.state.selectedActivity} />
@@ -47,4 +47,4 @@ const DashboardPage = connect(
   })
 )(_DashboardPage)
 
-export default DashboardPage;
+export default DashboardPage

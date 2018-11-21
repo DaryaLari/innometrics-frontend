@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 import { connect } from 'react-redux'
 import _ from 'lodash'
 import { getActivities } from '../../../helpers/selectors'
-import styles from "./style.css";
+import styles from './style.css'
 
 class TableView extends React.Component {
   state = {
@@ -39,12 +39,12 @@ class TableView extends React.Component {
   }
   orderSign = (key) => {
     if(this.state.sortKey !== key){
-      return ""
+      return ''
     }
     if(this.state.order === 'asc'){
-      return <i className={`${"material-icons"} ${styles.sortDirection}`}>arrow_drop_up</i>
+      return <i className={`${'material-icons'} ${styles.sortDirection}`}>arrow_drop_up</i>
     }
-    return <i className={`${"material-icons"} ${styles.sortDirection}`}>arrow_drop_down</i>
+    return <i className={`${'material-icons'} ${styles.sortDirection}`}>arrow_drop_down</i>
   }
   render(){
     let activities = this.getSortedActivities()
@@ -96,4 +96,4 @@ const ConnectedTableView = connect(
   })
 )(TableView)
 
-export default ConnectedTableView;
+export default ConnectedTableView

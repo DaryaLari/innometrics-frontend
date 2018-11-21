@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from 'prop-types';
-import styles from "./style.css";
+import React from 'react'
+import PropTypes from 'prop-types'
+import styles from './style.css'
 
 class Button extends React.Component {
   render() {
@@ -20,15 +20,15 @@ class Button extends React.Component {
 
 Button.propTypes = {
   name: PropTypes.string.isRequired,
-  styleType: PropTypes.oneOf(["primary", "secondary"]),
+  styleType: PropTypes.oneOf(['primary', 'secondary']),
   disabled: PropTypes.bool,
   style: PropTypes.object
 }
 
 Button.defaultProps = {
-  styleType: "primary",
+  styleType: 'primary',
   disabled: false,
   style: {}
 }
 
-export default Button;
+export default Button

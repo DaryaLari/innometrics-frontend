@@ -6,7 +6,7 @@
     height: 540px;
     margin: calc(var(--cell-size)/(-2));
     margin-bottom: 0;
-    background: rgba(142, 218, 190, 1) url("../../media/images/statistika.jpg") no-repeat center center;
+    background: rgba(142, 218, 190, 1) url('../../media/images/statistika.jpg') no-repeat center center;
     background-size: contain;
 
     display: flex;

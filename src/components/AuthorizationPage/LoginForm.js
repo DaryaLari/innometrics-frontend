@@ -11,9 +11,6 @@ class LoginForm extends React.Component {
     this.props.login()
   }
 
-  componentDidMount(){
-    console.log("here")
-  }
   render () {
     return (
       <form className={styles.form}
@@ -21,33 +18,33 @@ class LoginForm extends React.Component {
       >
         <h1>Login</h1>
         <Field
-          name="email"
+          name='email'
           component={Input}
-          label="Email"
-          placeholder="Email"
-          type="email"
+          label='Email'
+          placeholder='Email'
+          type='email'
           validate={[required, email]}
         />
         <Field
-          name="password"
+          name='password'
           component={Input}
-          label="Password"
-          placeholder="Password"
-          type="password"
+          label='Password'
+          placeholder='Password'
+          type='password'
           validate={required}
         />
-        <Button name="Login"
-                type="submit"
+        <Button name='Login'
+                type='submit'
                 style={{width: '100%'}}
                 disabled={this.props.submitDisabled}
         />
         <p className={styles.formError}>{this.props.formError}</p>
         <p>Don&#39;t have account yet?&nbsp;
-          <Link to="/register">Register</Link>
+          <Link to='/register'>Register</Link>
         </p>
       </form>
     )
   }
 }
 
-export default LoginForm;
+export default LoginForm

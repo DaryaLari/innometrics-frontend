@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 import _ from 'lodash'
-import styles from "./style.css";
+import styles from './style.css'
 
 class Input extends React.Component {
   render() {
@@ -57,12 +57,12 @@ Input.propTypes = {
 }
 
 Input.defaultProps = {
-  type: "text",
-  label: "",
-  placeholder: "Input your text here",
+  type: 'text',
+  label: '',
+  placeholder: 'Input your text here',
   required: false,
   disabled: false,
-  error: ""
+  error: ''
 }
 
-export default Input;
+export default Input

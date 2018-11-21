@@ -2,7 +2,7 @@ import React from 'react'
 import createStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import { shallow } from 'enzyme'
-import AuthorizationPage from "../index"
+import AuthorizationPage from '../index'
 import TestRenderer from 'react-test-renderer'
 
 const MockLoginForm = () => <div>Login</div>
@@ -15,7 +15,7 @@ describe('Test AuthorizationPage component', () => {
 
   it('Test shallow render AuthorizationPage component', () => {
 
-    const mockStore = createStore([]);
+    const mockStore = createStore([])
     const store = mockStore({})
 
     const wrapper = shallow(
@@ -29,7 +29,7 @@ describe('Test AuthorizationPage component', () => {
 
   it('Test renders \'Logout confirmation\' when user authenticated', () => {
 
-    const mockStore = createStore([]);
+    const mockStore = createStore([])
     const initialStore = {
       user: {
         authorized: true
@@ -51,7 +51,7 @@ describe('Test AuthorizationPage component', () => {
 
   it('Test renders LoginForm when user is not authenticated', () => {
 
-    const mockStore = createStore([]);
+    const mockStore = createStore([])
     const initialStore = {
       user: {
         authorized: false
@@ -78,7 +78,7 @@ describe('Test AuthorizationPage component', () => {
 
   it('Test renders RegistrationForm when user is not authenticated', () => {
 
-    const mockStore = createStore([]);
+    const mockStore = createStore([])
     const initialStore = {
       user: {
         authorized: false

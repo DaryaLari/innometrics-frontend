@@ -8,8 +8,8 @@ import LandingPage from './components/LandingPage'
 import AuthorizedRoute from './components/AuthorizedRoute'
 import ProjectsListPage from './components/ProjectsListPage'
 import ProjectPage from './components/ProjectPage'
-import styles from "./style.css"
 import PersonalStatistics from './components/PersonalStatistics'
+import styles from './style.css'
 
 class App extends React.Component {
   render() {
@@ -18,16 +18,16 @@ class App extends React.Component {
           <Header/>
             <main>
               <Switch>
-                <Route exact path="/" component={LandingPage}/>
-                <AuthorizedRoute path="/dashboard" component={DashboardPage}/>
-                <Route path="/login" component={AuthorizationPage}/>
-                <Route path="/register" component={AuthorizationPage}/>
-                {/*<Route exact path="/projects">*/}
-                  <Route exact path="/projects" component={ProjectsListPage}/>
-                  <Route path="/projects/:projectName" component={ProjectPage}/>
+                <Route exact path='/' component={LandingPage}/>
+                <AuthorizedRoute path='/dashboard' component={DashboardPage}/>
+                <Route path='/login' component={AuthorizationPage}/>
+                <Route path='/register' component={AuthorizationPage}/>
+                {/*<Route exact path='/projects'>*/}
+                  <Route exact path='/projects' component={ProjectsListPage}/>
+                  <Route path='/projects/:projectName' component={ProjectPage}/>
                 {/*</Route>*/}
-                <Route path="/stat" component={PersonalStatistics}/>
-                <Redirect to="/dashboard"/>
+                <Route path='/stat' component={PersonalStatistics}/>
+                <Redirect to='/dashboard'/>
               </Switch>
             </main>
           <Footer/>
@@ -38,4 +38,4 @@ class App extends React.Component {
 
 
 
-export default App;
+export default App

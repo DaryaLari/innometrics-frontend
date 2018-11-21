@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 import { connect } from 'react-redux'
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { activitiesSummarized } from '../../../helpers/selectors'
-import styles from "./style.css";
+import styles from './style.css'
 
 class ChartView extends React.Component {
   render() {
@@ -11,20 +11,20 @@ class ChartView extends React.Component {
         <ResponsiveContainer width={'100%'} aspect={2}>
           <BarChart data={this.props.activities}
                     margin={{ top: 25, right: 50, left: 50, bottom: 25 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="executable_name"
-                   label={{ offset: 0, value: "Activity", position: 'bottom' }}
+            <CartesianGrid strokeDasharray='3 3' />
+            <XAxis dataKey='executable_name'
+                   label={{ offset: 0, value: 'Activity', position: 'bottom' }}
                    height={25}
                    axisLine={false}
                    tickLine={false}
                    interval={0}
                    tick={<CustomTick amount={this.props.activities.length}/>}
             />
-            <YAxis label={{ offset: 13, value: "Duration (sec)", position: 'top' }} dataKey="duration" />
+            <YAxis label={{ offset: 13, value: 'Duration (sec)', position: 'top' }} dataKey='duration' />
             <Tooltip payload={this.props.activities} />
-            <Bar dataKey="duration"
+            <Bar dataKey='duration'
                  barSize={30}
-                 fill="#8884d8"
+                 fill='#8884d8'
                  onClick={this.props.onBarClick}
             />
         </BarChart>
@@ -56,4 +56,4 @@ const ConnectedChartView = connect(
   })
 )(ChartView)
 
-export default ConnectedChartView;
+export default ConnectedChartView

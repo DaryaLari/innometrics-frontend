@@ -1,7 +1,7 @@
-const merge = require('webpack-merge');
-const common = require('./webpack.config.js');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CompressionPlugin = require('compression-webpack-plugin');
+const merge = require('webpack-merge')
+const common = require('./webpack.config.js')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
@@ -13,9 +13,9 @@ module.exports = merge(common, {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Activity Dashboard",
+      title: 'Activity Dashboard',
       hash: true,
-      template: "public/index.html",
+      template: 'public/index.html',
       inject: true,
       minify: {
         removeComments: true,
@@ -31,4 +31,4 @@ module.exports = merge(common, {
       },
     })
   ]
-});
+})

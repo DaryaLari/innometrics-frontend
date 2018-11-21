@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./style.css";
+import React from 'react'
+import styles from './style.css'
 import Button from '../Button'
 
 class LandingPage extends React.Component {
@@ -14,7 +14,7 @@ class LandingPage extends React.Component {
               <h1 className={styles.secondaryPhrase}>Analyze your activity</h1>
               <h1 className={styles.articlePhrase}>and </h1>
               <h1 className={styles.primaryPhrase}>Improve Productivity</h1>
-              <Button name="Get Started"/>
+              <Button name='Get Started'/>
             </div>
           </div>
           <div className={styles.screenBlock}>
@@ -30,4 +30,4 @@ class LandingPage extends React.Component {
   }
 }
 
-export default LandingPage;
+export default LandingPage

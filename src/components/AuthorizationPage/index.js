@@ -13,7 +13,7 @@ class AuthPage extends React.Component {
     this.props.logout()
   }
   onStayTheSame = () => {
-    this.props.history.push("/")
+    this.props.history.push('/')
   }
   render(){
     return (
@@ -27,17 +27,17 @@ class AuthPage extends React.Component {
                 login to another account?
               </p>
               <div className={styles.buttonsRow}>
-                <Button name="Stay the same"
-                        styleType="primary"
+                <Button name='Stay the same'
+                        styleType='primary'
                         onClick={this.onStayTheSame}
                 />
-                <Button name="Logout anyway"
-                        styleType="secondary"
+                <Button name='Logout anyway'
+                        styleType='secondary'
                         onClick={this.onLogout}
                 />
               </div>
             </div>
-            : (this.props.match.path === "/login") ?
+            : (this.props.match.path === '/login') ?
               <LoginForm {...this.props}/> : <RegistrationForm {...this.props}/>
           }
         </div>
@@ -46,10 +46,10 @@ class AuthPage extends React.Component {
 }
 
 const initialValues = {
-  email: "",
-  password: "",
-  name: "",
-  surname: ""
+  email: '',
+  password: '',
+  name: '',
+  surname: ''
 }
 
 let AuthorizationPage = reduxForm({
@@ -72,4 +72,4 @@ AuthorizationPage = connect(
     })
 )(AuthorizationPage)
 
-export default AuthorizationPage;
+export default AuthorizationPage

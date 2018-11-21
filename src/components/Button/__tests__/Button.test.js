@@ -1,5 +1,5 @@
 import React from 'react'
-import TestRenderer from 'react-test-renderer';
+import TestRenderer from 'react-test-renderer'
 import Button from '../index'
 
 describe('Test Button component', () => {
@@ -7,8 +7,8 @@ describe('Test Button component', () => {
   it('Test render Button component', () => {
 
     const props = {
-      name: "Button",
-      styleType: "primary",
+      name: 'Button',
+      styleType: 'primary',
       disabled: false
     }
 

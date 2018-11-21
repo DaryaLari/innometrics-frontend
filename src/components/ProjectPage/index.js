@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
-import styles from "./style.css";
+import styles from './style.css'
 
 class ProjectPage extends React.Component {
   render() {
@@ -18,4 +18,4 @@ class ProjectPage extends React.Component {
   }
 }
 
-export default withRouter(ProjectPage);
+export default withRouter(ProjectPage)

@@ -1,9 +1,9 @@
-import React from "react";
-import {withRouter} from "react-router";
-import Logo from "../Logo";
-import Menu from "./Menu";
-import AuthorizationMenu from "./AuthorizationMenu";
-import styles from "./style.css";
+import React from 'react'
+import {withRouter} from 'react-router'
+import Logo from '../Logo'
+import Menu from './Menu'
+import AuthorizationMenu from './AuthorizationMenu'
+import styles from './style.css'
 
 const Header = ({history}) => {
   return (
@@ -18,4 +18,4 @@ const Header = ({history}) => {
   )
 }
 
-export default withRouter(Header);
+export default withRouter(Header)

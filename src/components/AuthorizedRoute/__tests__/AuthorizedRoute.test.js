@@ -25,7 +25,7 @@ describe('Test AuthorizedRoute component', () => {
     // selectors.userAuthorized = jest.fn().mockReturnValue(true)
 
     const props = {}
-    const mockStore = createStore([]);
+    const mockStore = createStore([])
     const initialStore = {
       user: {
         authorized: true
@@ -49,7 +49,7 @@ describe('Test AuthorizedRoute component', () => {
     // selectors.userAuthorized = jest.fn().mockReturnValue(true)
 
     const props = {component: Component}
-    const mockStore = createStore([]);
+    const mockStore = createStore([])
     const initialStore = {
       user: {
         authorized: true
@@ -74,7 +74,7 @@ describe('Test AuthorizedRoute component', () => {
     // selectors.userAuthorized = jest.fn().mockReturnValue(false)
 
     const props = {component: Component}
-    const mockStore = createStore([]);
+    const mockStore = createStore([])
     const initialStore = {
       user: {
         authorized: false

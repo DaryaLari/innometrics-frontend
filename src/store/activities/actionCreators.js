@@ -1,5 +1,5 @@
-import {TYPES as ACTIVITIES_TYPES} from "./actionTypes";
-import {getRequest} from "../../helpers/api";
+import {TYPES as ACTIVITIES_TYPES} from './actionTypes'
+import {getRequest} from '../../helpers/api'
 
 export const getActivitiesRequest = () => (dispatch, getState) => {
   dispatch({type: ACTIVITIES_TYPES.GET_ACTIVITIES_REQUEST})

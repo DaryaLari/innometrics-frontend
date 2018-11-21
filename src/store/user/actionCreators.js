@@ -1,6 +1,6 @@
 import _ from 'lodash'
-import {TYPES as USER_TYPES} from "./actionTypes";
-import {postRequest} from "../../helpers/api";
+import {TYPES as USER_TYPES} from './actionTypes'
+import {postRequest} from '../../helpers/api'
 import { redirectFromAuth } from '../../helpers/authenticationUtils'
 
 export const loginRequest = () => (dispatch, getState) => {

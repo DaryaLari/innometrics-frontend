@@ -1,20 +1,20 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const webpack = require("webpack")
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const webpack = require('webpack')
 
-const outputDirectory = "dist";
+const outputDirectory = 'dist'
 
 const DOMAIN_ADDRESS = process.env.DOMAIN_ADDRESS || '"/api"'
 
 module.exports = {
-  mode: "development",
+  mode: 'development',
   entry: {
-    app: ["./src/index.js"]
+    app: ['./src/index.js']
   },
   output: {
     path: path.resolve(__dirname, outputDirectory),
-    filename: "js/[name].js",
+    filename: 'js/[name].js',
     publicPath: '/'
   },
   devServer: {
@@ -36,20 +36,20 @@ module.exports = {
             test: /\.jsx?$/,
             exclude: /node_modules/,
             use: {
-              loader: "babel-loader"
+              loader: 'babel-loader'
             }
           },
           {
             test: /\.css$/,
             use: [
               {
-                loader: "style-loader"
+                loader: 'style-loader'
               },
               {
-                loader: "css-loader",
+                loader: 'css-loader',
                 query: {
                   modules: true,
-                  localIdentName: "[name]__[local]___[hash:base64:5]"
+                  localIdentName: '[name]__[local]___[hash:base64:5]'
                 }
               }
             ]
@@ -65,16 +65,16 @@ module.exports = {
       }
     ]
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   plugins: [
     new CleanWebpackPlugin([outputDirectory]),
     new HtmlWebpackPlugin({
-      title: "Activity Dashboard",
+      title: 'Activity Dashboard',
       hash: true,
-      template: "public/index.html"
+      template: 'public/index.html'
     }),
     new webpack.DefinePlugin({
       DOMAIN_ADDRESS: DOMAIN_ADDRESS
     })
   ]
-};
+}

@@ -5,7 +5,7 @@ const webpack = require("webpack")
 
 const outputDirectory = "dist";
 
-const DOMAIN_ADDRESS = process.env.DOMAIN_ADDRESS || '"https://innometric.guru:8120"'
+const DOMAIN_ADDRESS = process.env.DOMAIN_ADDRESS || '"/api"'
 
 module.exports = {
   mode: "development",

@@ -1,11 +1,11 @@
-# activity_dashboard
+# Innometrics Frontend
 Visualisation of users' working activity statistics
 
 ## Description
 An intelligent, customizable dashboard to visualize and manipulate software engineering data based on requirements and preferences coming from the industry.
 
 ## Link
-https://inno-dashboard.netlify.com
+https://innometric.guru
 
 ## API
 Backend source code: https://github.com/InnopolisUniversity/innometrics-backend

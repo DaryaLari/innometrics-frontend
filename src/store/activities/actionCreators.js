@@ -1,7 +1,5 @@
 import {TYPES as ACTIVITIES_TYPES} from "./actionTypes";
-import {TYPES as USER_TYPES} from "../user/actionTypes";
 import {getRequest} from "../../helpers/api";
-import { removeUserFromLocalStorage } from '../../helpers/user'
 
 export const getActivitiesRequest = () => (dispatch, getState) => {
   dispatch({type: ACTIVITIES_TYPES.GET_ACTIVITIES_REQUEST})
@@ -18,17 +16,6 @@ export const getActivitiesRequest = () => (dispatch, getState) => {
         })
       })
       .catch((error) => {
-        if(error == undefined){
-          dispatch({type: ACTIVITIES_TYPES.GET_ACTIVITIES_FAILURE, error: "No response"})
-          return
-        }
-        switch(error.status){
-          case 401:
-            removeUserFromLocalStorage()
-            dispatch({type: USER_TYPES.LOGOUT_SUCCESS})
-            break
-          default:
-            dispatch({type: ACTIVITIES_TYPES.GET_ACTIVITIES_FAILURE, error: error})
-        }
+        dispatch({type: ACTIVITIES_TYPES.GET_ACTIVITIES_FAILURE, error: error.data.message})
       })
 }

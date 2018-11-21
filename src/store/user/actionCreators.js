@@ -1,7 +1,7 @@
+import _ from 'lodash'
 import {TYPES as USER_TYPES} from "./actionTypes";
 import {postRequest} from "../../helpers/api";
-import {history} from "../../helpers/history"
-import _ from 'lodash'
+import { redirectFromAuth } from '../../helpers/authenticationUtils'
 
 export const loginRequest = () => (dispatch, getState) => {
   dispatch({type: USER_TYPES.LOGIN_REQUEST})
@@ -14,8 +14,7 @@ export const loginRequest = () => (dispatch, getState) => {
 
   postRequest('/login', params)
       .then((result) => {
-        localStorage.setItem("user", JSON.stringify({}))
-        dispatch({type: USER_TYPES.LOGIN_SUCCESS})
+        dispatch({type: USER_TYPES.LOGIN_SUCCESS, token: result.data.token})
         redirectFromAuth()
       })
       .catch((error) => {
@@ -36,7 +35,6 @@ export const registerRequest = () => (dispatch, getState) => {
 
   postRequest('/user', params)
       .then((result) => {
-        localStorage.setItem("user", JSON.stringify({}))
         dispatch({type: USER_TYPES.REGISTER_SUCCESS})
         loginRequest()(dispatch, getState)
       })
@@ -55,12 +53,4 @@ export const logoutRequest = () => (dispatch, getState) => {
       .catch((error) => {
         dispatch({type: USER_TYPES.LOGOUT_FAILURE, error: error.data.message})
       })
-  localStorage.removeItem("user")
-}
-
-const redirectFromAuth = () => {
-  let nextLocation = _.get(history, 'location.state.from', '/dashboard')
-  if(nextLocation === '/login' || nextLocation === '/register')
-    nextLocation = '/dashboard'
-  history.push(nextLocation)
 }

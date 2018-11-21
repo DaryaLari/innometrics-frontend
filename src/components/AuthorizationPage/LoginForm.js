@@ -11,6 +11,9 @@ class LoginForm extends React.Component {
     this.props.login()
   }
 
+  componentDidMount(){
+    console.log("here")
+  }
   render () {
     return (
       <form className={styles.form}

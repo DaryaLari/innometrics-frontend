@@ -1,7 +1,7 @@
 import {TYPES as PROJECTS_TYPES} from "./actionTypes";
 import {TYPES as USER_TYPES} from "../user/actionTypes";
 import {getRequest} from "../../helpers/api";
-import { removeUserFromLocalStorage } from '../../helpers/user'
+import { removeUserFromLocalStorage } from '../../helpers/authenticationUtils'
 
 export const getProjectsRequest = () => (dispatch, getState) => {
   dispatch({type: PROJECTS_TYPES.GET_PROJECTS_REQUEST})

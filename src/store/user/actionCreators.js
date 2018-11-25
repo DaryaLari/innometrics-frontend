@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import { getResponseError } from '../../helpers/errorProcessors'
 import {TYPES as USER_TYPES} from './actionTypes'
 import {postRequest} from '../../helpers/api'
 import { redirectFromAuth } from '../../helpers/authenticationUtils'
@@ -18,7 +19,7 @@ export const loginRequest = () => (dispatch, getState) => {
         redirectFromAuth()
       })
       .catch((error) => {
-        dispatch({type: USER_TYPES.LOGIN_FAILURE, error: error.data.message})
+        dispatch({type: USER_TYPES.LOGIN_FAILURE, error: getResponseError(error.status, '/login', 'post')})
       })
 }
 
@@ -39,7 +40,7 @@ export const registerRequest = () => (dispatch, getState) => {
         loginRequest()(dispatch, getState)
       })
       .catch((error) => {
-        dispatch({type: USER_TYPES.REGISTER_FAILURE, error: error.data.message})
+        dispatch({type: USER_TYPES.REGISTER_FAILURE, error: getResponseError(error.status, '/user', 'post')})
       })
 }
 
@@ -51,6 +52,6 @@ export const logoutRequest = () => (dispatch, getState) => {
         dispatch({type: USER_TYPES.LOGOUT_SUCCESS})
       })
       .catch((error) => {
-        dispatch({type: USER_TYPES.LOGOUT_FAILURE, error: error.data.message})
+        dispatch({type: USER_TYPES.LOGOUT_FAILURE, error: getResponseError(error.status, '/logout', 'post')})
       })
 }

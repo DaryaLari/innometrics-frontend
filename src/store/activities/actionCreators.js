@@ -1,3 +1,4 @@
+import { getResponseError } from '../../helpers/errorProcessors'
 import {TYPES as ACTIVITIES_TYPES} from './actionTypes'
 import {getRequest} from '../../helpers/api'
 
@@ -16,6 +17,6 @@ export const getActivitiesRequest = () => (dispatch, getState) => {
         })
       })
       .catch((error) => {
-        dispatch({type: ACTIVITIES_TYPES.GET_ACTIVITIES_FAILURE, error: error.data.message})
+        dispatch({type: ACTIVITIES_TYPES.GET_ACTIVITIES_FAILURE, error: getResponseError(error.status, '/activity', 'get')})
       })
 }

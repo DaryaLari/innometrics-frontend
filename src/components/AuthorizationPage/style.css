@@ -9,6 +9,7 @@
 .msgTitle {
     margin: 0;
     height: calc(var(--cell-size));
+    text-align: center;
 }
 
 .description {
@@ -24,8 +25,14 @@
 }
 
 .form {
-    background-color: rgba(255, 255, 255, 1);
-    padding: 0 var(--cell-size);
+    /*padding: 0 var(--cell-size);*/
+    width: calc(var(--cell-size) * 6)
+}
+
+@media all and (max-width: 360px) {
+    .form {
+        width: 100%;
+    }
 }
 
 .inputRow {
@@ -45,5 +52,9 @@
     composes: errorMsg;
     height: calc(var(--cell-size)/4);
     width: 100%;
+    text-align: center;
+}
+
+.suggestion {
     text-align: center;
 }

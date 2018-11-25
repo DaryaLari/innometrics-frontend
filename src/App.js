@@ -20,6 +20,7 @@ class App extends React.Component {
               <Switch>
                 <Route exact path='/' component={LandingPage}/>
                 <AuthorizedRoute path='/dashboard' component={DashboardPage}/>
+                <AuthorizedRoute path='/activities' component={DashboardPage}/>
                 <Route path='/login' component={AuthorizationPage}/>
                 <Route path='/register' component={AuthorizationPage}/>
                 {/*<Route exact path='/projects'>*/}

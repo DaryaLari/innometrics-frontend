@@ -5,6 +5,7 @@
 .commonView {
     display: flex;
     justify-content: stretch;
+    flex-wrap: wrap;
 }
 
 .truncated {
@@ -13,14 +14,15 @@
     text-overflow: ellipsis;
 }
 
-.chartView {
+.view {
     width: 50%;
 }
 
-.tableView {
-    width: 50%;
+@media all and (max-width: 1000px) {
+    .view {
+        width: 100%;
+    }
 }
-
 
 .table {
     table-layout: fixed;

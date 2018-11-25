@@ -1,5 +1,5 @@
 .tableView {
-    width: 50%;
+    composes: view from '../style.css'
 }
 
 .table {

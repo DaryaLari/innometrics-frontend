@@ -10,7 +10,7 @@ class HeaderMenu extends React.Component {
   ]
   userNavigation = [
     {name: 'Dashboard', path: '/dashboard'},
-    // {name: 'Main Page', path: '/'},
+    {name: 'Activities', path: '/activities'},
     // {name: 'Projects', path: '/projects'}
   ]
   render() {

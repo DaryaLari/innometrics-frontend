@@ -20,7 +20,7 @@ class AuthPage extends React.Component {
         <div className={styles.content}>
           {this.props.authorized ?
             <div>
-              <h2 className={styles.msgTitle}>Logout confirmation</h2>
+              <h1 className={styles.msgTitle}>Logout confirmation</h1>
               <p className={styles.description}>
                 You are logged in already.
                 Would you like to keep the same session or

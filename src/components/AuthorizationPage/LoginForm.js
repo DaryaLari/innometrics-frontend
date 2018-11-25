@@ -16,7 +16,7 @@ class LoginForm extends React.Component {
       <form className={styles.form}
             onSubmit={this.props.handleSubmit(this.onSubmit)}
       >
-        <h1>Login</h1>
+        <h1 className={styles.msgTitle}>Login</h1>
         <Field
           name='email'
           component={Input}
@@ -39,7 +39,7 @@ class LoginForm extends React.Component {
                 disabled={this.props.submitDisabled}
         />
         <p className={styles.formError}>{this.props.formError}</p>
-        <p>Don&#39;t have account yet?&nbsp;
+        <p className={styles.suggestion}>Don&#39;t have account yet?&nbsp;
           <Link to='/register'>Register</Link>
         </p>
       </form>

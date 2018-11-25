@@ -6,7 +6,7 @@
   "main": "src/index.js",
   "scripts": {
     "with-dev-server": "set DOMAIN_ADDRESS='http://localhost:8090' && nodemon ./stub/startServer.js",
-    "dev": "set DOMAIN_ADDRESS='https://innometrics-proxy-server.herokuapp.com/https://innometric.guru:8120' && webpack-dev-server",
+    "dev": "set DOMAIN_ADDRESS='https://innometrics-proxy-server.herokuapp.com/https://innometric.guru:8120' && webpack-dev-server --host 0.0.0.0",
     "build": "webpack --mode production --config webpack.prod.js",
     "test": "jest",
     "lint": "eslint ./src"

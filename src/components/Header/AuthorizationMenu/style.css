@@ -3,6 +3,7 @@
     display: flex;
     align-items: baseline;
     margin-left: auto;
+    flex-wrap: wrap;
 }
 
 .authItem {
@@ -10,4 +11,8 @@
     cursor: pointer;
     font-size: larger;
     font-weight: bolder;
+}
+
+.authItem:nth-child(3) {
+    order: 3;
 }

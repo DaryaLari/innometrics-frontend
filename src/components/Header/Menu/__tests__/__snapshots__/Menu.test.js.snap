@@ -10,7 +10,7 @@ exports[`Test AuthorizationMenu component Test render menu with 'Dashboard' when
   <div
     onClick={[Function]}
   >
-    Projects
+    Activities
   </div>
 </nav>
 `;

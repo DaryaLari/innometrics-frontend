@@ -35,7 +35,7 @@
     color: rgba(255, 255, 255, 1);
     margin: 0;
     text-align: center;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .primaryPhrase {
@@ -67,4 +67,16 @@
 .blockDescription {
     font-size: larger;
     margin: 0;
+}
+
+@media all and (max-width: 520px) {
+    .description {
+        font-size: 3em;
+    }
+}
+
+@media all and (max-width: 300px) {
+    .description {
+        font-size: 2em;
+    }
 }

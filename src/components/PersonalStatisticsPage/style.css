@@ -1,6 +1,32 @@
 .content {
     composes: content from '../../style.css';
+    position: relative;
     background-color: rgba(230, 230, 230, 1);
+}
+
+.datePicker {
+    position: absolute;
+    top: calc(var(--cell-size) / 4);
+    right: calc(var(--cell-size) / 2);
+    width: calc(var(--cell-size) * 5);
+    height: var(--cell-size);
+    padding: calc(var(--cell-size) / 4);
+    background-color: rgba(255, 255, 255, 1);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+}
+
+.calendarIcon {
+    font-size: 30px;
+    color: rgba(100, 100, 100, 1);
+}
+
+.periodPicked {
+
 }
 
 .title {
@@ -88,6 +114,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 1;
     padding: calc(var(--cell-size) / 2);
     font-size: 36px;
     color: rgba(100, 100, 100, 1);

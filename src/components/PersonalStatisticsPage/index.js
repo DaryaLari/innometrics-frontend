@@ -1,19 +1,8 @@
 import React from 'react'
+import _ from 'lodash'
 import ComparizonChart from './ComparizonChart'
-import styles from './style.css'
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  ComposedChart, LabelList,
-  Legend,
-  Line,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis
-} from 'recharts'
 import TrendLineChart from './TrendLineChart'
+import styles from './style.css'
 
 const activities = [
   {
@@ -135,15 +124,47 @@ const YAxisLabel = ({value, x, y, height, offset, content, ...rest}) => {
 }
 
 class PersonalStatisticsPage extends React.Component {
+  state = {
+    opened: {
+      activities: null,
+      metrics: null
+    }
+  }
+  closeChart = (type) => {
+    let newState = this.state
+    newState.opened[type] = null
+    this.setState(newState)
+  }
+
+  openChart = (type, name) => {
+    if(_.get(this.state.opened, type + '.name') === name)
+      this.closeChart(type)
+    else {
+      let newState = this.state
+      newState.opened[type] = {name}
+      this.setState(newState)
+    }
+  }
   render() {
+    console.log(this.state, this.state.opened.activities, this.state.opened.activities !== null)
     return (
       <div className={styles.content}>
         <h1 className={styles.title}>Ihar&#39;s performance</h1>
 
+        <div className={styles.datePicker}>
+          <i className={`${'material-icons'} ${styles.calendarIcon}`}>
+            calendar_today
+          </i>
+          <span className={styles.periodPicked}>12/11/2018 - 18/11/2018</span>
+        </div>
+
         <div className={styles.panel}>
           <div className={styles.tiles}>
             {activities.map(a => (
-              <div className={styles.tile} key={a.name}>
+              <div className={_.get(this.state.opened, 'activities.name') === a.name ? styles.tileActive : styles.tile}
+                   key={a.name}
+                   onClick={() => this.openChart('activities', a.name)}
+              >
                 <span className={styles.metricValue}>{a.duration} h</span>
                 <span className={styles.metricName}>{a.name}</span>
                 <span className={a.trend > 0 ? styles.positiveTrend : styles.negativeTrend}>
@@ -155,20 +176,22 @@ class PersonalStatisticsPage extends React.Component {
               </div>
             ))}
           </div>
-          <div className={styles.chart}>
+          {this.state.opened.activities !== null && <div className={styles.chart}>
             <i className={`${'material-icons'} ${styles.closeIcon}`}
-               onClick={() => {}}
+               onClick={() => {this.closeChart('activities')}}
             >
               highlight_off
             </i>
             <ComparizonChart data={totalHours}/>
-          </div>
+          </div>}
         </div>
 
         <div className={styles.panel}>
           <div className={styles.tiles}>
             {codeMetrics.map(m => (
-              <div className={styles.tile} key={m.name}>
+              <div className={_.get(this.state.opened, 'metrics.name') === m.name ? styles.tileActive : styles.tile}
+                    key={m.name}
+                   onClick={() => this.openChart('metrics', m.name)}>
                 <span className={styles.metricValue}>{m.value} h</span>
                 <span className={styles.metricName}>{m.name}</span>
                 <span className={m.trend > 0 ? styles.positiveTrend : styles.negativeTrend}>
@@ -181,14 +204,15 @@ class PersonalStatisticsPage extends React.Component {
             ))}
           </div>
 
-          <div className={styles.chart}>
+          {this.state.opened.metrics !== null && <div className={styles.chart}>
             <i className={`${'material-icons'} ${styles.closeIcon}`}
-               onClick={() => {}}
+               onClick={() => {this.closeChart('metrics')}}
             >
               highlight_off
             </i>
-            <TrendLineChart data={locTrend} yName={'LOC'}/>
+            <TrendLineChart data={locTrend} yName={this.state.opened.metrics.name}/>
           </div>
+          }
         </div>
       </div>
     )

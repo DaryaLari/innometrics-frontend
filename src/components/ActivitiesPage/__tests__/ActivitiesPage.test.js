@@ -2,18 +2,18 @@ import React from 'react'
 import createStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import { shallow } from 'enzyme'
-import DashboardPage from '../index'
+import ActivitiesPage from '../index'
 
-describe('Test DashboardPage component', () => {
+describe('Test ActivitiesPage component', () => {
 
-  it('Test shallow render DashboardPage component', () => {
+  it('Test shallow render ActivitiesPage component', () => {
 
     const mockStore = createStore([])
     const store = mockStore({})
 
     const wrapper = shallow(
       <Provider store={store}>
-        <DashboardPage />
+        <ActivitiesPage />
       </Provider>
     )
 

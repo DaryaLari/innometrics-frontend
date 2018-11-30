@@ -29,5 +29,14 @@ body {
 main {
     width: 100%;
     min-height: calc(100% - var(--header-height) - var(--footer-height));
+
+}
+
+.content {
     padding: var(--page-padding);
+}
+
+.pageTitle {
+    margin-top: 0;
+    text-align: left;
 }

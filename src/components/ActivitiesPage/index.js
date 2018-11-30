@@ -6,7 +6,7 @@ import { getActivities } from '../../helpers/selectors'
 import {getActivitiesRequest} from '../../store/activities/actionCreators'
 import styles from './style.css'
 
-class _DashboardPage extends React.Component {
+class _ActivitiesPage extends React.Component {
   state = {
     selectedActivity: null
   }
@@ -21,7 +21,7 @@ class _DashboardPage extends React.Component {
   render() {
     return (
         <div className={styles.content}>
-          <h1>Dashboard: Activities</h1>
+          <h1>Activities</h1>
           {this.props.activeRequest ? 'Loading ... ' :
             (this.props.activities.length === 0 ?
                 'There is nothing to show yet' :
@@ -36,7 +36,7 @@ class _DashboardPage extends React.Component {
   }
 }
 
-const DashboardPage = connect(
+const ActivitiesPage = connect(
   (state) => ({
     activities: getActivities(state),
     activeRequest: state.activities.activeRequest
@@ -45,6 +45,6 @@ const DashboardPage = connect(
   (dispatch) => ({
     getActivities: () => dispatch(getActivitiesRequest())
   })
-)(_DashboardPage)
+)(_ActivitiesPage)
 
-export default DashboardPage
+export default ActivitiesPage

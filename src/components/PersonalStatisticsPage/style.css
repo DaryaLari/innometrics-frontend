@@ -1,13 +1,22 @@
 .content {
     composes: content from '../../style.css';
-    position: relative;
     background-color: rgba(230, 230, 230, 1);
+    /*height: calc(100% - var(--header-height) - var(--footer-height));*/
+}
+
+/*@media all and (max-width: 450px) {*/
+    /*.content {*/
+        /*height: calc(100% - var(--header-height) - var(--footer-height));*/
+    /*}*/
+/*}*/
+
+.titleRow {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .datePicker {
-    position: absolute;
-    top: calc(var(--cell-size) / 4);
-    right: calc(var(--cell-size) / 2);
     width: calc(var(--cell-size) * 5);
     height: var(--cell-size);
     padding: calc(var(--cell-size) / 4);
@@ -16,8 +25,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.datePickerDisplay {
+}
+
+.date {
+    border: none;
+    width: calc(var(--cell-size) * 1.25);
 
     cursor: pointer;
+}
+
+.date:focus {
+    outline: none;
 }
 
 .calendarIcon {
@@ -42,6 +63,7 @@
     width: 100%;
     display: flex;
     justify-content: stretch;
+    flex-wrap: wrap;
 }
 
 .tile {
@@ -73,11 +95,17 @@
 }
 
 .metricValue {
-    vertical-align: center;
+    vertical-align: middle;
     text-align: left;
-    font-size: 3em;
+    font-size: 2em;
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
+}
+
+@media all and (min-width: 1200px) {
+    .metricValue {
+        font-size: 3em;
+    }
 }
 
 .metricTrend {

@@ -8,7 +8,7 @@ class LandingPage extends React.Component {
     // const bodyHeight = document.getElementsByTagName('body')[0].offsetHeight
     // console.log(bodyWidth, bodyHeight)
     return (
-        <div className={styles.content}>
+        <main className={styles.content}>
           <div className={styles.mainImg}>
             <div className={styles.descriptionBox}>
               <h1 className={styles.secondaryPhrase}>Analyze your activity</h1>
@@ -24,7 +24,7 @@ class LandingPage extends React.Component {
             </p>
           </div>
 
-        </div>
+        </main>
 
     )
   }

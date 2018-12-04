@@ -16,7 +16,7 @@ class App extends React.Component {
       return (
         <React.Fragment>
           <Header/>
-            <main>
+            {/*<main>*/}
               <Switch>
                 <Route exact path='/' component={LandingPage}/>
                 <AuthorizedRoute path='/dashboard' component={PersonalStatisticsPage}/>
@@ -27,7 +27,7 @@ class App extends React.Component {
                 <Route path='/projects/:projectName' component={ProjectPage}/>
                 <Redirect to='/dashboard'/>
               </Switch>
-            </main>
+            {/*</main>*/}
           <Footer/>
         </React.Fragment>
       )

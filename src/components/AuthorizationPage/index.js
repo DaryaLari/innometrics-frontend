@@ -17,7 +17,7 @@ class AuthPage extends React.Component {
   }
   render(){
     return (
-        <div className={styles.content}>
+        <main className={styles.content}>
           {this.props.authorized ?
             <div>
               <h1 className={styles.msgTitle}>Logout confirmation</h1>
@@ -40,7 +40,7 @@ class AuthPage extends React.Component {
             : (this.props.match.path === '/login') ?
               <LoginForm {...this.props}/> : <RegistrationForm {...this.props}/>
           }
-        </div>
+        </main>
     )
   }
 }

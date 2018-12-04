@@ -20,7 +20,7 @@ class _ActivitiesPage extends React.Component {
   }
   render() {
     return (
-        <div className={styles.content}>
+        <main className={styles.content}>
           <h1>Activities</h1>
           {this.props.activeRequest ? 'Loading ... ' :
             (this.props.activities.length === 0 ?
@@ -30,7 +30,7 @@ class _ActivitiesPage extends React.Component {
                   <TableView selectedActivity={this.state.selectedActivity} />
                 </div>
                 )}
-        </div>
+        </main>
 
     )
   }

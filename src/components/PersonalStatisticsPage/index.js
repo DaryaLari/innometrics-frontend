@@ -1,8 +1,10 @@
 import React from 'react'
 import _ from 'lodash'
+import DatePicker from 'react-datepicker'
 import ComparizonChart from './ComparizonChart'
 import TrendLineChart from './TrendLineChart'
 import styles from './style.css'
+import 'react-datepicker/dist/react-datepicker-cssmodules.css'
 
 const activities = [
   {
@@ -106,25 +108,10 @@ const locTrend = [
   }
 ]
 
-const BarLabel = ({value, x, y, height, offset, content, ...rest}) => {
-  return (
-    <text x={0} y={y + height/2 + offset} textAnchor='left'>
-      {value}
-    </text>
-  )
-}
-
-const YAxisLabel = ({value, x, y, height, offset, content, ...rest}) => {
-  console.log(rest)
-  return (
-    <text x={0} y={10} textAnchor='center'>
-      Hours
-    </text>
-  )
-}
-
 class PersonalStatisticsPage extends React.Component {
   state = {
+    startDate: new Date(),
+    endDate: new Date(),
     opened: {
       activities: null,
       metrics: null
@@ -145,17 +132,55 @@ class PersonalStatisticsPage extends React.Component {
       this.setState(newState)
     }
   }
+  handleChange = (source, date) => {
+    let newState = this.state
+    newState[source] = date
+    if(newState.startDate.getTime() > newState.endDate.getTime()){
+      newState.startDate = [newState.endDate, newState.endDate = newState.startDate][0] // swap
+    }
+    this.setState(newState)
+  }
   render() {
-    console.log(this.state, this.state.opened.activities, this.state.opened.activities !== null)
     return (
-      <div className={styles.content}>
-        <h1 className={styles.title}>Ihar&#39;s performance</h1>
+      <main className={styles.content}>
 
-        <div className={styles.datePicker}>
-          <i className={`${'material-icons'} ${styles.calendarIcon}`}>
-            calendar_today
-          </i>
-          <span className={styles.periodPicked}>12/11/2018 - 18/11/2018</span>
+        <div className={styles.titleRow}>
+          <h1 className={styles.title}>My performance</h1>
+          <div className={styles.datePicker}>
+            <i className={`${'material-icons'} ${styles.calendarIcon}`}>
+              calendar_today
+            </i>
+
+            <DatePicker className={styles.date}
+                        selected={this.state.startDate}
+                        onChange={(date) => this.handleChange('startDate', date)}
+                        dateFormat='dd/MM/yyyy'
+                        popperPlacement='bottom-start'
+                        popperModifiers={{
+                          preventOverflow: {
+                            enabled: true,
+                            escapeWithReference: false, // force popper to stay in viewport (even when input is scrolled out of view)
+                            boundariesElement: 'viewport'
+                          }
+                        }}
+            />
+            -
+            <DatePicker className={styles.date}
+                        selected={this.state.endDate}
+                        onChange={(date) => this.handleChange('endDate', date)}
+                        dateFormat='dd/MM/yyyy'
+                        popperPlacement='bottom-start'
+                        popperModifiers={{
+                          preventOverflow: {
+                            enabled: true,
+                            escapeWithReference: false, // force popper to stay in viewport (even when input is scrolled out of view)
+                            boundariesElement: 'viewport'
+                          }
+                        }}
+            />
+
+            {/*<span className={styles.periodPicked}>12/11/2018 - 18/11/2018</span>*/}
+          </div>
         </div>
 
         <div className={styles.panel}>
@@ -214,7 +239,7 @@ class PersonalStatisticsPage extends React.Component {
           </div>
           }
         </div>
-      </div>
+      </main>
     )
   }
 }

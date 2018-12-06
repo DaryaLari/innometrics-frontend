@@ -1,5 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import PageTemplate from '../PageTemplate'
+import Spinner from '../Spinner'
 import TableView from './TableView'
 import ChartView from './ChartView'
 import { getActivities } from '../../helpers/selectors'
@@ -20,9 +22,9 @@ class _ActivitiesPage extends React.Component {
   }
   render() {
     return (
-        <main className={styles.content}>
-          <h1>Activities</h1>
-          {this.props.activeRequest ? 'Loading ... ' :
+      <PageTemplate title='Activities'>
+          {/*<Spinner/>*/}
+          {this.props.activeRequest ? <Spinner/> :
             (this.props.activities.length === 0 ?
                 'There is nothing to show yet' :
                 <div className={styles.commonView}>
@@ -30,7 +32,7 @@ class _ActivitiesPage extends React.Component {
                   <TableView selectedActivity={this.state.selectedActivity} />
                 </div>
                 )}
-        </main>
+      </PageTemplate>
 
     )
   }

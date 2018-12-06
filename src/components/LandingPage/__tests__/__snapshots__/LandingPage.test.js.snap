@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test LandingPage component Test render LandingPage component 1`] = `
-<div>
+<main>
   <div>
     <div>
       <h1>
@@ -29,5 +29,5 @@ exports[`Test LandingPage component Test render LandingPage component 1`] = `
       Coming soon...
     </p>
   </div>
-</div>
+</main>
 `;

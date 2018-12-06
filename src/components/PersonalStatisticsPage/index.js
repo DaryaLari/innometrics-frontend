@@ -1,6 +1,8 @@
 import React from 'react'
 import _ from 'lodash'
 import DatePicker from 'react-datepicker'
+import PageTemplate from '../PageTemplate'
+import PeriodPicker from '../PeriodPicker'
 import ComparizonChart from './ComparizonChart'
 import TrendLineChart from './TrendLineChart'
 import styles from './style.css'
@@ -142,47 +144,12 @@ class PersonalStatisticsPage extends React.Component {
   }
   render() {
     return (
-      <main className={styles.content}>
-
-        <div className={styles.titleRow}>
-          <h1 className={styles.title}>My performance</h1>
-          <div className={styles.datePicker}>
-            <i className={`${'material-icons'} ${styles.calendarIcon}`}>
-              calendar_today
-            </i>
-
-            <DatePicker className={styles.date}
-                        selected={this.state.startDate}
-                        onChange={(date) => this.handleChange('startDate', date)}
-                        dateFormat='dd/MM/yyyy'
-                        popperPlacement='bottom-start'
-                        popperModifiers={{
-                          preventOverflow: {
-                            enabled: true,
-                            escapeWithReference: false, // force popper to stay in viewport (even when input is scrolled out of view)
-                            boundariesElement: 'viewport'
-                          }
-                        }}
-            />
-            -
-            <DatePicker className={styles.date}
-                        selected={this.state.endDate}
-                        onChange={(date) => this.handleChange('endDate', date)}
-                        dateFormat='dd/MM/yyyy'
-                        popperPlacement='bottom-start'
-                        popperModifiers={{
-                          preventOverflow: {
-                            enabled: true,
-                            escapeWithReference: false, // force popper to stay in viewport (even when input is scrolled out of view)
-                            boundariesElement: 'viewport'
-                          }
-                        }}
-            />
-
-            {/*<span className={styles.periodPicked}>12/11/2018 - 18/11/2018</span>*/}
-          </div>
-        </div>
-
+      <PageTemplate title='My performance'
+                    restHeader={<PeriodPicker handleChange={this.handleChange}
+                                              startDate={this.state.startDate}
+                                              endDate={this.state.endDate}
+                    />}
+      >
         <div className={styles.panel}>
           <div className={styles.tiles}>
             {activities.map(a => (
@@ -239,7 +206,7 @@ class PersonalStatisticsPage extends React.Component {
           </div>
           }
         </div>
-      </main>
+      </PageTemplate>
     )
   }
 }

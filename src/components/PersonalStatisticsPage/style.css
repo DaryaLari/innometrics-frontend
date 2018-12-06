@@ -1,62 +1,7 @@
-.content {
-    composes: content from '../../style.css';
-    background-color: rgba(230, 230, 230, 1);
-    /*height: calc(100% - var(--header-height) - var(--footer-height));*/
-}
-
-/*@media all and (max-width: 450px) {*/
-    /*.content {*/
-        /*height: calc(100% - var(--header-height) - var(--footer-height));*/
-    /*}*/
-/*}*/
-
-.titleRow {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.datePicker {
-    width: calc(var(--cell-size) * 5);
-    height: var(--cell-size);
-    padding: calc(var(--cell-size) / 4);
-    background-color: rgba(255, 255, 255, 1);
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.datePickerDisplay {
-}
-
-.date {
-    border: none;
-    width: calc(var(--cell-size) * 1.25);
-
-    cursor: pointer;
-}
-
-.date:focus {
-    outline: none;
-}
-
-.calendarIcon {
-    font-size: 30px;
-    color: rgba(100, 100, 100, 1);
-}
-
-.periodPicked {
-
-}
-
-.title {
-    composes: pageTitle from '../../style.css';
-}
-
 .panel {
     background-color: white;
     margin: calc(var(--cell-size) / 4) 0;
+    box-shadow: 0 0 5px 0px rgba(100, 100, 100, 0.15);
 }
 
 .tiles {

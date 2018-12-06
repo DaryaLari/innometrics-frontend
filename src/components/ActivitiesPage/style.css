@@ -1,11 +1,9 @@
-.content {
-    composes: content from '../../style.css';
-}
-
 .commonView {
     display: flex;
     justify-content: stretch;
     flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 1);
+    padding: calc(var(--cell-size)/4) 0;
 }
 
 .truncated {

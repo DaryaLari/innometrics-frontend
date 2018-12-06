@@ -61,7 +61,7 @@
     "webpack-merge": "^4.1.4"
   },
   "optionalDependencies": {
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.7"
   },
   "dependencies": {
     "history": "^4.7.2",

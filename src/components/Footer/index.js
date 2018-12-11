@@ -32,7 +32,7 @@ class Footer extends React.Component {
           <h4>Contact us</h4>
           <div className={styles.questions}>
             {contacts.map(contact =>  (
-                <div key={contact.question}>
+                <div className={styles.question} key={contact.question}>
                   <h5>{contact.question}:</h5>
                   {contact.users.map(user => (
                     <div className={styles.user} key={user.email}>

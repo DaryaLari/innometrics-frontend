@@ -11,8 +11,12 @@
 
 .questions {
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     flex-wrap: wrap;
+}
+
+.question {
+    padding-right: var(--cell-size);
 }
 
 .user {

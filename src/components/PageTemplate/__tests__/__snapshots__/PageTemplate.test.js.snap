@@ -5,5 +5,6 @@ exports[`Test PageTemplate component Test render PageTemplate component 1`] = `
   <div>
     <h1 />
   </div>
+  <div />
 </main>
 `;

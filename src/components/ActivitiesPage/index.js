@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import PageTemplate from '../PageTemplate'
-import PeriodPicker from '../PeriodPicker'
 import Spinner from '../Spinner'
 import TableView from './TableView'
 import ChartView from './ChartView'

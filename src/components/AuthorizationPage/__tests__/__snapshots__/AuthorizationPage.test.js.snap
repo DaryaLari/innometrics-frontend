@@ -7,46 +7,48 @@ exports[`Test AuthorizationPage component Test renders 'Logout confirmation' whe
       Logout confirmation
     </h1>
   </div>
-  <p>
-    You are logged in already. Would you like to keep the same session or login to another account?
-  </p>
   <div>
-    <button
-      disabled={false}
-      onClick={[Function]}
-      style={
-        Object {
-          "margin": "0 calc(var(--cell-size)/4) 0 0",
+    <p>
+      You are logged in already. Would you like to keep the same session or login to another account?
+    </p>
+    <div>
+      <button
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "margin": "0 calc(var(--cell-size)/4) 0 0",
+          }
         }
-      }
-    >
-      Stay the same
-    </button>
-    <button
-      disabled={false}
-      onClick={[Function]}
-      style={Object {}}
-    >
-      Logout anyway
-    </button>
+      >
+        Stay the same
+      </button>
+      <button
+        disabled={false}
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Logout anyway
+      </button>
+    </div>
   </div>
 </main>
 `;
 
 exports[`Test AuthorizationPage component Test renders LoginForm when user is not authenticated 1`] = `
-<div>
+<main>
   <div>
     Login
   </div>
-</div>
+</main>
 `;
 
 exports[`Test AuthorizationPage component Test renders RegistrationForm when user is not authenticated 1`] = `
-<div>
+<main>
   <div>
     Register
   </div>
-</div>
+</main>
 `;
 
 exports[`Test AuthorizationPage component Test shallow render AuthorizationPage component 1`] = `<Connect(ReduxForm) />`;

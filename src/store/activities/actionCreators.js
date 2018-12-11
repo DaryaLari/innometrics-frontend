@@ -5,7 +5,7 @@ import {getRequest} from '../../helpers/api'
 export const getActivitiesRequest = () => (dispatch, getState) => {
   dispatch({type: ACTIVITIES_TYPES.GET_ACTIVITIES_REQUEST})
 
-  getRequest('/activity', {offset: 0, amount_to_return: 100}, true)
+  getRequest('/activity', {offset: 0, amount_to_return: 10}, true)
       .then((result) => {
         dispatch({
           type: ACTIVITIES_TYPES.GET_ACTIVITIES_SUCCESS,

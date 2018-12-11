@@ -134,7 +134,7 @@ class PersonalStatisticsPage extends React.Component {
       this.setState(newState)
     }
   }
-  handleChange = (source, date) => {
+  handlePeriodChange = (source, date) => {
     let newState = this.state
     newState[source] = date
     if(newState.startDate.getTime() > newState.endDate.getTime()){
@@ -145,10 +145,10 @@ class PersonalStatisticsPage extends React.Component {
   render() {
     return (
       <PageTemplate title='My performance'
-                    restHeader={<PeriodPicker handleChange={this.handleChange}
+                    restHeader={<PeriodPicker handlePeriodChange={this.handleChange}
                                               startDate={this.state.startDate}
                                               endDate={this.state.endDate}
-                    />}
+                                />}
       >
         <div className={styles.panel}>
           <div className={styles.tiles}>

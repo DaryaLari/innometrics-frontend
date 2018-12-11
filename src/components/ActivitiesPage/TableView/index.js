@@ -50,41 +50,37 @@ class TableView extends React.Component {
     let activities = this.getSortedActivities()
     return (
       <div className={styles.tableView}>
-        <table className={styles.table}>
-          <thead>
-          <tr className={styles.row}>
-            <th className={styles.cell}
+        <div className={styles.table}>
+          <div className={styles.headerRow}>
+            <div className={styles.cell}
                 onClick={() => this.sortBy('start_time')}
             >
               Start time
               {this.orderSign('start_time')}
-            </th>
-            <th className={styles.cell}
+            </div>
+            <div className={styles.cell}
                 onClick={() => this.sortBy('end_time')}
             >
               End time
               {this.orderSign('end_time')}
-            </th>
-            <th className={styles.cell}
+            </div>
+            <div className={styles.cell}
                 onClick={() => this.sortBy('executable_name')}
             >
               File name
               {this.orderSign('executable_name')}
-            </th>
-          </tr>
-          </thead>
-          <tbody>
+            </div>
+          </div>
           {activities.map(a => (
-            <tr key={a._id}
+            <div key={a._id}
                 className={`${styles.row} ${this.props.selectedActivity === a.executable_name && styles.selectedActivity}`}
             >
-              <td className={styles.cell}>{a.start_time}</td>
-              <td className={styles.cell}>{a.end_time}</td>
-              <td className={styles.cell} title={a.executable_name}>{a.executable_name}</td>
-            </tr>
+              <div className={styles.cell}>{a.start_time}</div>
+              <div className={styles.cell}>{a.end_time}</div>
+              <div className={styles.cell} title={a.executable_name}>{a.executable_name}</div>
+            </div>
           ))}
-          </tbody>
-        </table>
+        </div>
       </div>
     )
   }

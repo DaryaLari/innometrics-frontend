@@ -14,13 +14,14 @@ class LandingPage extends React.Component {
               <h1 className={styles.secondaryPhrase}>Analyze your activity</h1>
               <h1 className={styles.articlePhrase}>and </h1>
               <h1 className={styles.primaryPhrase}>Improve Productivity</h1>
-              <Button name='Get Started'/>
+              {/*<Button name='Get Started'/>*/}
             </div>
           </div>
           <div className={styles.screenBlock}>
             <h2 className={styles.heading}>Download links</h2>
             <p className={styles.blockDescription}>
-              Coming soon...
+              <a href='https://innometric.guru/media/InnometricsMac.zip' download>MacOS client</a><br/>
+              Others coming soon...
             </p>
           </div>
 

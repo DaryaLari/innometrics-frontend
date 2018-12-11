@@ -17,7 +17,7 @@ app.use(express.static('dist'))
 
 app.listen(8090, () => console.log('Listening on port 8090!'))
 
-app.post('/user', upload.fields([{ name: 'email' }, { name: 'password'}, { name: 'name'}, { name: 'surname'}]), (req, res) => {
+app.post('/api/user', upload.fields([{ name: 'email' }, { name: 'password'}, { name: 'name'}, { name: 'surname'}]), (req, res) => {
   console.log(req.body)
   if(!req.body.email || !req.body.password || !req.body.name || !req.body.surname)
     res.status(400).send({message: 'Parameters are not correct'})
@@ -36,7 +36,7 @@ app.post('/user', upload.fields([{ name: 'email' }, { name: 'password'}, { name:
   }
 })
 
-app.post('/login', upload.fields([{ name: 'email' }, { name: 'password'}]), (req, res) => {
+app.post('/api/login', upload.fields([{ name: 'email' }, { name: 'password'}]), (req, res) => {
   console.log(req.body)
   if(!req.body.email || !req.body.password)
     res.status(400).send({message: 'Parameters are not correct'})
@@ -53,12 +53,12 @@ app.post('/login', upload.fields([{ name: 'email' }, { name: 'password'}]), (req
   }
 })
 
-app.post('/logout', (req, res) => {
+app.post('/api/logout', (req, res) => {
   console.log(req.body)
   res.status(200).send({message: 'Success'})
 })
 
-app.get('/activity', (req, res) => {
+app.get('/api/activity', (req, res) => {
   console.log(req.query)
   res.send(activities)
 })

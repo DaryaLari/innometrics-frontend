@@ -1,5 +1,7 @@
 .content {
-    composes: content from '../../style.css';
+    /*composes: content from '../../style.css';*/
+    width: 100%;
+    padding: var(--page-padding);
 }
 
 .mainImg {

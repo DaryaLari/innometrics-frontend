@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import PageTemplate from '../PageTemplate'
+import PeriodPicker from '../PeriodPicker'
 import Spinner from '../Spinner'
 import TableView from './TableView'
 import ChartView from './ChartView'
@@ -10,6 +11,8 @@ import styles from './style.css'
 
 class _ActivitiesPage extends React.Component {
   state = {
+    startDate: new Date(),
+    endDate: new Date(),
     selectedActivity: null
   }
   componentDidMount(){
@@ -20,10 +23,22 @@ class _ActivitiesPage extends React.Component {
       this.setState({selectedActivity: null}):
       this.setState({selectedActivity: data.executable_name})
   }
+  handlePeriodChange = (source, date) => {
+    let newState = this.state
+    newState[source] = date
+    if(newState.startDate.getTime() > newState.endDate.getTime()){
+      newState.startDate = [newState.endDate, newState.endDate = newState.startDate][0] // swap
+    }
+    this.setState(newState)
+  }
   render() {
     return (
-      <PageTemplate title='Activities'>
-          {/*<Spinner/>*/}
+      <PageTemplate title='Activities'
+                    // restHeader={<PeriodPicker handlePeriodChange={this.handleChange}
+                    //                           startDate={this.state.startDate}
+                    //                           endDate={this.state.endDate}
+                    //             />}
+      >
           {this.props.activeRequest ? <Spinner/> :
             (this.props.activities.length === 0 ?
                 'There is nothing to show yet' :

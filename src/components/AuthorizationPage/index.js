@@ -39,10 +39,10 @@ class AuthPage extends React.Component {
         </PageTemplate>
       )
     return (
-      <div className={styles.content}>
-        {this.props.match.path === '/login' ?
-          <LoginForm {...this.props}/> : <RegistrationForm {...this.props}/>}
-      </div>
+        <main className={styles.content}>
+          {this.props.match.path === '/login' ?
+            <LoginForm {...this.props}/> : <RegistrationForm {...this.props}/>}
+        </main>
     )
   }
 }

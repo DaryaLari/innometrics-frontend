@@ -22,7 +22,7 @@ exports[`Test LandingPage component Test render LandingPage component 1`] = `
     <p>
       <a
         download={true}
-        href="https://innometric.guru/media/InnometricsMac.zip"
+        href="https://innometric.guru/files/InnometricsMac.zip"
       >
         MacOS client
       </a>

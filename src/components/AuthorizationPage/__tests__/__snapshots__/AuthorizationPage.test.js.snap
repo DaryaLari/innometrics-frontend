@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test AuthorizationPage component Test renders 'Logout confirmation' when user authenticated 1`] = `
-<div>
+<main>
   <div>
-    <h2>
+    <h1>
       Logout confirmation
-    </h2>
+    </h1>
+  </div>
+  <div>
     <p>
       You are logged in already. Would you like to keep the same session or login to another account?
     </p>
@@ -13,7 +15,11 @@ exports[`Test AuthorizationPage component Test renders 'Logout confirmation' whe
       <button
         disabled={false}
         onClick={[Function]}
-        style={Object {}}
+        style={
+          Object {
+            "margin": "0 calc(var(--cell-size)/4) 0 0",
+          }
+        }
       >
         Stay the same
       </button>
@@ -26,23 +32,23 @@ exports[`Test AuthorizationPage component Test renders 'Logout confirmation' whe
       </button>
     </div>
   </div>
-</div>
+</main>
 `;
 
 exports[`Test AuthorizationPage component Test renders LoginForm when user is not authenticated 1`] = `
-<div>
+<main>
   <div>
     Login
   </div>
-</div>
+</main>
 `;
 
 exports[`Test AuthorizationPage component Test renders RegistrationForm when user is not authenticated 1`] = `
-<div>
+<main>
   <div>
     Register
   </div>
-</div>
+</main>
 `;
 
 exports[`Test AuthorizationPage component Test shallow render AuthorizationPage component 1`] = `<Connect(ReduxForm) />`;

@@ -1,5 +1,5 @@
 import React from 'react'
-import TestRenderer from 'react-test-renderer';
+import TestRenderer from 'react-test-renderer'
 import Header from '../index'
 import { Router } from 'react-router-dom'
 import { history } from '../../../helpers/history'
@@ -10,7 +10,7 @@ describe('Test Header component', () => {
 
   it('Test render Header component', () => {
 
-    const mockStore = createStore([]);
+    const mockStore = createStore([])
     const initialStore = {
       user: {
         authorized: false

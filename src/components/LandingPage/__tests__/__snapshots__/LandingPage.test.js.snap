@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test LandingPage component Test render LandingPage component 1`] = `
-<div>
+<main>
   <div>
     <div>
       <h1>
@@ -13,12 +13,6 @@ exports[`Test LandingPage component Test render LandingPage component 1`] = `
       <h1>
         Improve Productivity
       </h1>
-      <button
-        disabled={false}
-        style={Object {}}
-      >
-        Get Started
-      </button>
     </div>
   </div>
   <div>
@@ -26,8 +20,15 @@ exports[`Test LandingPage component Test render LandingPage component 1`] = `
       Download links
     </h2>
     <p>
-      Coming soon...
+      <a
+        download={true}
+        href="https://innometric.guru/media/InnometricsMac.zip"
+      >
+        MacOS client
+      </a>
+      <br />
+      Others coming soon...
     </p>
   </div>
-</div>
+</main>
 `;

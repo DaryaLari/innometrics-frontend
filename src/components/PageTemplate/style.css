@@ -1,0 +1,21 @@
+.main {
+    width: 100%;
+    /*background-color: rgba(230, 230, 230, 1);*/
+    padding: var(--page-padding);
+}
+
+.titleRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.pageTitle {
+    margin: 0 auto 0 0;
+    text-align: left;
+}
+
+.content {
+    padding-top: calc(var(--cell-size) / 2);
+}

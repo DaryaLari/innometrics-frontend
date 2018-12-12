@@ -1,0 +1,34 @@
+.datePicker {
+    width: calc(var(--cell-size) * 5);
+    height: var(--cell-size);
+    padding: calc(var(--cell-size) / 4);
+    background-color: rgba(255, 255, 255, 1);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 5px 0px rgba(100, 100, 100, 0.15);
+}
+
+.datePickerDisplay {
+}
+
+.date {
+    border: none;
+    width: calc(var(--cell-size) * 1.25);
+
+    cursor: pointer;
+}
+
+.date:focus {
+    outline: none;
+}
+
+.calendarIcon {
+    font-size: 30px;
+    color: rgba(100, 100, 100, 1);
+}
+
+.periodPicked {
+
+}

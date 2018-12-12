@@ -1,5 +1,5 @@
 import React from 'react'
-import TestRenderer from 'react-test-renderer';
+import TestRenderer from 'react-test-renderer'
 import Input from '../index'
 
 describe('Test Input component', () => {

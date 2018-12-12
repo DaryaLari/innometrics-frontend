@@ -1,5 +1,5 @@
 import React from 'react'
-import TestRenderer from 'react-test-renderer';
+import TestRenderer from 'react-test-renderer'
 import { Router } from 'react-router-dom'
 import { history } from '../../../../helpers/history'
 import createStore from 'redux-mock-store'
@@ -10,7 +10,7 @@ describe('Test AuthorizationMenu component', () => {
 
   it('Test render \'Login or Register\' when not authenticated', () => {
 
-    const mockStore = createStore([]);
+    const mockStore = createStore([])
     const initialStore = {
       user: {
         authorized: false
@@ -33,7 +33,7 @@ describe('Test AuthorizationMenu component', () => {
 
   it('Test render \'Logout\' when authenticated', () => {
 
-    const mockStore = createStore([]);
+    const mockStore = createStore([])
     const initialStore = {
       user: {
         authorized: true

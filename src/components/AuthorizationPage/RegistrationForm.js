@@ -16,51 +16,51 @@ class RegistrationForm extends React.Component {
       <form className={styles.form}
             onSubmit={this.props.handleSubmit(this.onSubmit)}
       >
-        <h1>Register</h1>
+        <h1 className={styles.msgTitle}>Register</h1>
         <Field
-          name="email"
+          name='email'
           component={Input}
-          label="Email"
-          placeholder="Email"
-          type="email"
+          label='Email'
+          placeholder='Email'
+          type='email'
           validate={[required, email]}
         />
         <Field
-          name="name"
+          name='name'
           component={Input}
-          label="Name"
-          placeholder="Name"
-          type="text"
+          label='Name'
+          placeholder='Name'
+          type='text'
           validate={required}
         />
         <Field
-          name="surname"
+          name='surname'
           component={Input}
-          label="Surname"
-          placeholder="Surname"
-          type="text"
+          label='Surname'
+          placeholder='Surname'
+          type='text'
           validate={required}
         />
         <Field
-          name="password"
+          name='password'
           component={Input}
-          label="Password"
-          placeholder="Password"
-          type="password"
+          label='Password'
+          placeholder='Password'
+          type='password'
           validate={required}
         />
-        <Button name="Register"
-                type="submit"
+        <Button name='Register'
+                type='submit'
                 style={{width: '100%'}}
                 disabled={this.props.submitDisabled}
         />
         <p className={styles.formError}>{this.props.formError}</p>
-        <p>Have account already?
-          <Link to="/login">Login</Link>
+        <p className={styles.suggestion}>Have account already?
+          <Link to='/login'>Login</Link>
         </p>
       </form>
     )
   }
 }
 
-export default RegistrationForm;
+export default RegistrationForm

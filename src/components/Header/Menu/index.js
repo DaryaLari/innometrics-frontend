@@ -1,17 +1,17 @@
-import React from "react";
-import {connect} from "react-redux";
-import {withRouter} from "react-router";
-import {userAuthorized} from "../../../helpers/selectors";
-import styles from "./style.css";
+import React from 'react'
+import {connect} from 'react-redux'
+import {withRouter} from 'react-router'
+import {userAuthorized} from '../../../helpers/selectors'
+import styles from './style.css'
 
 class HeaderMenu extends React.Component {
   guestNavigation = [
-    // {name: "Main Page", path: "/"}
+    // {name: 'Main Page', path: '/'}
   ]
   userNavigation = [
-    {name: "Dashboard", path: "/dashboard"},
-    // {name: "Main Page", path: "/"},
-    {name: "Projects", path: "/projects"}
+    {name: 'Dashboard', path: '/dashboard'},
+    {name: 'Activities', path: '/activities'},
+    // {name: 'Projects', path: '/projects'}
   ]
   render() {
     const navigation = this.props.authorized ? this.userNavigation : this.guestNavigation
@@ -35,4 +35,4 @@ const Menu = connect(
   () => ({})
 )(HeaderMenu)
 
-export default withRouter(Menu);
+export default withRouter(Menu)

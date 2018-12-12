@@ -1,4 +1,4 @@
-import {TYPES as PROJECTS_TYPES} from "./actionTypes";
+import {TYPES as PROJECTS_TYPES} from './actionTypes'
 
 const initialState = {
   projects: [],
@@ -35,6 +35,6 @@ export const reducer = (state = initialState, action) => {
       }
 
     default:
-      return state;
+      return state
   }
 }

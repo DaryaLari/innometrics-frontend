@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectPage from "../index"
+import ProjectPage from '../index'
 import { shallow } from 'enzyme'
 import { history } from '../../../helpers/history'
 import { Router } from 'react-router-dom'

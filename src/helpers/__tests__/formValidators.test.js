@@ -2,11 +2,11 @@ import {required, email} from '../formValidators'
 
 describe('Test \'required\' validator', () => {
   it('Rejects \'\' string', () => {
-    expect(required('')).toBe("Required")
+    expect(required('')).toBe('Required')
   })
 
   it('Rejects \'   \' string', () => {
-    expect(required('   ')).toBe("Required")
+    expect(required('   ')).toBe('Required')
   })
 
   it('Passes \'123\' string', () => {
@@ -21,12 +21,12 @@ describe('Test \'required\' validator', () => {
 
 describe('Test \'email\' validator', () => {
   it('Rejects \'\' string', () => {
-    expect(email('')).toBe("Invalid email")
+    expect(email('')).toBe('Invalid email')
   })
 
 
   it('Rejects \'qwerty@gmail\' string', () => {
-    expect(email('qwerty@gmail')).toBe("Invalid email")
+    expect(email('qwerty@gmail')).toBe('Invalid email')
   })
 
 

@@ -1,4 +1,5 @@
-import {TYPES as ACTIVITIES_TYPES} from "./actionTypes";
+import {TYPES as ACTIVITIES_TYPES} from './actionTypes'
+import {TYPES as USER_TYPES} from '../user/actionTypes'
 
 const initialState = {
   activities: [],
@@ -12,6 +13,13 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case ACTIVITIES_TYPES.INIT_ACTIVITIES:
+    case USER_TYPES.LOGIN_SUCCESS:
+    case USER_TYPES.LOGOUT_SUCCESS:
+    case USER_TYPES.LOGOUT_FAILURE:
+      return initialState
+
+
     case ACTIVITIES_TYPES.GET_ACTIVITIES_REQUEST:
       return {
         ...state,
@@ -39,6 +47,6 @@ export const reducer = (state = initialState, action) => {
       }
 
     default:
-      return state;
+      return state
   }
 }

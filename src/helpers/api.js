@@ -1,5 +1,6 @@
-import axios from "axios";
-import { getToken } from './user'
+import axios from 'axios'
+import { getToken } from './authenticationUtils'
+import { processApiError } from './errorProcessors'
 
 /* DOMAIN_ADDRESS initialized by process.env in 'webpack.config.js' */
 
@@ -28,7 +29,7 @@ export function postRequest (url, params={}, withToken=false) {
           resolve(response)
         })
         .catch((error) => {
-          reject(error.response)
+          reject(processApiError(error))
         })
   })
 }
@@ -48,7 +49,7 @@ export function getRequest (url, params={}, withToken=false) {
           resolve(response)
         })
         .catch((error) => {
-          reject(error.response)
+          reject(processApiError(error))
         })
   })
 }

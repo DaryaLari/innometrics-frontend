@@ -18,16 +18,20 @@ html {
 body {
     margin: 0;
     /*width: 100vw;*/
-    min-width: 750px;
+    /*min-width: 750px;*/
     height: 100vh;
     overflow-y: scroll;
 
-    /*font-family: 'PT Serif', serif;*/
     font-family: 'PT Sans', sans-serif;
 }
 
 main {
     width: 100%;
     min-height: calc(100% - var(--header-height) - var(--footer-height));
-    padding: var(--page-padding);
+    position: relative;
+
+}
+
+i {
+    overflow: hidden;
 }

@@ -1,0 +1,60 @@
+.commonView {
+    display: flex;
+    justify-content: stretch;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 0;
+}
+
+.truncated {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.view {
+    width: 50%;
+}
+
+@media all and (max-width: 1000px) {
+    .view {
+        width: 100%;
+    }
+}
+
+.table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.row {
+    width: 100%;
+    overflow: hidden;
+}
+
+.cell {
+    height: var(--cell-size);
+}
+
+th.cell {
+    cursor: pointer;
+}
+
+.cell:nth-child(1), .cell:nth-child(2) {
+    width: calc(var(--cell-size)*2);
+}
+
+.cell:nth-child(3) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sortDirection {
+    font-size: inherit;
+    vertical-align: middle;
+}
+
+.selectedActivity {
+    background-color: rgba(136, 132, 216, 0.31);
+}

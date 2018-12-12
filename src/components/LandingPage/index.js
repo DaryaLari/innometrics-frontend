@@ -20,7 +20,7 @@ class LandingPage extends React.Component {
           <div className={styles.screenBlock}>
             <h2 className={styles.heading}>Download links</h2>
             <p className={styles.blockDescription}>
-              <a href='https://innometric.guru/media/InnometricsMac.zip' download>MacOS client</a><br/>
+              <a href='https://innometric.guru/files/InnometricsMac.zip' download>MacOS client</a><br/>
               Others coming soon...
             </p>
           </div>

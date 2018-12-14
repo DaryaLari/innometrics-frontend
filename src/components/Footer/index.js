@@ -26,7 +26,6 @@ const contacts = [
 
 class Footer extends React.Component {
   render() {
-    console.log(contacts)
     return (
         <footer className={styles.footer}>
           <h4>Contact us</h4>

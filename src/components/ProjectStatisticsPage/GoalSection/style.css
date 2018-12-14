@@ -1,0 +1,28 @@
+.goal {
+    margin-bottom: calc(var(--cell-size) / 2);
+}
+
+.goal > span {
+    display: block;
+    margin: 0;
+    height: var(--cell-size);
+    font-size: larger;
+}
+
+.goalName {
+    margin: 0;
+    display: inline-block;
+}
+
+.panel {
+    min-height: calc(var(--cell-size) * 2);
+    background-color: white;
+    box-shadow: 0 0 5px 0px rgba(100, 100, 100, 0.15);
+}
+
+.emptyPanel {
+    composes: panel;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -10,6 +10,7 @@ const AuthorizedRoute  = lazy(() => import('./components/AuthorizedRoute'))
 const ProjectsListPage  = lazy(() => import('./components/ProjectsListPage'))
 const ProjectPage  = lazy(() => import('./components/ProjectPage'))
 const PersonalStatisticsPage  = lazy(() => import('./components/PersonalStatisticsPage'))
+const ProjectStatisticsPage  = lazy(() => import('./components/ProjectStatisticsPage'))
 import styles from './style.css'
 
 class App extends React.Component {
@@ -20,12 +21,13 @@ class App extends React.Component {
           <Suspense fallback={<main><Spinner/></main>}>
             <Switch>
               <Route exact path='/' component={LandingPage}/>
+              <AuthorizedRoute path='/project' component={ProjectStatisticsPage}/>
               <AuthorizedRoute path='/dashboard' component={PersonalStatisticsPage}/>
               <AuthorizedRoute path='/activities' component={ActivitiesPage}/>
               <Route path='/login' component={AuthorizationPage}/>
               <Route path='/register' component={AuthorizationPage}/>
               <Route exact path='/projects' component={ProjectsListPage}/>
-              <Route path='/projects/:projectName' component={ProjectPage}/>
+              {/*<Route path='/projects/:projectName' component={ProjectPage}/>*/}
               <Redirect to='/dashboard'/>
             </Switch>
           </Suspense>

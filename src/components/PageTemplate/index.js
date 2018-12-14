@@ -7,7 +7,7 @@ class PageTemplate extends React.Component {
     // const bodyHeight = document.getElementsByTagName('body')[0].offsetHeight
     // console.log(bodyWidth, bodyHeight)
     return (
-        <main className={styles.main}>
+        <article className={styles.main}>
 
           <div className={styles.titleRow}>
             <h1 className={styles.pageTitle}>{this.props.title}</h1>{this.props.restHeader}
@@ -15,7 +15,7 @@ class PageTemplate extends React.Component {
           <div className={styles.content}>
             {this.props.children}
           </div>
-        </main>
+        </article>
 
     )
   }

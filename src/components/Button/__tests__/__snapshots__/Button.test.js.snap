@@ -5,6 +5,11 @@ exports[`Test Button component Test render Button component 1`] = `
   disabled={false}
   style={Object {}}
 >
-  Button
+  <i
+    className="material-icons"
+  />
+  <span>
+    Button
+  </span>
 </button>
 `;

@@ -1,18 +1,19 @@
 import React from 'react'
 import { withRouter } from 'react-router'
-import { Link } from 'react-router-dom'
+import PageTemplate from '../PageTemplate'
 import styles from './style.css'
 
 class ProjectPage extends React.Component {
   render() {
     const projectName = this.props.match.params.projectName
     return (
-      <div className={styles.content}>
-        <h1><Link to='/projects'>Projects</Link> / {projectName}</h1>
+      <PageTemplate title={projectName}
+                    leftSideNavBar={<aside style={{display: 'inline-block'}}>menu</aside>}
+      >
         <div className={styles.statistics}>
           Statistics in diagrams would be here
         </div>
-      </div>
+      </PageTemplate>
 
     )
   }

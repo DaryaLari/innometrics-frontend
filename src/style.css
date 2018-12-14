@@ -1,6 +1,6 @@
 :root {
     --cell-size: 60px;
-    --page-padding: calc(var(--cell-size)/2);
+    --page-padding: calc(var(--cell-size)/4);
     --header-height: calc(var(--cell-size));
     --footer-height: calc(var(--cell-size)*2);
 
@@ -29,6 +29,7 @@ main {
     width: 100%;
     min-height: calc(100% - var(--header-height) - var(--footer-height));
     position: relative;
+    display: flex;
 
 }
 

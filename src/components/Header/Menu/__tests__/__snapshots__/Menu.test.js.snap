@@ -12,6 +12,11 @@ exports[`Test AuthorizationMenu component Test render menu with 'Dashboard' when
   >
     Activities
   </div>
+  <div
+    onClick={[Function]}
+  >
+    Projects
+  </div>
 </nav>
 `;
 

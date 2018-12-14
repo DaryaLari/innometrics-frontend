@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import ProjectPageNavigation from './components/ProjectPageNavigation'
 import Spinner from './components/Spinner'
 const AuthorizationPage  = lazy(() => import('./components/AuthorizationPage'))
 const ActivitiesPage  = lazy(() => import('./components/ActivitiesPage'))
@@ -18,19 +19,22 @@ class App extends React.Component {
       return (
         <React.Fragment>
           <Header/>
-          <Suspense fallback={<main><Spinner/></main>}>
-            <Switch>
-              <Route exact path='/' component={LandingPage}/>
-              <AuthorizedRoute path='/project' component={ProjectStatisticsPage}/>
-              <AuthorizedRoute path='/dashboard' component={PersonalStatisticsPage}/>
-              <AuthorizedRoute path='/activities' component={ActivitiesPage}/>
-              <Route path='/login' component={AuthorizationPage}/>
-              <Route path='/register' component={AuthorizationPage}/>
-              <Route exact path='/projects' component={ProjectsListPage}/>
-              {/*<Route path='/projects/:projectName' component={ProjectPage}/>*/}
-              <Redirect to='/dashboard'/>
-            </Switch>
-          </Suspense>
+          <main>
+            <Route path='/projects/:projectName' component={ProjectPageNavigation}/>
+            <Suspense fallback={<Spinner/>}>
+              <Switch>
+                <Route exact path='/' component={LandingPage}/>
+                <AuthorizedRoute path='/project' component={ProjectStatisticsPage}/>
+                <AuthorizedRoute path='/dashboard' component={PersonalStatisticsPage}/>
+                <AuthorizedRoute path='/activities' component={ActivitiesPage}/>
+                <Route path='/login' component={AuthorizationPage}/>
+                <Route path='/register' component={AuthorizationPage}/>
+                <Route exact path='/projects' component={ProjectsListPage}/>
+                <Route path='/projects/:projectName' component={ProjectPage}/>
+                <Redirect to='/dashboard'/>
+              </Switch>
+            </Suspense>
+          </main>
           <Footer/>
         </React.Fragment>
       )

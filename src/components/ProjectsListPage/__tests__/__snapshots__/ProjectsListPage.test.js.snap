@@ -1,26 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test ProjectsListPage component Test render ProjectsListPage component 1`] = `
-<div>
-  <h1>
-    Projects
-  </h1>
+<article>
   <div>
-    <div
-      onClick={[Function]}
+    <h1>
+      Projects
+    </h1>
+    <button
+      disabled={false}
+      style={Object {}}
     >
-      proj 1
-    </div>
-    <div
-      onClick={[Function]}
-    >
-      proj 2
-    </div>
-    <div
-      onClick={[Function]}
-    >
-      proj 3
+      <i
+        className="material-icons"
+      >
+        add
+      </i>
+      <span>
+        New project
+      </span>
+    </button>
+  </div>
+  <div>
+    <div>
+      <div
+        onClick={[Function]}
+      >
+        <span>
+          proj 1
+        </span>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <span>
+          proj 2
+        </span>
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <span>
+          proj 3
+        </span>
+      </div>
     </div>
   </div>
-</div>
+</article>
 `;

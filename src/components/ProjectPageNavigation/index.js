@@ -36,7 +36,10 @@ class ProjectPageNavigation extends React.Component {
         <div className={styles.navContainer}>
           <nav className={styles.nav}>
             {this.navItems.map(i => (
-              <div className={styles.navItem} onClick={() => this.props.history.push(i.link)}>
+              <div className={styles.navItem}
+                   key={i.link}
+                   onClick={() => this.props.history.push(i.link)}
+              >
                 <i className={`${'material-icons'}`}>
                   {i.icon}
                 </i>

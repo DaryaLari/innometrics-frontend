@@ -24,13 +24,13 @@ class App extends React.Component {
             <Suspense fallback={<Spinner/>}>
               <Switch>
                 <Route exact path='/' component={LandingPage}/>
-                <AuthorizedRoute path='/project' component={ProjectStatisticsPage}/>
-                <AuthorizedRoute path='/dashboard' component={PersonalStatisticsPage}/>
-                <AuthorizedRoute path='/activities' component={ActivitiesPage}/>
                 <Route path='/login' component={AuthorizationPage}/>
                 <Route path='/register' component={AuthorizationPage}/>
-                <Route exact path='/projects' component={ProjectsListPage}/>
-                <Route path='/projects/:projectName' component={ProjectPage}/>
+                <AuthorizedRoute path='/dashboard' component={PersonalStatisticsPage}/>
+                <AuthorizedRoute path='/activities' component={ActivitiesPage}/>
+                <AuthorizedRoute exact path='/projects' component={ProjectsListPage}/>
+                <AuthorizedRoute path='/projects/:projectName' component={ProjectStatisticsPage}/>
+                {/*<Route path='/projects/:projectName' component={ProjectPage}/>*/}
                 <Redirect to='/dashboard'/>
               </Switch>
             </Suspense>

@@ -135,7 +135,7 @@ const OpenedTabTemplate = ({children, onClose}) => {
   )
 }
 
-class ProjectStatisticsPage extends React.Component {
+class StatisticsPage extends React.Component {
   state = {
     startDate: new Date(),
     endDate: new Date(),
@@ -168,8 +168,11 @@ class ProjectStatisticsPage extends React.Component {
     this.setState(newState)
   }
   render() {
+    const testeeName = this.props.match.params.projectName ?
+                        `'${this.props.match.params.projectName}' team`
+                        : 'My'
     return (
-      <PageTemplate title='Team performance'
+      <PageTemplate title={testeeName + ' performance'}
                     restHeader={<PeriodPicker handlePeriodChange={this.handleChange}
                                               startDate={this.state.startDate}
                                               endDate={this.state.endDate}
@@ -232,4 +235,4 @@ class ProjectStatisticsPage extends React.Component {
   }
 }
 
-export default ProjectStatisticsPage
+export default StatisticsPage

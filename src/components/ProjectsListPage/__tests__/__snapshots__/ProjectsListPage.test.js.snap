@@ -6,19 +6,6 @@ exports[`Test ProjectsListPage component Test render ProjectsListPage component 
     <h1>
       Projects
     </h1>
-    <button
-      disabled={false}
-      style={Object {}}
-    >
-      <i
-        className="material-icons"
-      >
-        add
-      </i>
-      <span>
-        New project
-      </span>
-    </button>
   </div>
   <div>
     <div>

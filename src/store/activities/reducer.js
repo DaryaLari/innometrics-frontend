@@ -3,8 +3,7 @@ import {TYPES as USER_TYPES} from '../user/actionTypes'
 
 const initialState = {
   activities: [],
-  offset: 0,
-  amount_to_return: 0,
+  filters: {},
 
   activeRequest: false,
   failed: false,
@@ -24,15 +23,16 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         activeRequest: true,
+        activities: [],
+        filters: action.payload.filters,
         failed: false,
         error: null
       }
 
     case ACTIVITIES_TYPES.GET_ACTIVITIES_SUCCESS:
       return {
+        ...state,
         activities: action.payload.activities,
-        offset: action.payload.offset,
-        amount_to_return: action.payload.amount_to_return,
         activeRequest: false,
         failed: false,
         error: null
@@ -42,6 +42,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         activeRequest: false,
+        activities: [],
         failed: true,
         error: action.error
       }

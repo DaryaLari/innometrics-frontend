@@ -1,6 +1,7 @@
 import React from 'react'
-import DatePicker from 'react-datepicker/es'
+import DatePicker from 'react-datepicker'
 import styles from './style.css'
+import 'react-datepicker/dist/react-datepicker-cssmodules.css'
 
 class PeriodPicker extends React.Component {
   render() {

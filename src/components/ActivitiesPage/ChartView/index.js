@@ -8,7 +8,7 @@ class ChartView extends React.Component {
   render() {
     return (
       <div className={styles.chartView}>
-        <ResponsiveContainer width={'100%'} aspect={2}>
+        <ResponsiveContainer width={'100%'} aspect={3}>
           <BarChart data={this.props.activities}
                     margin={{ top: 25, right: 50, left: 50, bottom: 25 }}>
             <CartesianGrid strokeDasharray='3 3' />
@@ -25,7 +25,6 @@ class ChartView extends React.Component {
             <Bar dataKey='duration'
                  barSize={30}
                  fill='#8884d8'
-                 onClick={this.props.onBarClick}
             />
         </BarChart>
         </ResponsiveContainer>

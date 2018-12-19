@@ -73,7 +73,7 @@ class TableView extends React.Component {
           </div>
           {activities.map(a => (
             <div key={a._id}
-                className={`${styles.row} ${this.props.selectedActivity === a.executable_name && styles.selectedActivity}`}
+                className={styles.row}
             >
               <div className={styles.cell}>{a.start_time}</div>
               <div className={styles.cell}>{a.end_time}</div>

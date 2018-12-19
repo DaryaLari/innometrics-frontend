@@ -1,11 +1,13 @@
+import moment from 'moment'
 import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
+import DatePicker from 'react-datepicker/es'
 import styles from './style.css'
 
 class Input extends React.Component {
   render() {
-    const {input, meta, type, label, placeholder, required, disabled, id, error, width, height, ...inputPassedProps} = this.props
+    const {input, meta, type, label, labelStyle, placeholder, required, disabled, id, error, width, height, ...inputPassedProps} = this.props
     let containerProps = {
       style: _.pickBy({
         width,
@@ -18,7 +20,8 @@ class Input extends React.Component {
       disabled
     }
     _.assign(inputProps, inputPassedProps)
-    let labelProps = {}
+    let labelProps = {style: {}}
+    _.assign(labelProps.style, labelStyle)
     if(id != undefined) {
       inputProps.id = id
       labelProps.htmlFor = id
@@ -31,7 +34,22 @@ class Input extends React.Component {
             {label}
             {required && <span className={styles.required}>*</span>}
           </label>
-          <input className={styles.input} {...inputProps}/>
+          {type === 'datePicker' ?
+           <DatePicker {...input}
+                       onBlur={(value) => {input.onBlur(moment(input.value, 'DD/MM/YYYY').toDate())}}
+                       dateFormat='dd/MM/yyyy'
+                       popperPlacement='bottom-start'
+                       popperModifiers={{
+                         preventOverflow: {
+                           enabled: true,
+                           escapeWithReference: false, // force popper to stay in viewport (even when input is scrolled out of view)
+                           boundariesElement: 'viewport'
+                         }
+                       }}
+           />
+           :
+            <input className={styles.input} {...inputProps}/>
+          }
           <div className={styles.messages}>
             {_.get(meta, 'touched') && <span className={styles.error}>{displayedError}</span>}
           </div>

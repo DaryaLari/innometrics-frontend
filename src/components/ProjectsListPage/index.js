@@ -12,10 +12,10 @@ class _ProjectsListPage extends React.Component {
   render() {
     return (
       <PageTemplate title='Projects'
-                    restHeader={<Button name='New project'
-                                        icon='add'
-                                        styleType='action'
-                    />}
+                    // restHeader={<Button name='New project'
+                    //                     icon='add'
+                    //                     styleType='action'
+                    // />}
       >
         {this.props.activeRequest ? 'Loading ... ' :
           (this.props.projects.length === 0 ?

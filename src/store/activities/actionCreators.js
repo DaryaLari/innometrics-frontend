@@ -1,19 +1,24 @@
+import moment from 'moment'
 import { getResponseError } from '../../helpers/errorProcessors'
 import {TYPES as ACTIVITIES_TYPES} from './actionTypes'
 import {getRequest} from '../../helpers/api'
 
 export const getActivitiesRequest = () => (dispatch, getState) => {
-  dispatch({type: ACTIVITIES_TYPES.GET_ACTIVITIES_REQUEST})
 
-  getRequest('/activity', {offset: 0, amount_to_return: 10}, true)
+  const filters = getState().form.activitiesFilter.values
+  dispatch({type: ACTIVITIES_TYPES.GET_ACTIVITIES_REQUEST, payload: {filters: filters}})
+
+  const sd = moment(filters.startDate, 'DD/MM/YYYY'), ed = moment(filters.endDate, 'DD/MM/YYYY')
+  const params = {
+    start_time: `${sd.year()}-${sd.month() + 1}-${sd.date()} 00:00:00`,
+    end_time: `${ed.year()}-${ed.month() + 1}-${ed.date()} 23:59:59`
+  }
+
+  getRequest('/activity', {...params}, true)
       .then((result) => {
         dispatch({
           type: ACTIVITIES_TYPES.GET_ACTIVITIES_SUCCESS,
-          payload: {
-            activities: result.data.activities,
-            offset: 0,
-            amount_to_return: 100
-          }
+          payload: {activities: result.data.activities}
         })
       })
       .catch((error) => {

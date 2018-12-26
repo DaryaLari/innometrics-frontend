@@ -1,5 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
+import { Link } from 'react-router-dom'
 import PageTemplate from '../PageTemplate'
 import PeriodPicker from '../PeriodPicker'
 import GoalSection from './GoalSection'
@@ -122,14 +123,16 @@ const OpenedTabTemplate = ({children, onClose}) => {
         >
           close
         </i>
-        <div className={styles.moreButton}>
+        <Link className={styles.moreButton}
+          to='/'
+        >  {/*TODO: solve navigation*/}
           <i className={`${'material-icons'}`}
           >
             arrow_forward_ios
             {/*chevron_right*/}
           </i>
           More...
-        </div>
+        </Link>
       </div>
     </div>
   )

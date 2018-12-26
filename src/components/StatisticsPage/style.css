@@ -116,7 +116,9 @@
     flex-direction: column;
     justify-content: center;
 
-    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    /*cursor: pointer;*/
 }
 
 .moreButton > i {

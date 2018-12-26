@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router'
+import { NavLink } from 'react-router-dom'
 import {logoutRequest} from '../../../store/user/actionCreators'
 import {userAuthorized} from '../../../helpers/selectors'
 import styles from './style.css'
@@ -21,9 +22,17 @@ class AuthMenu  extends React.Component {
         :
         (
             <div className={styles.authMenu}>
-              <div className={styles.authItem} onClick={() => this.props.history.push('/login')}>Login</div>
+              <div className={styles.authItem}
+                   // onClick={() => this.props.history.push('/login')}
+              >
+                <NavLink to='/login'>Login</NavLink>
+              </div>
               <span style={{padding: '0 5px 0 5px'}}> or </span>
-              <div className={styles.authItem} onClick={() => this.props.history.push('/register')}>Register</div>
+              <div className={styles.authItem}
+                   // onClick={() => this.props.history.push('/register')}
+              >
+                <NavLink to='/register'>Register</NavLink>
+              </div>
             </div>
         )
   }

@@ -2,6 +2,10 @@
     font-size: x-large;
 }
 
+.logo > a {
+    text-decoration: none;
+}
+
 .name {
     letter-spacing: -1px;
 }

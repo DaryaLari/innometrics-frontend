@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router'
+import { NavLink } from 'react-router-dom'
 import {userAuthorized} from '../../../helpers/selectors'
 import styles from './style.css'
 
@@ -20,9 +21,9 @@ class HeaderMenu extends React.Component {
         <nav className={styles.menu}>
           {navigation.map((i) => {
             return <div className={styles.menuItem} key={i.name}
-                        onClick={() => this.props.history.push(i.path)}
+                        // onClick={() => this.props.history.push(i.path)}
                     >
-                      {i.name}
+              <NavLink to={i.path}>{i.name}</NavLink>
                     </div>
           })}
         </nav>

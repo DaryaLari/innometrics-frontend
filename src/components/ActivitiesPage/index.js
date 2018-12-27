@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import PageTemplate from '../PageTemplate'
 import PeriodPicker from '../PeriodPicker'
 import Spinner from '../Spinner'
-import Filter from './Filter'
+import TimelineChart from './TimelineChart'
 import TableView from './TableView'
 import ChartView from './ChartView'
 import { getActivities } from '../../helpers/selectors'
@@ -15,21 +15,17 @@ class _ActivitiesPage extends React.Component {
     this.props.getActivities()
   }
   render() {
+    // console.log(this.props.activities[0])
     return (
-      <PageTemplate title={'Activities'/*{(
-                          <React.Fragment>
-                            Activities
-                            <span className={styles.period}>
-                              ({this.props.activitiesFilters.startDate} - {this.props.activitiesFilters.endDate})
-                            </span>
-                          </React.Fragment>)
-        }*/}
-                    restHeader={<Filter onSubmit={this.props.getActivities}/>}
+      <PageTemplate title='Activities'
+                    restHeader={<PeriodPicker onSubmit={this.props.getActivities}/>}
       >
           {this.props.activeRequest ? <Spinner/> :
             (this.props.activities.length === 0 ?
                 'There is nothing to show yet' :
                 <div className={styles.commonView}>
+
+                  <TimelineChart activities={this.props.activities}/>
                   <ChartView />
                   <TableView />
                 </div>

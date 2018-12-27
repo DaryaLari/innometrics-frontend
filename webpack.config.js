@@ -10,7 +10,7 @@ const DOMAIN_ADDRESS = process.env.DOMAIN_ADDRESS || '"/api"'
 module.exports = {
   mode: 'development',
   entry: {
-    app: ['./src/index.js']
+    app: ['@babel/polyfill', './src/index.js']
   },
   output: {
     path: path.resolve(__dirname, outputDirectory),

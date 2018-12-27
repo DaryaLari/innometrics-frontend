@@ -5,7 +5,7 @@ import {getRequest} from '../../helpers/api'
 
 export const getActivitiesRequest = () => (dispatch, getState) => {
 
-  const filters = getState().form.activitiesFilter.values
+  const filters = getState().form.periodPicker.values
   dispatch({type: ACTIVITIES_TYPES.GET_ACTIVITIES_REQUEST, payload: {filters: filters}})
 
   const sd = moment(filters.startDate, 'DD/MM/YYYY'), ed = moment(filters.endDate, 'DD/MM/YYYY')

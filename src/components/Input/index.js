@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import _ from 'lodash'
 import DatePicker from 'react-datepicker/es'
 import styles from './style.css'
+import datePickerStyles from './datePicker.css'
 
 class Input extends React.Component {
   render() {
@@ -46,6 +47,7 @@ class Input extends React.Component {
                            boundariesElement: 'viewport'
                          }
                        }}
+                       className={datePickerStyles.input}
            />
            :
             <input className={styles.input} {...inputProps}/>

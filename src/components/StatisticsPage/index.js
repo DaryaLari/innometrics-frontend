@@ -140,8 +140,6 @@ const OpenedTabTemplate = ({children, onClose}) => {
 
 class StatisticsPage extends React.Component {
   state = {
-    startDate: new Date(),
-    endDate: new Date(),
     opened: {
       activities: null,
       metrics: null
@@ -162,24 +160,14 @@ class StatisticsPage extends React.Component {
       this.setState(newState)
     }
   }
-  handlePeriodChange = (source, date) => {
-    let newState = this.state
-    newState[source] = date
-    if(newState.startDate.getTime() > newState.endDate.getTime()){
-      newState.startDate = [newState.endDate, newState.endDate = newState.startDate][0] // swap
-    }
-    this.setState(newState)
-  }
+  onPeriodChange = () => {}
   render() {
     const testeeName = this.props.match.params.projectName ?
                         `'${this.props.match.params.projectName}' team`
                         : 'My'
     return (
       <PageTemplate title={testeeName + ' performance'}
-                    restHeader={<PeriodPicker handlePeriodChange={this.handleChange}
-                                              startDate={this.state.startDate}
-                                              endDate={this.state.endDate}
-                                />}
+                    restHeader={<PeriodPicker onSubmit={this.onPeriodChange}/>}
       >
         <GoalSection goalName='Effort estimation'/>
 

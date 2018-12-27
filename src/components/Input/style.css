@@ -14,7 +14,7 @@
     color: rgba(255, 0, 0, 1);
 }
 
-input {
+.input {
     display: block;
     width: 100%;
     height: calc(var(--cell-size)/2);

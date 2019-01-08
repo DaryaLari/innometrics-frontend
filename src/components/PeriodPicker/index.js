@@ -1,6 +1,7 @@
 import moment from 'moment'
 import React from 'react'
 import { connect } from 'react-redux'
+import _ from 'lodash'
 import { Field, isInvalid, reduxForm } from 'redux-form'
 import { date, required } from '../../helpers/formValidators'
 import Input from '../Input'
@@ -11,6 +12,15 @@ class _PeriodPicker extends React.Component {
     console.log('submit')
     this.props.onSubmit()
   }
+
+  componentDidUpdate = (prevProps, prevState, snapshot) => {
+    if(this.props.periodFormState != undefined && prevProps.periodFormState != undefined &&
+       !_.isEqual(this.props.periodFormState.values, prevProps.periodFormState.values)){
+      console.log(!_.isEqual(this.props.periodFormState.values, prevProps.periodFormState.values),
+                  this.props.periodFormState.values, prevProps.periodFormState.values)
+      this.props.submit()
+    }
+}
   render(){
     const datePickerProps = {
       type: 'datePicker',
@@ -46,11 +56,11 @@ class _PeriodPicker extends React.Component {
                 this.props.change('endDate', moment(value).format('DD/MM/YYYY'))
                 return allValues.endDate
               }
-              console.log(moment(value).format('DD/MM/YYYY'))
+              // console.log(moment(value).format('DD/MM/YYYY'))
               return moment(value).format('DD/MM/YYYY')
             }}
             props={datePickerProps}
-            onChange={this.props.handleSubmit(this.onSubmit)}
+            // onChange={this.props.handleSubmit(this.onSubmit)}
           />
           <span style={{padding: '0 5px'}}>-</span>
           <Field
@@ -67,7 +77,7 @@ class _PeriodPicker extends React.Component {
               return moment(value).format('DD/MM/YYYY')
             }}
             props={datePickerProps}
-            onChange={this.props.handleSubmit(this.onSubmit)}
+            // onChange={this.props.handleSubmit(this.onSubmit)}
           />
 
         </form>

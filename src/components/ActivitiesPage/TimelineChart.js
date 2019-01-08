@@ -1,5 +1,6 @@
 import moment from 'moment'
 import React from 'react'
+import _ from 'lodash'
 import Chart from 'react-google-charts'
 import Spinner from '../Spinner'
 
@@ -15,12 +16,13 @@ const Tooltip = ({startTime, endTime, executable_name, browser_url}) => {
 
 class TimelineChart extends React.Component {
   render() {
+    console.log(_.min([40.992 * this.props.activities.length, 600]))
     return (
       <Chart
        width={'100%'}
-       height={'600px'}
+       height={_.min([40.992 * this.props.activities.length + 50, 600]) + 'px'}
        chartType="Timeline"
-       loader={<Spinner style={{width: '600px', height: '600px'}}/>}
+       loader={<div style={{width: '100%', height: '300px', position: 'relative'}}><Spinner style={{height: '300px'}}/></div>}
        data={
          [[
            { type: 'string', id: 'Activity' },
@@ -43,7 +45,7 @@ class TimelineChart extends React.Component {
          timeline: {showBarLabels: false},
          tooltip: {isHtml: true},
          hAxis: {
-           format: 'dd/MM/yyyy'
+           format: 'dd/MM/yyyy\nhh:mm:ss'
          }
        }}
       />

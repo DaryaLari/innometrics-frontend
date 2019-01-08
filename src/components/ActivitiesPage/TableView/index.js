@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import _ from 'lodash'
-import { getActivities } from '../../../helpers/selectors'
+import { getActivities, getFilteredActivities } from '../../../helpers/selectors'
 import styles from './style.css'
 
 class TableView extends React.Component {
@@ -88,7 +88,7 @@ class TableView extends React.Component {
 
 const ConnectedTableView = connect(
   (state) => ({
-    activities: getActivities(state)
+    activities: getFilteredActivities(state)
   })
 )(TableView)
 

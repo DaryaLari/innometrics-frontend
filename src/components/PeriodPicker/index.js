@@ -35,7 +35,6 @@ class _PeriodPicker extends React.Component {
         height: '30px'
       }}
     }
-    console.log(this.props.periodFormState && this.props.periodFormState.values)
     return (
       <div className={styles.periodPicker}>
         <i className={`${'material-icons'} ${styles.calendarIcon}`}>
@@ -56,11 +55,9 @@ class _PeriodPicker extends React.Component {
                 this.props.change('endDate', moment(value).format('DD/MM/YYYY'))
                 return allValues.endDate
               }
-              // console.log(moment(value).format('DD/MM/YYYY'))
               return moment(value).format('DD/MM/YYYY')
             }}
             props={datePickerProps}
-            // onChange={this.props.handleSubmit(this.onSubmit)}
           />
           <span style={{padding: '0 5px'}}>-</span>
           <Field
@@ -77,7 +74,6 @@ class _PeriodPicker extends React.Component {
               return moment(value).format('DD/MM/YYYY')
             }}
             props={datePickerProps}
-            // onChange={this.props.handleSubmit(this.onSubmit)}
           />
 
         </form>
@@ -94,6 +90,7 @@ const initialValues = {
 
 let PeriodPicker = reduxForm({
   form: 'periodPicker',
+  destroyOnUnmount: false,
   initialValues
 })(_PeriodPicker)
 

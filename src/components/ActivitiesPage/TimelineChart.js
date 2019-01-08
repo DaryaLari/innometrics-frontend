@@ -16,7 +16,6 @@ const Tooltip = ({startTime, endTime, executable_name, browser_url}) => {
 
 class TimelineChart extends React.Component {
   render() {
-    console.log(_.min([40.992 * this.props.activities.length, 600]))
     return (
       <Chart
        width={'100%'}

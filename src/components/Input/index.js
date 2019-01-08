@@ -24,6 +24,17 @@ class Input extends React.Component {
     _.assign(_inputProps, input)
     const displayedError = meta != undefined ? meta.error : error
 
+
+    if(type === 'checkbox')
+      return (
+        <div className={styles.checkboxContainer} {..._containerProps}>
+          <input className={styles.checkboxInput} {..._inputProps} type={type}/>
+          <label className={styles.checkboxLabel} {...labelProps}>
+            {label}
+          </label>
+        </div>
+      )
+
     return (
         <div className={styles.container} {..._containerProps}>
           {label.trim().length > 0 && (

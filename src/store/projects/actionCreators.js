@@ -9,7 +9,7 @@ export const getProjectsRequest = () => (dispatch, getState) => {
   dispatch({
     type: PROJECTS_TYPES.GET_PROJECTS_SUCCESS,
     payload: {
-      projects: []//[{name: 'proj-1'}, {name: 'proj-2'}, {name: 'proj-3'}]
+      projects: [{name: 'proj-1'}, {name: 'proj-2'}, {name: 'proj-3'}]
     }
   })
 

@@ -12,6 +12,11 @@ export const userAuthorized = createSelector(
 
 export const getActivities = createSelector(state => state.activities, actStore => actStore.activities)
 
+export const activitiesFilterTags = createSelector(state => getActivities(state), activities => {
+  let actTags = _.chain(activities).map('executable_name').uniq().value()
+  return actTags
+})
+
 export const activitiesSummarized = createSelector(
   (state) => getActivities(state),
   (activities) => {

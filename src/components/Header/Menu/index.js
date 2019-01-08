@@ -10,10 +10,10 @@ class HeaderMenu extends React.Component {
     // {name: 'Main Page', path: '/'}
   ]
   userNavigation = [
-    {name: 'Dashboard', path: '/dashboard'},
+    {name: 'MyDashboard', path: '/dashboard'},
     {name: 'Activities', path: '/activities'},
     {name: 'Projects', path: '/projects'},
-    // {name: 'Settings', path: '/settings'}
+    {name: 'Settings', path: '/settings'}
   ]
   render() {
     const navigation = this.props.authorized ? this.userNavigation : this.guestNavigation
@@ -21,7 +21,6 @@ class HeaderMenu extends React.Component {
         <nav className={styles.menu}>
           {navigation.map((i) => {
             return <div className={styles.menuItem} key={i.name}
-                        // onClick={() => this.props.history.push(i.path)}
                     >
               <NavLink to={i.path}>{i.name}</NavLink>
                     </div>

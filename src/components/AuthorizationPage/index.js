@@ -64,6 +64,7 @@ AuthorizationPage = connect(
       authorized: userAuthorized(state),
       authFormState: state.form.authorization,
       formError: state.user.error,
+      activeRequest: state.user.activeRequest,
       submitDisabled: isInvalid('authorization')(state) || state.user.activeRequest
     }),
 

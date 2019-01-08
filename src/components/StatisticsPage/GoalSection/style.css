@@ -5,8 +5,8 @@
 .goal > span {
     display: block;
     margin: 0;
-    height: var(--cell-size);
-    font-size: larger;
+    min-height: var(--cell-size);
+    /*font-size: larger;*/
 }
 
 .goalName {

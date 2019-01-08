@@ -8,6 +8,7 @@ import styles from './style.css'
 
 class _PeriodPicker extends React.Component {
   onSubmit = () => {
+    console.log('submit')
     this.props.onSubmit()
   }
   render(){
@@ -19,9 +20,12 @@ class _PeriodPicker extends React.Component {
         margin: 0
       },
       placeholder: '',
-      width: 'fit-content',
-      height: '30px'
+      containerProps: {style: {
+        width: 'fit-content',
+        height: '30px'
+      }}
     }
+    console.log(this.props.periodFormState && this.props.periodFormState.values)
     return (
       <div className={styles.periodPicker}>
         <i className={`${'material-icons'} ${styles.calendarIcon}`}>
@@ -42,6 +46,7 @@ class _PeriodPicker extends React.Component {
                 this.props.change('endDate', moment(value).format('DD/MM/YYYY'))
                 return allValues.endDate
               }
+              console.log(moment(value).format('DD/MM/YYYY'))
               return moment(value).format('DD/MM/YYYY')
             }}
             props={datePickerProps}

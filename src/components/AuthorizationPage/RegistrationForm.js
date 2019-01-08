@@ -24,6 +24,7 @@ class RegistrationForm extends React.Component {
           placeholder='Email'
           type='email'
           validate={[required, email]}
+          disabled={this.props.activeRequest}
         />
         <Field
           name='name'
@@ -32,6 +33,7 @@ class RegistrationForm extends React.Component {
           placeholder='Name'
           type='text'
           validate={required}
+          disabled={this.props.activeRequest}
         />
         <Field
           name='surname'
@@ -40,6 +42,7 @@ class RegistrationForm extends React.Component {
           placeholder='Surname'
           type='text'
           validate={required}
+          disabled={this.props.activeRequest}
         />
         <Field
           name='password'
@@ -48,6 +51,7 @@ class RegistrationForm extends React.Component {
           placeholder='Password'
           type='password'
           validate={required}
+          disabled={this.props.activeRequest}
         />
         <Button name='Register'
                 type='submit'

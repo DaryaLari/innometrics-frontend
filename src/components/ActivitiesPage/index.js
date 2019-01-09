@@ -14,13 +14,17 @@ import styles from './style.css'
 
 class _ActivitiesPage extends React.Component {
   componentDidMount(){
-    this.props.getActivities()
+    this.props.match.params.projectName ?
+      this.props.getActivities(this.props.match.params.projectName)
+      : this.props.getActivities()
   }
 
   render() {
-    // console.log(this.props.activities[0])
+    const testeeName = this.props.match.params.projectName ?
+                       `'${this.props.match.params.projectName}' team`
+                                                           : 'My'
     return (
-      <PageTemplate title='Activities'
+      <PageTemplate title={testeeName + ' activities'}
                     restHeader={<PeriodPicker onSubmit={this.props.getActivities}/>}
       >
           {this.props.activeRequest ? <Spinner/> :
@@ -49,7 +53,7 @@ const ActivitiesPage = connect(
   }),
 
   (dispatch) => ({
-    getActivities: () => dispatch(getActivitiesRequest())
+    getActivities: (proj) => dispatch(getActivitiesRequest(proj))
   })
 )(_ActivitiesPage)
 

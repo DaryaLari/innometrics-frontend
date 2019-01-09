@@ -10,27 +10,33 @@ class ProjectPageNavigation extends React.Component {
   }
   navItems = [
     {
-      icon: 'dashboard',
+      icon: 'developer_board',//'dashboard',
       name: 'Dashboard',
-      link: this.props.history.location.pathname
+      link: this.props.match.url
+    },
+    {
+      icon: 'dvr',//'storage',
+      name: 'Activities',
+      link: this.props.match.url + '/activities'
     },
     {
       icon: 'people',
       name: 'Team members',
-      link: this.props.history.location.pathname + '/team'
+      link: this.props.match.url + '/team'
     },
     {
       icon: 'track_changes', // 'list_alt'
       name: 'Manage goals',
-      link: this.props.history.location.pathname + '/goals'
+      link: this.props.match.url + '/goals'
     },
     {
       icon: 'settings',
       name: 'Settings',
-      link: this.props.history.location.pathname + '/settings'
+      link: this.props.match.url + '/settings'
     }
   ]
   render() {
+    console.log(this.props.match)
     return (
       <aside className={this.state.opened ? styles.asideOpened : styles.asideClosed}>
         <div className={styles.navContainer}>

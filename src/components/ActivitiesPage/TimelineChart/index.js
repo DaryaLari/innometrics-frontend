@@ -2,7 +2,7 @@ import moment from 'moment'
 import React from 'react'
 import _ from 'lodash'
 import Chart from 'react-google-charts'
-import Spinner from '../Spinner'
+import Spinner from '../../Spinner'
 
 const Tooltip = ({startTime, endTime, executable_name, browser_url}) => {
   return (

@@ -3,7 +3,9 @@ import { getResponseError } from '../../helpers/errorProcessors'
 import {TYPES as ACTIVITIES_TYPES} from './actionTypes'
 import {getRequest} from '../../helpers/api'
 
-export const getActivitiesRequest = () => (dispatch, getState) => {
+export const getActivitiesRequest = (project) => (dispatch, getState) => {
+
+  const requestPath = (project === undefined) ? '/activity' : `/project/${project}/activity`
 
   const filters = getState().form.periodPicker.values
   dispatch({type: ACTIVITIES_TYPES.GET_ACTIVITIES_REQUEST, payload: {filters: filters}})
@@ -14,7 +16,7 @@ export const getActivitiesRequest = () => (dispatch, getState) => {
     end_time: `${ed.year()}-${ed.month() + 1}-${ed.date()} 23:59:59`
   }
 
-  getRequest('/activity', {...params}, true)
+  getRequest(requestPath, {...params}, true)
       .then((result) => {
         dispatch({
           type: ACTIVITIES_TYPES.GET_ACTIVITIES_SUCCESS,

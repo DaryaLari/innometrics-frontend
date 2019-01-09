@@ -10,7 +10,9 @@ class PageTemplate extends React.Component {
         <article className={styles.main}>
 
           <div className={styles.titleRow}>
-            <h1 className={styles.pageTitle}>{this.props.title}</h1>{this.props.restHeader}
+            <span className={styles.pageTitle}><h1>
+              {this.props.title}
+            </h1></span>{this.props.restHeader}
           </div>
           <div className={styles.content}>
             {this.props.children}

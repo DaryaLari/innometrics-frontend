@@ -36,7 +36,7 @@ class ProjectPageNavigation extends React.Component {
     }
   ]
   render() {
-    console.log(this.props.match)
+//    console.log(this.props.match)
     return (
       <aside className={this.state.opened ? styles.asideOpened : styles.asideClosed}>
         <div className={styles.navContainer}>

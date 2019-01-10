@@ -1,38 +1,43 @@
 import React from 'react'
 import _ from 'lodash'
+import Chart from 'react-google-charts'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
+import { getLinesAdded, getMetrics } from '../../helpers/metricsSelectors'
+import { getActivitiesRequest } from '../../store/activities/actionCreators'
+import Spinner from '../Spinner'
 import PageTemplate from '../PageTemplate'
 import PeriodPicker from '../PeriodPicker'
 import GoalSection from './GoalSection'
 import ComparizonChart from './ComparizonChart'
-import TrendLineChart from './TrendLineChart'
 import styles from './style.css'
 import 'react-datepicker/dist/react-datepicker-cssmodules.css'
 
 const activities = [
   {
     name: 'Total hours',
-    duration: 38,
+    value: 38,
     trend: -2.7
   },
   {
     name: 'Coding',
-    duration: 15,
+    value: 15,
     trend: +10
   },
   {
     name: 'Web search',
-    duration: 12,
+    value: 12,
     trend: -18.2
   },
   {
     name: 'Communication',
-    duration: 7,
+    value: 7,
     trend: +5.7
   },
   {
     name: 'Others',
-    duration: 4,
+    value: 4,
     trend: -5.3
   }
 ]
@@ -111,57 +116,16 @@ const locTrend = [
   }
 ]
 
-const OpenedTabTemplate = ({children, onClose}) => {
-  return (
-    <div className={styles.openedTabArea}>
-      <div className={styles.chart}>
-        {children}
-      </div>
-      <div className={styles.buttons}>
-        <i className={`${'material-icons'} ${styles.closeIcon}`}
-           onClick={onClose}
-        >
-          close
-        </i>
-        <Link className={styles.moreButton}
-          to='/'
-        >  {/*TODO: solve navigation*/}
-          <i className={`${'material-icons'}`}
-          >
-            arrow_forward_ios
-            {/*chevron_right*/}
-          </i>
-          More...
-        </Link>
-      </div>
-    </div>
-  )
-}
 
-class StatisticsPage extends React.Component {
-  state = {
-    opened: {
-      activities: null,
-      metrics: null
-    }
+class _StatisticsPage extends React.Component {
+  componentDidMount(){
+    this.props.match.params.projectName ?
+      this.props.getActivities(this.props.match.params.projectName)
+      : this.props.getActivities()
   }
-  closeChart = (type) => {
-    let newState = this.state
-    newState.opened[type] = null
-    this.setState(newState)
-  }
-
-  openChart = (type, name) => {
-    if(_.get(this.state.opened, type + '.name') === name)
-      this.closeChart(type)
-    else {
-      let newState = this.state
-      newState.opened[type] = {name}
-      this.setState(newState)
-    }
-  }
-  onPeriodChange = () => {}
   render() {
+    // console.log(this.props.metricsGroups)
+
     const testeeName = this.props.match.params.projectName ?
                         `'${this.props.match.params.projectName}' team`
                         : 'My'
@@ -169,61 +133,34 @@ class StatisticsPage extends React.Component {
       <PageTemplate title={testeeName + ' performance'}
                     restHeader={<PeriodPicker onSubmit={this.onPeriodChange}/>}
       >
-        <GoalSection goalName='Effort estimation'/>
 
-        <GoalSection goalName='Use of resources'>
-          <div className={styles.tiles}>
-            {activities.map(a => (
-              <div className={_.get(this.state.opened, 'activities.name') === a.name ? styles.tileActive : styles.tile}
-                   key={a.name}
-                   onClick={() => this.openChart('activities', a.name)}
-              >
-                <span className={styles.metricValue}>{a.duration} h</span>
-                <span className={styles.metricName}>{a.name}</span>
-                <span className={a.trend > 0 ? styles.positiveTrend : styles.negativeTrend}>
-                  <i className={`${'material-icons'} ${styles.trendArrow}`}>
-                    {a.trend > 0 ? 'arrow_upward' : 'arrow_downward'}
-                  </i>
-                  {a.trend}%
-                </span>
-              </div>
-            ))}
-          </div>
-          {this.state.opened.activities !== null && (
-            <OpenedTabTemplate onClose={() => this.closeChart('activities')}>
-              <ComparizonChart data={totalHours}/>
-            </OpenedTabTemplate>
-          )}
-        </GoalSection>
+        {
+          this.props.activeRequest ? <Spinner/> :
 
-        <GoalSection goalName='Software quality and development process'>
-          <div className={styles.tiles}>
-            {codeMetrics.map(m => (
-              <div className={_.get(this.state.opened, 'metrics.name') === m.name ? styles.tileActive : styles.tile}
-                   key={m.name}
-                   onClick={() => this.openChart('metrics', m.name)}>
-                <span className={styles.metricValue}>{m.value} h</span>
-                <span className={styles.metricName}>{m.name}</span>
-                <span className={m.trend > 0 ? styles.positiveTrend : styles.negativeTrend}>
-                  <i className={`${'material-icons'} ${styles.trendArrow}`}>
-                    {m.trend > 0 ? 'arrow_upward' : 'arrow_downward'}
-                  </i>
-                  {m.trend}%
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {this.state.opened.metrics !== null && (
-            <OpenedTabTemplate onClose={() => this.closeChart('metrics')}>
-              <TrendLineChart data={locTrend} yName={this.state.opened.metrics.name}/>
-            </OpenedTabTemplate>
-          )}
-        </GoalSection>
+          this.props.metricsGroups.map(group => (
+            <GoalSection key={group.name}
+                         goalName={group.name}
+                         metrics={group.metrics}
+            >
+            </GoalSection>
+          ))
+        }
 
       </PageTemplate>
     )
   }
 }
 
-export default StatisticsPage
+const StatisticsPage = connect(
+  (state) => ({
+    metricsGroups: getMetrics(state),
+    activeRequest: state.activities.activeRequest
+  }),
+
+  (dispatch) => ({
+    getActivities: (proj) => dispatch(getActivitiesRequest(proj))
+  })
+)(_StatisticsPage)
+
+
+export default withRouter(StatisticsPage)

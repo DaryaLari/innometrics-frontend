@@ -1,6 +1,7 @@
 import _ from 'lodash'
 import React from 'react'
 import {connect} from 'react-redux'
+import { withRouter } from 'react-router'
 import PageTemplate from '../PageTemplate'
 import PeriodPicker from '../PeriodPicker'
 import Spinner from '../Spinner'
@@ -20,6 +21,7 @@ class _ActivitiesPage extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     const testeeName = this.props.match.params.projectName ?
                        `'${this.props.match.params.projectName}' team`
                                                            : 'My'
@@ -57,4 +59,4 @@ const ActivitiesPage = connect(
   })
 )(_ActivitiesPage)
 
-export default ActivitiesPage
+export default withRouter(ActivitiesPage)

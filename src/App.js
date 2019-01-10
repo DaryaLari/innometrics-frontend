@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import ProjectPageNavigation from './components/ProjectPageNavigation'
+import AsideNavigation from './components/AsideNavigation'
 import Spinner from './components/Spinner'
 const AuthorizationPage  = lazy(() => import('./components/AuthorizationPage'))
 const ActivitiesPage  = lazy(() => import('./components/ActivitiesPage'))
@@ -19,7 +19,8 @@ class App extends React.Component {
         <React.Fragment>
           <Header/>
           <main>
-            <Route path='/projects/:projectName' component={ProjectPageNavigation}/>
+            <Route path='/(dashboard|activities|goals|settings)' component={AsideNavigation}/>
+            <Route path='/projects/:projectName' component={AsideNavigation}/>
             <Suspense fallback={<Spinner/>}>
               <Switch>
                 <Route exact path='/' component={LandingPage}/>

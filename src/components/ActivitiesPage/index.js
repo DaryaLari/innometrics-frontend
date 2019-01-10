@@ -21,7 +21,6 @@ class _ActivitiesPage extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     const testeeName = this.props.match.params.projectName ?
                        `'${this.props.match.params.projectName}' team`
                                                            : 'My'

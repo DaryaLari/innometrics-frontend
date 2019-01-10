@@ -1,14 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styles from './style.css'
 
-class ProjectPageNavigation extends React.Component {
+class AsideNavigation extends React.Component {
   state = {
     opened: true
   }
   onOpenClose = () => {
     this.setState({opened : !this.state.opened})
   }
-  navItems = [
+  projectsNavigation = [
     {
       icon: 'developer_board',//'dashboard',
       name: 'Dashboard',
@@ -35,16 +36,45 @@ class ProjectPageNavigation extends React.Component {
       link: this.props.match.url + '/settings'
     }
   ]
+
+  personalNavigation = [
+    {
+      icon: 'developer_board',//'dashboard',
+      name: 'Dashboard',
+      link: '/dashboard'
+    },
+    {
+      icon: 'dvr',//'storage',
+      name: 'Activities',
+      link: '/activities'
+    },
+    // {
+    //   icon: 'people',
+    //   name: 'Projects',
+    //   link: this.props.match.url + '/projects'
+    // },
+    {
+      icon: 'track_changes', // 'list_alt'
+      name: 'Manage goals',
+      link: '/goals'
+    },
+    {
+      icon: 'settings',
+      name: 'Settings',
+      link: '/settings'
+    }
+  ]
   render() {
-//    console.log(this.props.match)
+    const navigation = this.props.match.path === '/projects/:projectName' ?
+                       this.projectsNavigation : this.personalNavigation
     return (
       <aside className={this.state.opened ? styles.asideOpened : styles.asideClosed}>
         <div className={styles.navContainer}>
           <nav className={styles.nav}>
-            {this.navItems.map(i => (
-              <div className={styles.navItem}
+            {navigation.map(i => (
+              <Link className={styles.navItem}
                    key={i.link}
-                   onClick={() => this.props.history.push(i.link)}
+                   to={i.link}
               >
                 <i className={`${'material-icons'}`}>
                   {i.icon}
@@ -52,7 +82,7 @@ class ProjectPageNavigation extends React.Component {
                 {this.state.opened && (
                   <span>{i.name}</span>
                  )}
-              </div>
+              </Link>
             ))}
           </nav>
         </div>
@@ -78,4 +108,4 @@ class ProjectPageNavigation extends React.Component {
   }
 }
 
-export default ProjectPageNavigation
+export default AsideNavigation

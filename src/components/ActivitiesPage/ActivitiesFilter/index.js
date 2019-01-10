@@ -7,6 +7,9 @@ import Input from '../../Input'
 import styles from './style.css'
 
 class _ActivitiesFilter extends React.Component {
+  state = {
+    opened: false
+  }
   onSubmit = () => {
     console.log(this.props.tagsFormState)
   }
@@ -21,11 +24,16 @@ class _ActivitiesFilter extends React.Component {
   render(){
     return (
       <div>
+        <span className={styles.showHideBtn} onClick={() => this.setState({opened: !this.state.opened})}>
+          {this.state.opened ?
+           'Hide filters' : 'Show filters'
+          }
+        </span>
         <form
           onSubmit={this.props.handleSubmit(this.onSubmit)}
         >
 
-          {this.props.suggestions.map((activity, index) => (
+          {this.state.opened && this.props.suggestions.map((activity, index) => (
             <Field key={_.camelCase(activity)}
               name={_.camelCase(activity)}
               type='checkbox'

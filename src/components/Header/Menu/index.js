@@ -10,10 +10,10 @@ class HeaderMenu extends React.Component {
     // {name: 'Main Page', path: '/'}
   ]
   userNavigation = [
-    {name: 'MyDashboard', path: '/dashboard'},
-    {name: 'Activities', path: '/activities'},
+    {name: 'MyPage', path: '/dashboard'},
+    // {name: 'Activities', path: '/activities'},
     {name: 'Projects', path: '/projects'},
-    {name: 'Settings', path: '/settings'}
+    // {name: 'Settings', path: '/settings'}
   ]
   render() {
     const navigation = this.props.authorized ? this.userNavigation : this.guestNavigation

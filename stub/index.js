@@ -1,3 +1,4 @@
+const moment = require('moment')
 const express = require('express')
 const app = express()
 const multer  = require('multer')
@@ -59,8 +60,11 @@ app.post('/api/logout', (req, res) => {
 })
 
 app.get('/api/activity', (req, res) => {
-  console.log(req.query)
-  res.send(activities)
+  // console.log(req.query)
+  // res.send(activities)
+  let acts = activities.activities.filter(a => moment(a.start_time, 'YYYY-MM-DD hh:mm:ss').isAfter(moment('2018-10-27', 'YYYY-MM-DD')))
+  res.send({message: 'Success', activities: acts})
+
 })
 
 module.exports = app

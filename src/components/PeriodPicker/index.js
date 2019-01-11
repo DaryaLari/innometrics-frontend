@@ -10,14 +10,12 @@ import styles from './style.css'
 class _PeriodPicker extends React.Component {
   onSubmit = () => {
     console.log('submit')
-    this.props.onSubmit()
+    this.props.getActivities()
   }
 
   componentDidUpdate = (prevProps, prevState, snapshot) => {
     if(this.props.periodFormState != undefined && prevProps.periodFormState != undefined &&
        !_.isEqual(this.props.periodFormState.values, prevProps.periodFormState.values)){
-      console.log(!_.isEqual(this.props.periodFormState.values, prevProps.periodFormState.values),
-                  this.props.periodFormState.values, prevProps.periodFormState.values)
       this.props.submit()
     }
 }

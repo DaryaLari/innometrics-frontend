@@ -15,6 +15,11 @@ import styles from './style.css'
 
 class _ActivitiesPage extends React.Component {
   componentDidMount(){
+    console.log(this.props.match.params.projectName)
+    this.getActivities()
+  }
+
+  getActivities = () => {
     this.props.match.params.projectName ?
       this.props.getActivities(this.props.match.params.projectName)
       : this.props.getActivities()
@@ -26,7 +31,7 @@ class _ActivitiesPage extends React.Component {
                                                            : 'My'
     return (
       <PageTemplate title={testeeName + ' activities'}
-                    restHeader={<PeriodPicker onSubmit={this.props.getActivities}/>}
+                    restHeader={<PeriodPicker onSubmit={this.getActivities}/>}
       >
           {this.props.activeRequest ? <Spinner/> :
             (this.props.activities.length === 0 ?

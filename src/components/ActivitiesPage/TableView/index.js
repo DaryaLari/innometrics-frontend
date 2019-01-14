@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import _ from 'lodash'
-import { getActivities } from '../../../helpers/selectors'
+import { getActivities, getFilteredActivities } from '../../../helpers/selectors'
 import styles from './style.css'
 
 class TableView extends React.Component {
@@ -73,7 +73,7 @@ class TableView extends React.Component {
           </div>
           {activities.map(a => (
             <div key={a._id}
-                className={`${styles.row} ${this.props.selectedActivity === a.executable_name && styles.selectedActivity}`}
+                className={styles.row}
             >
               <div className={styles.cell}>{a.start_time}</div>
               <div className={styles.cell}>{a.end_time}</div>
@@ -88,7 +88,7 @@ class TableView extends React.Component {
 
 const ConnectedTableView = connect(
   (state) => ({
-    activities: getActivities(state)
+    activities: getFilteredActivities(state)
   })
 )(TableView)
 

@@ -12,8 +12,26 @@ export const userAuthorized = createSelector(
 
 export const getActivities = createSelector(state => state.activities, actStore => actStore.activities)
 
+export const getSelectedActivitiesFilters = createSelector(state => _.get(state.form, 'activitiesFilter.values', []),
+                                                           filters => _(filters).pickBy().keys().value())
+
+export const getFilteredActivities = createSelector(
+  [state => getActivities(state),
+   state => getSelectedActivitiesFilters(state)],
+  (activities, filters) => {
+    if(filters.length === 0)
+    return activities
+
+  return _.filter(activities, (a) => _.includes(filters, _.camelCase(a.executable_name)))
+})
+
+export const activitiesFilterTags = createSelector(state => getActivities(state), activities => {
+  let actTags = _.chain(activities).map('executable_name').uniq().value()
+  return actTags
+})
+
 export const activitiesSummarized = createSelector(
-  (state) => getActivities(state),
+  (state) => getFilteredActivities(state),
   (activities) => {
     let actObj = _(activities).chain()
       .reduce(

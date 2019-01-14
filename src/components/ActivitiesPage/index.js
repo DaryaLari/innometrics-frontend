@@ -1,49 +1,48 @@
+import _ from 'lodash'
 import React from 'react'
 import {connect} from 'react-redux'
+import { withRouter } from 'react-router'
 import PageTemplate from '../PageTemplate'
+import PeriodPicker from '../PeriodPicker'
 import Spinner from '../Spinner'
+import ActivitiesFilter from './ActivitiesFilter'
+import TimelineChart from './TimelineChart'
 import TableView from './TableView'
 import ChartView from './ChartView'
-import { getActivities } from '../../helpers/selectors'
+import { getActivities, getFilteredActivities, getSelectedActivitiesFilters } from '../../helpers/selectors'
 import {getActivitiesRequest} from '../../store/activities/actionCreators'
 import styles from './style.css'
 
 class _ActivitiesPage extends React.Component {
-  state = {
-    startDate: new Date(),
-    endDate: new Date(),
-    selectedActivity: null
-  }
   componentDidMount(){
-    this.props.getActivities()
+    console.log(this.props.match.params.projectName)
+    this.getActivities()
   }
-  onSelectActivity = (data) => {
-    this.state.selectedActivity === data.executable_name ?
-      this.setState({selectedActivity: null}):
-      this.setState({selectedActivity: data.executable_name})
+
+  getActivities = () => {
+    this.props.match.params.projectName ?
+      this.props.getActivities(this.props.match.params.projectName)
+      : this.props.getActivities()
   }
-  handlePeriodChange = (source, date) => {
-    let newState = this.state
-    newState[source] = date
-    if(newState.startDate.getTime() > newState.endDate.getTime()){
-      newState.startDate = [newState.endDate, newState.endDate = newState.startDate][0] // swap
-    }
-    this.setState(newState)
-  }
+
   render() {
+    const testeeName = this.props.match.params.projectName ?
+                       `'${this.props.match.params.projectName}' team`
+                                                           : 'My'
     return (
-      <PageTemplate title='Activities'
-                    // restHeader={<PeriodPicker handlePeriodChange={this.handleChange}
-                    //                           startDate={this.state.startDate}
-                    //                           endDate={this.state.endDate}
-                    //             />}
+      <PageTemplate title={testeeName + ' activities'}
+                    restHeader={<PeriodPicker onSubmit={this.getActivities}/>}
       >
           {this.props.activeRequest ? <Spinner/> :
             (this.props.activities.length === 0 ?
                 'There is nothing to show yet' :
                 <div className={styles.commonView}>
-                  <ChartView onBarClick={this.onSelectActivity} />
-                  <TableView selectedActivity={this.state.selectedActivity} />
+
+                  <ActivitiesFilter/>
+
+                  <TimelineChart activities={this.props.activities}/>
+                  <ChartView />
+                  <TableView />
                 </div>
                 )}
       </PageTemplate>
@@ -54,13 +53,14 @@ class _ActivitiesPage extends React.Component {
 
 const ActivitiesPage = connect(
   (state) => ({
-    activities: getActivities(state),
+    // activities: getActivities(state),
+    activities: getFilteredActivities(state),
     activeRequest: state.activities.activeRequest
   }),
 
   (dispatch) => ({
-    getActivities: () => dispatch(getActivitiesRequest())
+    getActivities: (proj) => dispatch(getActivitiesRequest(proj))
   })
 )(_ActivitiesPage)
 
-export default ActivitiesPage
+export default withRouter(ActivitiesPage)

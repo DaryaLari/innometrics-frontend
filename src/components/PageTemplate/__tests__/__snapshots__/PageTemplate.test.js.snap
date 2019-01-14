@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test PageTemplate component Test render PageTemplate component 1`] = `
-<main>
+<article>
   <div>
     <h1 />
   </div>
   <div />
-</main>
+</article>
 `;

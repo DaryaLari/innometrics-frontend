@@ -24,6 +24,7 @@ class LoginForm extends React.Component {
           placeholder='Email'
           type='email'
           validate={[required, email]}
+          disabled={this.props.activeRequest}
         />
         <Field
           name='password'
@@ -32,6 +33,7 @@ class LoginForm extends React.Component {
           placeholder='Password'
           type='password'
           validate={required}
+          disabled={this.props.activeRequest}
         />
         <Button name='Login'
                 type='submit'

@@ -1,12 +1,10 @@
 .content {
-    /*composes: content from '../../style.css';*/
     width: 100%;
-    padding: var(--page-padding);
+    display: initial;
 }
 
 .mainImg {
     min-height: 540px;
-    margin: calc(var(--cell-size)/(-2));
     margin-bottom: 0;
     background: rgba(142, 218, 190, 1) url('../../media/images/statistika.jpg') no-repeat center center;
     background-size: contain;
@@ -58,12 +56,13 @@
 .screenBlock {
     width: 100%;
     height: 540px;
+    padding: var(--page-padding);
 }
 
 .heading {
     font-size: xx-large;
     margin: 0;
-    padding: calc(var(--cell-size)/2) 0;
+    padding-bottom: calc(var(--cell-size)/4);
 }
 
 .blockDescription {

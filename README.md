@@ -19,9 +19,15 @@ Stores information from:
 - remote repositories about developers' source code quality metrics
 
 ## Run
-`npm i`
+1) `npm i`
+2) `npm run dev`
 
-`npm run dev`
+## Build and set up
+1) `npm i`
+2) Initialize environment variable `DOMAIN_ADDRESS` with address of the backend server 
+(default is `https://innometric.guru`).
+3) `npm run build`
+4) Serve `dist` directory.
 
 ## Visualization
 Infographics, charts, diagrams

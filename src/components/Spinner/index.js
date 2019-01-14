@@ -4,7 +4,7 @@ import styles from './style.css'
 class Spinner extends React.Component {
   render() {
     return (
-        <div className={styles.spinnerContainer}>
+        <div className={styles.spinnerContainer} {...this.props}>
           <div className={styles.spinner}>
             <div className={styles.sc1}></div>
             <div className={styles.sc2}></div>

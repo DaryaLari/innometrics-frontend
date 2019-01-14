@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test AuthorizationPage component Test renders 'Logout confirmation' when user authenticated 1`] = `
-<main>
+<article>
   <div>
     <h1>
       Logout confirmation
@@ -21,18 +21,28 @@ exports[`Test AuthorizationPage component Test renders 'Logout confirmation' whe
           }
         }
       >
-        Stay the same
+        <i
+          className="material-icons"
+        />
+        <span>
+          Stay the same
+        </span>
       </button>
       <button
         disabled={false}
         onClick={[Function]}
         style={Object {}}
       >
-        Logout anyway
+        <i
+          className="material-icons"
+        />
+        <span>
+          Logout anyway
+        </span>
       </button>
     </div>
   </div>
-</main>
+</article>
 `;
 
 exports[`Test AuthorizationPage component Test renders LoginForm when user is not authenticated 1`] = `

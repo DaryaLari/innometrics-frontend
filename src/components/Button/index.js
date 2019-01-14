@@ -4,14 +4,18 @@ import styles from './style.css'
 
 class Button extends React.Component {
   render() {
-    const {name, styleType, style, disabled, ...restProps} = this.props
+    const {name, icon, styleType, style, disabled, ...restProps} = this.props
     return (
         <button className={styles[styleType]}
                 style={style}
                 disabled={disabled}
                 {...restProps}
         >
-          {name}
+          <i className={`${'material-icons'}`}
+          >
+            {icon}
+          </i>
+          <span>{name}</span>
         </button>
 
     )
@@ -20,7 +24,7 @@ class Button extends React.Component {
 
 Button.propTypes = {
   name: PropTypes.string.isRequired,
-  styleType: PropTypes.oneOf(['primary', 'secondary']),
+  styleType: PropTypes.oneOf(['primary', 'secondary', 'action']),
   disabled: PropTypes.bool,
   style: PropTypes.object
 }

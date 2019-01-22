@@ -2,6 +2,7 @@
     width: 100%;
     /*background-color: rgba(230, 230, 230, 1);*/
     padding: var(--page-padding);
+    overflow-x: hidden;
 }
 
 .titleRow {

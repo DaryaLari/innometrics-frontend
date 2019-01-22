@@ -30,7 +30,7 @@ main {
     min-height: calc(100% - var(--header-height) - var(--footer-height));
     position: relative;
     display: flex;
-
+    justify-content: stretch;
 }
 
 i {

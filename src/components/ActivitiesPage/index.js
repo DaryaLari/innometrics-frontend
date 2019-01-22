@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import moment from 'moment'
 import React from 'react'
 import {connect} from 'react-redux'
 import { withRouter } from 'react-router'
@@ -9,13 +10,17 @@ import ActivitiesFilter from './ActivitiesFilter'
 import TimelineChart from './TimelineChart'
 import TableView from './TableView'
 import ChartView from './ChartView'
-import { getActivities, getFilteredActivities, getSelectedActivitiesFilters } from '../../helpers/selectors'
+import {
+  getActivities,
+  getFilteredActivities,
+  getSelectedActivitiesFilters,
+  getSelectedPeriod
+} from '../../helpers/selectors'
 import {getActivitiesRequest} from '../../store/activities/actionCreators'
 import styles from './style.css'
 
 class _ActivitiesPage extends React.Component {
   componentDidMount(){
-    console.log(this.props.match.params.projectName)
     this.getActivities()
   }
 
@@ -40,7 +45,10 @@ class _ActivitiesPage extends React.Component {
 
                   <ActivitiesFilter/>
 
-                  <TimelineChart activities={this.props.activities}/>
+                  <TimelineChart activities={this.props.activities}
+                                 start={moment(this.props.periodChosen.startDate, 'DD/MM/YYYY').toDate()}
+                                 end={moment(this.props.periodChosen.endDate, 'DD/MM/YYYY').toDate()}
+                  />
                   <ChartView />
                   <TableView />
                 </div>
@@ -54,6 +62,8 @@ class _ActivitiesPage extends React.Component {
 const ActivitiesPage = connect(
   (state) => ({
     // activities: getActivities(state),
+
+    periodChosen: getSelectedPeriod(state),
     activities: getFilteredActivities(state),
     activeRequest: state.activities.activeRequest
   }),

@@ -6,6 +6,8 @@ const webpack = require('webpack')
 const outputDirectory = 'dist'
 
 const DOMAIN_ADDRESS = process.env.DOMAIN_ADDRESS || '"/api"'
+/* 'FRONTEND_ADDRESS' is used in '/src/helpers/history.js' as 'basename' for creating custom browser history */
+const FRONTEND_ADDRESS = process.env.FRONTEND_ADDRESS || '"/"'
 
 module.exports = {
   mode: 'development',
@@ -15,7 +17,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, outputDirectory),
     filename: 'js/[name].js',
-    publicPath: '/'
+    // publicPath: '/innometrics/'
   },
   devServer: {
     historyApiFallback: true,
@@ -69,12 +71,13 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin([outputDirectory]),
     new HtmlWebpackPlugin({
-      title: 'Activity Dashboard',
+      title: 'Innometrics',
       hash: true,
       template: 'public/index.html'
     }),
     new webpack.DefinePlugin({
-      DOMAIN_ADDRESS: DOMAIN_ADDRESS
+     DOMAIN_ADDRESS: DOMAIN_ADDRESS,
+     FRONTEND_ADDRESS: FRONTEND_ADDRESS
     })
   ]
 }

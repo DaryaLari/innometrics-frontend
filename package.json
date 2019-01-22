@@ -1,5 +1,5 @@
 {
-  "name": "activity_dashboard",
+  "name": "innometrics",
   "version": "0.1.0",
   "description": "Visualisation of users' working activity statistics",
   "private": true,
@@ -56,7 +56,7 @@
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-middleware": "^3.4.0",
-    "webpack-dev-server": "^3.1.10",
+    "webpack-dev-server": "^3.1.14",
     "webpack-hot-client": "^4.1.1",
     "webpack-merge": "^4.1.4"
   },

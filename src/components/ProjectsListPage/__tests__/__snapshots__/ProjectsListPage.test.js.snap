@@ -3,9 +3,11 @@
 exports[`Test ProjectsListPage component Test render ProjectsListPage component 1`] = `
 <article>
   <div>
-    <h1>
-      Projects
-    </h1>
+    <span>
+      <h1>
+        Projects
+      </h1>
+    </span>
   </div>
   <div>
     <div>

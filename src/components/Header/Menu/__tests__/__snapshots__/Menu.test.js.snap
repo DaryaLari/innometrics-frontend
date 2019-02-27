@@ -1,23 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test AuthorizationMenu component Test render menu with 'Dashboard' when authenticated 1`] = `
+exports[`Test Menu component Test render menu with 'MyPage' when authenticated 1`] = `
 <nav>
-  <div
-    onClick={[Function]}
-  >
-    Dashboard
-  </div>
-  <div
-    onClick={[Function]}
-  >
-    Activities
-  </div>
-  <div
-    onClick={[Function]}
-  >
-    Projects
+  <div>
+    <a
+      aria-current={null}
+      href="/dashboard"
+      onClick={[Function]}
+    >
+      MyPage
+    </a>
   </div>
 </nav>
 `;
 
-exports[`Test AuthorizationMenu component Test render menu without 'Dashboard' when not authenticated 1`] = `<nav />`;
+exports[`Test Menu component Test render menu without 'MyPage' when not authenticated 1`] = `<nav />`;

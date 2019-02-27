@@ -2,10 +2,14 @@
 
 exports[`Test AuthorizationMenu component Test render 'Login or Register' when not authenticated 1`] = `
 <div>
-  <div
-    onClick={[Function]}
-  >
-    Login
+  <div>
+    <a
+      aria-current={null}
+      href="/login"
+      onClick={[Function]}
+    >
+      Login
+    </a>
   </div>
   <span
     style={
@@ -16,10 +20,14 @@ exports[`Test AuthorizationMenu component Test render 'Login or Register' when n
   >
      or 
   </span>
-  <div
-    onClick={[Function]}
-  >
-    Register
+  <div>
+    <a
+      aria-current={null}
+      href="/register"
+      onClick={[Function]}
+    >
+      Register
+    </a>
   </div>
 </div>
 `;

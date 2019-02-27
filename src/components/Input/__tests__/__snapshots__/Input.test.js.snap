@@ -1,15 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test Input component Test render Input component 1`] = `
-<div
-  style={Object {}}
->
-  <label>
-    
-  </label>
+<div>
   <input
-    disabled={false}
-    placeholder="Input your text here"
     type="text"
   />
   <div />

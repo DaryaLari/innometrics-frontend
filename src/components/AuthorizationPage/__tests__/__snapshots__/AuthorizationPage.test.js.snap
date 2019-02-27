@@ -3,9 +3,11 @@
 exports[`Test AuthorizationPage component Test renders 'Logout confirmation' when user authenticated 1`] = `
 <article>
   <div>
-    <h1>
-      Logout confirmation
-    </h1>
+    <span>
+      <h1>
+        Logout confirmation
+      </h1>
+    </span>
   </div>
   <div>
     <p>

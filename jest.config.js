@@ -55,7 +55,8 @@ module.exports = {
 
   // A set of global variables that need to be available in all test environments
   globals: {
-    'DOMAIN_ADDRESS': 'http://localhost:8090'
+    'DOMAIN_ADDRESS': 'http://localhost:8090',
+    'FRONTEND_ADDRESS': '/'
   },
 
   // An array of directory names to be searched recursively up from the requiring module's location

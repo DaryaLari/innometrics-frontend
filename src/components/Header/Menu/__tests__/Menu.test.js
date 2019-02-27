@@ -6,9 +6,9 @@ import createStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import Menu from '../index'
 
-describe('Test AuthorizationMenu component', () => {
+describe('Test Menu component', () => {
 
-  it('Test render menu without \'Dashboard\' when not authenticated', () => {
+  it('Test render menu without \'MyPage\' when not authenticated', () => {
 
     const mockStore = createStore([])
     const initialStore = {
@@ -25,11 +25,11 @@ describe('Test AuthorizationMenu component', () => {
         </Router>
       </Provider>
     )
-    expect(() => !!instance.root.find(element => element.children && element.children.includes('Dashboard'))).toThrow()
+    expect(() => !!instance.root.find(element => element.children && element.children.includes('MyPage'))).toThrow()
     expect(instance.toJSON()).toMatchSnapshot()
   })
 
-  it('Test render menu with \'Dashboard\' when authenticated', () => {
+  it('Test render menu with \'MyPage\' when authenticated', () => {
 
     const mockStore = createStore([])
     const initialStore = {
@@ -46,7 +46,7 @@ describe('Test AuthorizationMenu component', () => {
         </Router>
       </Provider>
     )
-    expect(!!instance.root.find(element => element.children && element.children.includes('Dashboard'))).toEqual(true)
+    expect(!!instance.root.find(element => element.children && element.children.includes('MyPage'))).toEqual(true)
     expect(instance.toJSON()).toMatchSnapshot()
   })
 })

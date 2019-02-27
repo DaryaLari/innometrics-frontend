@@ -1,8 +1,8 @@
 :root {
     --cell-size: 60px;
-    --page-padding: calc(var(--cell-size)/4);
+    --page-padding: calc(var(--cell-size) / 4);
     --header-height: calc(var(--cell-size));
-    --footer-height: calc(var(--cell-size)*2);
+    --footer-height: calc(var(--cell-size) * 2);
 
     --header-color: 60, 60, 60;
     --footer-color: 60, 60, 60;

@@ -1,6 +1,6 @@
 .button {
-    min-width: calc(var(--cell-size)*3);
-    min-height: calc(var(--cell-size)*0.75);
+    min-width: calc(var(--cell-size) * 3);
+    min-height: calc(var(--cell-size) * 0.75);
     border: none;
     border-radius: 5px;
     font-size: larger;

@@ -23,7 +23,8 @@ module.exports = {
     }
   },
   globals: {
-    DOMAIN_ADDRESS: false
+    DOMAIN_ADDRESS: false,
+    FRONTEND_ADDRESS: false
   },
   rules: {
     'no-confusing-arrow': 'off',

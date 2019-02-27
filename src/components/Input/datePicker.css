@@ -1,5 +1,5 @@
 .input {
-    width: calc(var(--cell-size)*1.5);
+    width: calc(var(--cell-size) * 1.5);
 
     outline: none;
     border: none;

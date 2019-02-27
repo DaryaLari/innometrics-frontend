@@ -3,7 +3,9 @@
 exports[`Test PageTemplate component Test render PageTemplate component 1`] = `
 <article>
   <div>
-    <h1 />
+    <span>
+      <h1 />
+    </span>
   </div>
   <div />
 </article>

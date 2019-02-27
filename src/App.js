@@ -20,7 +20,7 @@ class App extends React.Component {
           <Header/>
           <main>
             <Route path='/(dashboard|activities|goals|settings)' component={AsideNavigation}/>
-            <Route path='/projects/:projectName' component={AsideNavigation}/>
+            {/*<Route path='/projects/:projectName' component={AsideNavigation}/>*/}
             <Suspense fallback={<Spinner/>}>
               <Switch>
                 <Route exact path='/' component={LandingPage}/>
@@ -28,10 +28,10 @@ class App extends React.Component {
                 <Route path='/register' component={AuthorizationPage}/>
                 <AuthorizedRoute path='/dashboard' component={StatisticsPage}/>
                 <AuthorizedRoute path='/activities' component={ActivitiesPage}/>
-                <AuthorizedRoute exact path='/projects' component={ProjectsListPage}/>
-                <AuthorizedRoute exact path='/projects/:projectName' component={StatisticsPage}/>
-                <AuthorizedRoute path='/projects/:projectName/activities' component={ActivitiesPage}/>
-                <AuthorizedRoute path='/projects/:projectName/team' component={ProjectsTeamPage}/>
+                {/*<AuthorizedRoute exact path='/projects' component={ProjectsListPage}/>*/}
+                {/*<AuthorizedRoute exact path='/projects/:projectName' component={StatisticsPage}/>*/}
+                {/*<AuthorizedRoute path='/projects/:projectName/activities' component={ActivitiesPage}/>*/}
+                {/*<AuthorizedRoute path='/projects/:projectName/team' component={ProjectsTeamPage}/>*/}
                 <Redirect to='/dashboard'/>
               </Switch>
             </Suspense>

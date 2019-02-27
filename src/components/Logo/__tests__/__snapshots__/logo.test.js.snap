@@ -2,13 +2,37 @@
 
 exports[`Test Logo component Test render Logo component 1`] = `
 <div>
-  <span>
+  <a
+    aria-current="page"
+    className="active"
+    href="/"
+    onClick={[Function]}
+    style={Object {}}
+  >
     <span>
-      Inno
+      <span>
+        Inno
+      </span>
+      <span>
+        Metrics
+      </span>
     </span>
-    <span>
-      Metrics
-    </span>
-  </span>
+  </a>
 </div>
 `;
+
+exports[`Test Menu component Test render menu with 'MyPage' when authenticated 1`] = `
+<nav>
+  <div>
+    <a
+      aria-current={null}
+      href="/dashboard"
+      onClick={[Function]}
+    >
+      MyPage
+    </a>
+  </div>
+</nav>
+`;
+
+exports[`Test Menu component Test render menu without 'MyPage' when not authenticated 1`] = `<nav />`;

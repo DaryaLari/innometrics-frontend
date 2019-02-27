@@ -27,6 +27,13 @@ exports[`Test LandingPage component Test render LandingPage component 1`] = `
         MacOS client
       </a>
       <br />
+      <a
+        download={true}
+        href="https://innometric.guru/files/EclipseLogger_1.0.0.jar"
+      >
+        Eclipse plugin
+      </a>
+      <br />
       Others coming soon...
     </p>
   </div>

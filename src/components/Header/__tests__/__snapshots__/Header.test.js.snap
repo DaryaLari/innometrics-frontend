@@ -6,22 +6,34 @@ exports[`Test Header component Test render Header component 1`] = `
     onClick={[Function]}
   >
     <div>
-      <span>
+      <a
+        aria-current="page"
+        className="active"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      >
         <span>
-          Inno
+          <span>
+            Inno
+          </span>
+          <span>
+            Metrics
+          </span>
         </span>
-        <span>
-          Metrics
-        </span>
-      </span>
+      </a>
     </div>
   </div>
   <nav />
   <div>
-    <div
-      onClick={[Function]}
-    >
-      Login
+    <div>
+      <a
+        aria-current={null}
+        href="/login"
+        onClick={[Function]}
+      >
+        Login
+      </a>
     </div>
     <span
       style={
@@ -32,10 +44,14 @@ exports[`Test Header component Test render Header component 1`] = `
     >
        or 
     </span>
-    <div
-      onClick={[Function]}
-    >
-      Register
+    <div>
+      <a
+        aria-current={null}
+        href="/register"
+        onClick={[Function]}
+      >
+        Register
+      </a>
     </div>
   </div>
 </header>

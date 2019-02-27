@@ -1,3 +1,4 @@
+import moment from 'moment'
 import React from 'react'
 import { connect } from 'react-redux'
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
@@ -20,8 +21,18 @@ class ChartView extends React.Component {
                    interval={0}
                    tick={<CustomTick amount={this.props.activities.length}/>}
             />
-            <YAxis label={{ offset: 13, value: 'Duration (sec)', position: 'top' }} dataKey='duration' />
-            <Tooltip payload={this.props.activities} />
+            <YAxis width={100}
+                   label={{ offset: 13, value: 'Duration', position: 'top' }}
+                   dataKey='duration'
+                   tickFormatter={(value) => moment().startOf('day')
+                                                     .seconds(value)
+                                                     .format('HH[h ]mm[m ]ss[s]')}
+            />
+            <Tooltip payload={this.props.activities}
+                     formatter={(value, name, props) => moment().startOf('day')
+                                                                .seconds(value)
+                                                                .format('HH[h ]mm[m ]ss[s]')}
+            />
             <Bar dataKey='duration'
                  barSize={30}
                  fill='#8884d8'

@@ -1,5 +1,5 @@
 {
-  "name": "activity_dashboard",
+  "name": "innometrics",
   "version": "0.1.0",
   "description": "Visualisation of users' working activity statistics",
   "private": true,
@@ -8,6 +8,7 @@
     "with-dev-server": "set DOMAIN_ADDRESS='http://localhost:8090/api' && nodemon ./stub/startServer.js",
     "dev": "set DOMAIN_ADDRESS='https://innometrics-proxy-server.herokuapp.com/https://innometric.guru:8120' && webpack-dev-server --host 0.0.0.0",
     "build": "webpack --mode production --config webpack.prod.js",
+    "bologna_build": "set DOMAIN_ADDRESS='/innometrics/api' && set FRONTEND_ADDRESS='/innometrics' && webpack --mode production --config webpack.prod.js",
     "test": "jest",
     "lint": "eslint ./src"
   },
@@ -56,7 +57,7 @@
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-middleware": "^3.4.0",
-    "webpack-dev-server": "^3.1.10",
+    "webpack-dev-server": "^3.1.14",
     "webpack-hot-client": "^4.1.1",
     "webpack-merge": "^4.1.4"
   },

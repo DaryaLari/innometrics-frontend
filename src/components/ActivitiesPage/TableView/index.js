@@ -1,3 +1,4 @@
+import moment from 'moment'
 import React from 'react'
 import { connect } from 'react-redux'
 import _ from 'lodash'
@@ -75,8 +76,8 @@ class TableView extends React.Component {
             <div key={a._id}
                 className={styles.row}
             >
-              <div className={styles.cell}>{a.start_time}</div>
-              <div className={styles.cell}>{a.end_time}</div>
+              <div className={styles.cell}>{moment(a.start_time, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD[\n]HH:mm:ss')}</div>
+              <div className={styles.cell}>{moment(a.end_time, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD[\n]HH:mm:ss')}</div>
               <div className={styles.cell} title={a.executable_name}>{a.executable_name}</div>
             </div>
           ))}

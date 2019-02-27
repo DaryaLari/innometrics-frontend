@@ -1,5 +1,6 @@
 import {createSelector} from 'reselect'
 import _ from 'lodash'
+import moment from 'moment'
 
 export const userAuthorized = createSelector(
   (state) => {
@@ -14,6 +15,15 @@ export const getActivities = createSelector(state => state.activities, actStore 
 
 export const getSelectedActivitiesFilters = createSelector(state => _.get(state.form, 'activitiesFilter.values', []),
                                                            filters => _(filters).pickBy().keys().value())
+
+export const getSelectedPeriod = createSelector(
+  state => _.get(state.form,
+                 'periodPicker.values',
+                 {
+                   startDate: moment().subtract({weeks: 1}).format('DD/MM/YYYY'),
+                   endDate: moment().format('DD/MM/YYYY')
+                 }),
+  period => period)
 
 export const getFilteredActivities = createSelector(
   [state => getActivities(state),

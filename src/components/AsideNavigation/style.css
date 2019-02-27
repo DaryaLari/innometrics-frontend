@@ -34,6 +34,8 @@
 
     text-decoration: none;
     color: initial;
+
+    cursor: pointer;
 }
 
 .navItem > i {

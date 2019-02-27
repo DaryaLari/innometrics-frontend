@@ -28,7 +28,7 @@
 }
 
 .form {
-    padding: 0 calc(var(--cell-size)/4);
+    padding: 0 calc(var(--cell-size) / 4);
     width: calc(var(--cell-size) * 6);
     background-color: rgba(255, 255, 255, 1);
 }
@@ -44,7 +44,7 @@
 }
 
 .submitBtn {
-    height: calc(var(--cell-size)/2);
+    height: calc(var(--cell-size) / 2);
     width: var(--cell-size);
 }
 
@@ -54,7 +54,7 @@
 
 .formError {
     composes: errorMsg;
-    height: calc(var(--cell-size)/4);
+    height: calc(var(--cell-size) / 4);
     width: 100%;
     text-align: center;
 }

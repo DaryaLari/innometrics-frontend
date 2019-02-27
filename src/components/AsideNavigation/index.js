@@ -53,16 +53,16 @@ class AsideNavigation extends React.Component {
     //   name: 'Projects',
     //   link: this.props.match.url + '/projects'
     // },
-    {
-      icon: 'track_changes', // 'list_alt'
-      name: 'Manage goals',
-      link: '/goals'
-    },
-    {
-      icon: 'settings',
-      name: 'Settings',
-      link: '/settings'
-    }
+    // {
+    //   icon: 'track_changes', // 'list_alt'
+    //   name: 'Manage goals',
+    //   link: '/goals'
+    // },
+    // {
+    //   icon: 'settings',
+    //   name: 'Settings',
+    //   link: '/settings'
+    // }
   ]
   render() {
     const navigation = this.props.match.path === '/projects/:projectName' ?

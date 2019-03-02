@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {getProjectsRequest} from '../../store/projects/actionCreators'
-import Button from '../Button'
 import PageTemplate from '../PageTemplate'
 import styles from './style.css'
 

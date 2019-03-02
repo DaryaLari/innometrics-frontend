@@ -4,7 +4,6 @@ import { Router } from 'react-router-dom'
 import TestRenderer from 'react-test-renderer'
 import createStore from 'redux-mock-store'
 import { history } from '../../../helpers/history'
-import Menu from '../../Header/Menu/__tests__/Menu.test'
 import Logo from '../index'
 
 describe('Test Logo component', () => {

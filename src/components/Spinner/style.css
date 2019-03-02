@@ -10,20 +10,11 @@
 }
 
 .spinner {
-    width: var(--cell-size);
-    height: var(--cell-size);
-}
-
-.spinner {
-    position:relative;
-    width:125px;
-    height:125px;
-    margin:auto;
-    transform:scale(0.6);
-    -o-transform:scale(0.6);
-    -ms-transform:scale(0.6);
-    -webkit-transform:scale(0.6);
-    -moz-transform:scale(0.6);
+    position: relative;
+    width: 125px;
+    height: 125px;
+    margin: auto;
+    transform: scale(0.6);
 }
 
 .smallCircle{

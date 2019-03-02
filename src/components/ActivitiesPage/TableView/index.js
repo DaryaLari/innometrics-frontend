@@ -2,7 +2,7 @@ import moment from 'moment'
 import React from 'react'
 import { connect } from 'react-redux'
 import _ from 'lodash'
-import { getActivities, getFilteredActivities } from '../../../helpers/selectors'
+import { getFilteredActivities } from '../../../helpers/selectors'
 import styles from './style.css'
 
 class TableView extends React.Component {

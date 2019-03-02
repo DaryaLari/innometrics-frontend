@@ -19,10 +19,6 @@
     padding-right: var(--cell-size);
 }
 
-.user {
-
-}
-
 .name {
     display: block;
     margin: 5px 0;

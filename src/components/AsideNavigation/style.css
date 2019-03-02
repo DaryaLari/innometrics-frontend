@@ -43,10 +43,6 @@
     font-size: 30px;
 }
 
-.navItem > span {
-
-}
-
 .openCloseBtn {
     composes: navItem;
     box-shadow: 0 0 5px 0px rgba(100, 100, 100, 0.15);

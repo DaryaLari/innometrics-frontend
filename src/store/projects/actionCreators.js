@@ -1,6 +1,6 @@
 import {TYPES as PROJECTS_TYPES} from './actionTypes'
 import {TYPES as USER_TYPES} from '../user/actionTypes'
-import { getRequest, postRequest } from '../../helpers/api'
+import { postRequest } from '../../helpers/api'
 import { removeUserFromLocalStorage } from '../../helpers/authenticationUtils'
 
 export const getProjectsRequest = () => (dispatch, getState) => {
@@ -12,35 +12,11 @@ export const getProjectsRequest = () => (dispatch, getState) => {
       projects: [{name: 1}, {name: 2}, {name: 3}]
     }
   })
-
-/*  getRequest('/projects', {}, true)
-      .then((result) => {
-        dispatch({
-          type: PROJECTS_TYPES.GET_PROJECTS_SUCCESS,
-          payload: {
-            projects: result.data.projects
-          }
-        })
-      })
-      .catch((error) => {
-        if(error == undefined){
-          dispatch({type: PROJECTS_TYPES.GET_PROJECTS_FAILURE, error: 'No response'})
-          return
-        }
-        switch(error.status){
-          case 401:
-            removeUserFromLocalStorage()
-            dispatch({type: USER_TYPES.LOGOUT_SUCCESS})
-            break
-          default:
-            dispatch({type: PROJECTS_TYPES.GET_PROJECTS_FAILURE, error: error})
-        }
-      })*/
 }
 
 export const inviteUserRequest = (projectId) => (dispatch, getState) => {
 	
-	const filters = getState().form.projectInvitation.values.email
+	// const filters = getState().form.projectInvitation.values.email
 	dispatch({type: PROJECTS_TYPES.INVITE_USER_REQUEST})
 
 	postRequest(`/project/${projectId}/invite`, {}, true)

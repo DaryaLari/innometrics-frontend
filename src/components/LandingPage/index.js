@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './style.css'
-import Button from '../Button'
 
 class LandingPage extends React.Component {
   render() {

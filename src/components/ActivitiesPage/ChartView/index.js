@@ -1,15 +1,51 @@
-import moment from 'moment'
 import React from 'react'
+import Chart from 'react-google-charts'
 import { connect } from 'react-redux'
-import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { activitiesSummarized } from '../../../helpers/selectors'
+import Spinner from '../../Spinner'
 import styles from './style.css'
 
 class ChartView extends React.Component {
   render() {
+    console.log([['Activity', 'Duration', { role: 'annotation' }]]
+                  .concat(this.props.activities.map(a => [a.executable_name, a.duration, a.duration])))
     return (
       <div className={styles.chartView}>
-        <ResponsiveContainer width={'100%'} aspect={3}>
+        <Chart
+          // width={'500px'}
+          height={`${this.props.activities.length * 30}px`}
+          chartType='BarChart'
+          loader={<Spinner/>}
+          data={[['Activity', 'Duration (min)', { role: 'annotation' }]]
+            .concat(this.props.activities.map(a => {
+              let time = Number(a.duration)
+              const days = Math.floor(time / (24 * 60 * 60))
+              time -= days * (24 * 60 * 60)
+              const hours = Math.floor(time / (60 * 60))
+              time -= hours * (60 * 60)
+              const minutes = Math.floor(time / 60),
+                    seconds = time - minutes * 60
+              return [
+                a.executable_name, a.duration / 60,
+                `${days > 0 ? days + 'days\n' : ''} ${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
+              ]
+            }))
+          }
+          options={{
+            title: 'Time spend for activities',
+            // chartArea: { width: '50%' },
+            hAxis: {
+              title: 'Time (min)',
+            },
+            vAxis: {
+              title: 'Activity',
+              minValue: 0,
+            },
+            legend: { position: 'none' },
+            // bar: { groupWidth: '30px' },
+          }}
+        />
+        {/*<ResponsiveContainer width={'100%'} aspect={3}>
           <BarChart data={this.props.activities}
                     margin={{ top: 25, right: 50, left: 50, bottom: 25 }}>
             <CartesianGrid strokeDasharray='3 3' />
@@ -38,7 +74,7 @@ class ChartView extends React.Component {
                  fill='#8884d8'
             />
         </BarChart>
-        </ResponsiveContainer>
+        </ResponsiveContainer>*/}
       </div>
     )
   }

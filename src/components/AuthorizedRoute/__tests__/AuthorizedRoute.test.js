@@ -4,7 +4,6 @@ import { Provider } from 'react-redux'
 import { shallow } from 'enzyme'
 import AuthorizedRoute from '../index'
 import TestRenderer from 'react-test-renderer'
-import * as selectors from '../../../helpers/selectors'
 import * as reactRouterDom from 'react-router-dom'
 import { history } from '../../../helpers/history'
 
@@ -21,8 +20,6 @@ describe('Test AuthorizedRoute component', () => {
   reactRouterDom.Redirect = jest.fn(RedirectComponent)
 
   it('Test shallow render AuthorizedRoute component', () => {
-
-    // selectors.userAuthorized = jest.fn().mockReturnValue(true)
 
     const props = {}
     const mockStore = createStore([])

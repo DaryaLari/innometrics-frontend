@@ -1,9 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { Field, isInvalid, reduxForm } from 'redux-form'
-import { email, required } from '../../helpers/formValidators'
-import { getProjectsRequest, inviteUserRequest } from '../../store/projects/actionCreators'
-import { logoutRequest } from '../../store/user/actionCreators'
+import { inviteUserRequest } from '../../store/projects/actionCreators'
 import Button from '../Button'
 import Input from '../Input'
 import PageTemplate from '../PageTemplate'
@@ -15,7 +13,7 @@ class _ProjectsTeamPage extends React.Component {
     this.props.inviteUser(this.props.match.params.projectName)
   }
   render() {
-    const projectName = this.props.match.params.projectName
+    // const projectName = this.props.match.params.projectName
     return (
       <PageTemplate title={`Project '${this.props.match.params.projectName}' team`}
       >

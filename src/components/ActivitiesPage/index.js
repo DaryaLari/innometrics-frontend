@@ -1,4 +1,3 @@
-import _ from 'lodash'
 import moment from 'moment'
 import React from 'react'
 import {connect} from 'react-redux'
@@ -11,9 +10,7 @@ import TimelineChart from './TimelineChart'
 import TableView from './TableView'
 import ChartView from './ChartView'
 import {
-  getActivities,
   getFilteredActivities,
-  getSelectedActivitiesFilters,
   getSelectedPeriod
 } from '../../helpers/selectors'
 import {getActivitiesRequest} from '../../store/activities/actionCreators'

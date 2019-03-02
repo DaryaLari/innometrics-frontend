@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
-import { getLinesAdded, getMetrics } from '../../helpers/metricsSelectors'
+import { getMetrics } from '../../helpers/metricsSelectors'
 import { getActivitiesRequest } from '../../store/activities/actionCreators'
 import Spinner from '../Spinner'
 import PageTemplate from '../PageTemplate'
 import PeriodPicker from '../PeriodPicker'
 import GoalSection from './GoalSection'
-import styles from './style.css'
+// import styles from './style.css'
 import 'react-datepicker/dist/react-datepicker-cssmodules.css'
 
 class _StatisticsPage extends React.Component {

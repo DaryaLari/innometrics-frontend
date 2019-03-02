@@ -30,7 +30,7 @@ export const getFilteredActivities = createSelector(
    state => getSelectedActivitiesFilters(state)],
   (activities, filters) => {
     if(filters.length === 0)
-    return activities
+      return activities
 
   return _.filter(activities, (a) => _.includes(filters, _.camelCase(a.executable_name)))
 })

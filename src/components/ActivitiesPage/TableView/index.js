@@ -1,88 +1,38 @@
 import moment from 'moment'
 import React from 'react'
+import Chart from 'react-google-charts'
 import { connect } from 'react-redux'
 import _ from 'lodash'
 import { getFilteredActivities } from '../../../helpers/selectors'
+import Spinner from '../../Spinner'
 import styles from './style.css'
 
 class TableView extends React.Component {
-  state = {
-    sortKey: null,
-    order: null // ['asc' | 'desc']
-  }
-  sortBy = (key) => {
-    if(this.state.order === null || this.state.order === 'desc'){
-      this.setState({sortKey: key, order: 'asc'})
-    }
-    else{
-      this.setState({sortKey: key, order: 'desc'})
-    }
-  }
-  getSortedActivities = () => {
-    const key = this.state.key
-    const order = this.state.order
-    if(key === null) {
-      return this.props.activities
-    }
-    let activities = this.props.activities
-    let modifiedKey = this.state.sortKey
-
-    // if sortBy time, then convert value to data
-    if(key === 'start_time' || key === 'end_time'){
-      modifiedKey = (a) => Date.parse(a[key])
-    }
-
-    activities = _.sortBy(activities, modifiedKey)
-    if(order === 'desc'){
-      _.reverse(activities)
-    }
-    return activities
-  }
-  orderSign = (key) => {
-    if(this.state.sortKey !== key){
-      return ''
-    }
-    if(this.state.order === 'asc'){
-      return <i className={`${'material-icons'} ${styles.sortDirection}`}>arrow_drop_up</i>
-    }
-    return <i className={`${'material-icons'} ${styles.sortDirection}`}>arrow_drop_down</i>
-  }
   render(){
-    let activities = this.getSortedActivities()
     return (
-      <div className={styles.tableView}>
-        <div className={styles.table}>
-          <div className={styles.headerRow}>
-            <div className={styles.cell}
-                onClick={() => this.sortBy('start_time')}
-            >
-              Start time
-              {this.orderSign('start_time')}
-            </div>
-            <div className={styles.cell}
-                onClick={() => this.sortBy('end_time')}
-            >
-              End time
-              {this.orderSign('end_time')}
-            </div>
-            <div className={styles.cell}
-                onClick={() => this.sortBy('executable_name')}
-            >
-              File name
-              {this.orderSign('executable_name')}
-            </div>
-          </div>
-          {activities.map(a => (
-            <div key={a._id}
-                className={styles.row}
-            >
-              <div className={styles.cell}>{moment(a.start_time, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD[\n]HH:mm:ss')}</div>
-              <div className={styles.cell}>{moment(a.end_time, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD[\n]HH:mm:ss')}</div>
-              <div className={styles.cell} title={a.executable_name}>{a.executable_name}</div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <Chart
+        width={ '100%'}
+        // height={'300px'}
+        chartType="Table"
+        loader={<Spinner/>}
+        data={[
+          [
+            { type: 'string', label: 'Id' },
+            { type: 'datetime', label: 'Start time' },
+            { type: 'datetime', label: 'End time' },
+            { type: 'string', label: 'Name' }
+          ]]
+          .concat(this.props.activities.map(a => [
+            a._id,
+            moment(a.start_time, 'YYYY-MM-DD HH:mm:ss').toDate(),
+            moment(a.end_time, 'YYYY-MM-DD HH:mm:ss').toDate(),
+            a.executable_name,
+          ]))
+        }
+        options={{
+        }}
+        rootProps={{ 'data-testid': '1' }}
+      />
     )
   }
 }

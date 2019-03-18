@@ -19,15 +19,19 @@ class ChartView extends React.Component {
           data={[['Activity', 'Duration (min)', { role: 'annotation' }]]
             .concat(this.props.activities.map(a => {
               let time = Number(a.duration)
-              const days = Math.floor(time / (24 * 60 * 60))
-              time -= days * (24 * 60 * 60)
-              const hours = Math.floor(time / (60 * 60))
-              time -= hours * (60 * 60)
-              const minutes = Math.floor(time / 60),
-                    seconds = time - minutes * 60
+              const fromDays = 24 * 60 * 60,
+                    fromHours = 60 * 60,
+                    fromMinutes = 60
+              const days = Math.floor(time / fromDays)
+              time -= days * fromDays
+              const hours = Math.floor(time / fromHours)
+              time -= hours * fromHours
+              const minutes = Math.floor(time / fromMinutes)
+              const seconds = (time - minutes * fromMinutes)
+              const formatted = (x) => (x < 10 ? '0' : '') + x
               return [
                 a.executable_name, a.duration / 60,
-                `${days > 0 ? days + 'days\n' : ''} ${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
+                `${days > 0 ? days + 'days\n' : ''} ${formatted(hours)}:${formatted(minutes)}:${formatted(seconds)}`
               ]
             }))
           }

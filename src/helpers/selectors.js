@@ -46,7 +46,7 @@ export const activitiesSummarized = createSelector(
     let actObj = _(activities).chain()
       .reduce(
         (result, a) => {
-          result[a.executable_name] = _.add(result[a.executable_name],Date.parse(a.end_time) - Date.parse(a.start_time))
+          result[a.executable_name] = _.add(result[a.executable_name], (Date.parse(a.end_time) - Date.parse(a.start_time)) / 1000) // to seconds
           return result
         }, {})
       .reduce(

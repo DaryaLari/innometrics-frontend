@@ -53,6 +53,7 @@
     "redux-devtools-extension": "^2.13.7",
     "redux-mock-store": "^1.5.3",
     "style-loader": "^0.23.1",
+    "svg-inline-loader": "^0.8.0",
     "url-loader": "^1.1.2",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2",
@@ -69,6 +70,7 @@
     "history": "^4.7.2",
     "lodash": "^4.17.11",
     "moment": "^2.23.0",
+    "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
     "react-datepicker": "^2.0.0",
     "react-google-charts": "^3.0.10",
@@ -78,6 +80,7 @@
     "redux": "^4.0.1",
     "redux-form": "^7.4.2",
     "redux-thunk": "^2.3.0",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "sass-loader": "^7.1.0"
   }
 }

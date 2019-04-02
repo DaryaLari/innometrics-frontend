@@ -1,26 +1,26 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const webpack = require('webpack')
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const webpack = require("webpack");
 
-const outputDirectory = 'dist'
+const outputDirectory = "dist";
 
-const DOMAIN_ADDRESS = process.env.DOMAIN_ADDRESS || '"/api"'
+const DOMAIN_ADDRESS = process.env.DOMAIN_ADDRESS || '"/api"';
 /* 'FRONTEND_ADDRESS' is used in '/src/helpers/history.js' as 'basename' for creating custom browser history */
-const FRONTEND_ADDRESS = process.env.FRONTEND_ADDRESS || '"/"'
+const FRONTEND_ADDRESS = process.env.FRONTEND_ADDRESS || '"/"';
 
 module.exports = {
-  mode: 'development',
+  mode: "development",
   entry: {
-    app: ['@babel/polyfill', './src/index.js']
+    app: ["@babel/polyfill", "./src/index.js"]
   },
   output: {
     path: path.resolve(__dirname, outputDirectory),
-    filename: 'js/[name].js',
+    filename: "js/[name].js"
     // publicPath: '/innometrics/'
   },
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: true
   },
   module: {
     rules: [
@@ -28,56 +28,61 @@ module.exports = {
         oneOf: [
           {
             test: /\.(png|jpe?g)$/,
-            loader: 'url-loader',
+            loader: "url-loader",
             options: {
               limit: 10000,
-              name: 'media/[name].[ext]',
-            },
+              name: "media/[name].[ext]"
+            }
           },
           {
             test: /\.jsx?$/,
             exclude: /node_modules/,
             use: {
-              loader: 'babel-loader'
+              loader: "babel-loader"
             }
           },
           {
-            test: /\.css$/,
+            test: /\.module\.css$/,
+            use: ["style-loader", "css-loader"]
+          },
+          {
+            test: /^(?!.*?\.module).*\.css$/,
             use: [
+              "style-loader",
               {
-                loader: 'style-loader'
-              },
-              {
-                loader: 'css-loader',
-                query: {
-                  modules: true,
-                  localIdentName: '[name]__[local]___[hash:base64:5]'
+                loader: "css-loader",
+                options: {
+                  modules: true
                 }
               }
             ]
           },
           {
-            loader: require.resolve('file-loader'),
-            exclude: [/\.(jsx?|html)$/],
+            test: /\.svg$/,
+            loader: "svg-inline-loader"
+          },
+          {
+            loader: require.resolve("file-loader"),
+            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/, /\.scss$/],
             options: {
-              name: 'media/[name].[ext]',
-            },
+              name: "media/[name].[ext]"
+            }
           }
         ]
       }
     ]
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   plugins: [
     new CleanWebpackPlugin([outputDirectory]),
     new HtmlWebpackPlugin({
-      title: 'Innometrics',
+      title: "Innometrics",
       hash: true,
-      template: 'public/index.html'
+      template: "public/index.html"
     }),
     new webpack.DefinePlugin({
-     DOMAIN_ADDRESS: DOMAIN_ADDRESS,
-     FRONTEND_ADDRESS: FRONTEND_ADDRESS
+      DOMAIN_ADDRESS: DOMAIN_ADDRESS,
+      FRONTEND_ADDRESS: FRONTEND_ADDRESS
     })
   ]
-}
+};

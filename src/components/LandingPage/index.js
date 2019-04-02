@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import "./style.module.css";
 
@@ -150,12 +151,9 @@ class LandingPage extends React.Component {
             <div className="container">
               <div className="hero-inner">
                 <div className="hero-copy">
-                  <h1 className="hero-title mt-0">
-                    Landing template for startups
-                  </h1>
+                  <h1 className="hero-title mt-0">Innometrics</h1>
                   <p className="hero-paragraph">
-                    Our landing page template works on all devices, so you only
-                    have to set it up once, and get beautiful results forever.
+                    Know what your developers are doing
                   </p>
                   <div className="hero-form field field-grouped">
                     <div className="control control-expanded">
@@ -830,11 +828,18 @@ class LandingPage extends React.Component {
               <div className="features-inner section-inner">
                 <div className="features-header text-center">
                   <div className="container-sm">
-                    <h2 className="section-title mt-0">Meet April</h2>
+                    <h2 className="section-title mt-0">Meet Innometrics</h2>
                     <p className="section-paragraph">
-                      Lorem ipsum is common placeholder text used to demonstrate
-                      the graphic elements of a document or visual presentation.
+                      A tool which easily estimates developers' performance. And
+                      effectively answers the following questions:
                     </p>
+                    <ul className="no-list">
+                      <li>Does time spend on task correlate to the output?</li>
+                      <li>How exactly time was spent?</li>
+                      <li>
+                        How does a fellow performs compared with their colleges?
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 <div className="features-wrap">
@@ -861,11 +866,12 @@ class LandingPage extends React.Component {
                           </g>
                         </svg>
                       </div>
-                      <h4 className="feature-title h3-mobile mb-8">Powerful</h4>
+                      <h4 className="feature-title h3-mobile mb-8">
+                        Collects Data
+                      </h4>
                       <p className="text-sm">
-                        A pseudo-Latin text used in web design, layout, and
-                        printing in place of English to emphasise design
-                        elements.
+                        Automatically. Without hassle or upfront setup. It just
+                        works. Built with privacy in mind.
                       </p>
                     </div>
                   </div>
@@ -892,11 +898,12 @@ class LandingPage extends React.Component {
                           </g>
                         </svg>
                       </div>
-                      <h4 className="feature-title h3-mobile mb-8">Powerful</h4>
+                      <h4 className="feature-title h3-mobile mb-8">
+                        Cross-Platform
+                      </h4>
                       <p className="text-sm">
-                        A pseudo-Latin text used in web design, layout, and
-                        printing in place of English to emphasise design
-                        elements.
+                        Cross-platform - MacOS, Windows & Linux. Built with
+                        developers' productivity in mind.
                       </p>
                     </div>
                   </div>
@@ -924,11 +931,12 @@ class LandingPage extends React.Component {
                           </g>
                         </svg>
                       </div>
-                      <h4 className="feature-title h3-mobile mb-8">Powerful</h4>
+                      <h4 className="feature-title h3-mobile mb-8">Benefits</h4>
                       <p className="text-sm">
-                        A pseudo-Latin text used in web design, layout, and
-                        printing in place of English to emphasise design
-                        elements.
+                        - Increase productivity of your workers <br />- Manager
+                        can see a full picture
+                        <br /> - User friendly approach
+                        <br /> - Automatic data collection
                       </p>
                     </div>
                   </div>
@@ -955,11 +963,13 @@ class LandingPage extends React.Component {
                           </g>
                         </svg>
                       </div>
-                      <h4 className="feature-title h3-mobile mb-8">Powerful</h4>
+                      <h4 className="feature-title h3-mobile mb-8">
+                        Visualization
+                      </h4>
                       <p className="text-sm">
-                        A pseudo-Latin text used in web design, layout, and
-                        printing in place of English to emphasise design
-                        elements.
+                        Every team member can see their activity and
+                        performance. Positive trends are signified in
+                        Achievements to increase motivation of people
                       </p>
                     </div>
                   </div>
@@ -1069,7 +1079,7 @@ class LandingPage extends React.Component {
                       </div>
                       <div className="testimonial-footer">
                         <div className="testimonial-link">
-                          <a href="#">@martajones</a>
+                          <a href="#">@person1</a>
                         </div>
                       </div>
                     </div>
@@ -1093,7 +1103,7 @@ class LandingPage extends React.Component {
                       </div>
                       <div className="testimonial-footer">
                         <div className="testimonial-link">
-                          <a href="#">@michealpahm</a>
+                          <a href="#">@person2</a>
                         </div>
                       </div>
                     </div>
@@ -1117,7 +1127,7 @@ class LandingPage extends React.Component {
                       </div>
                       <div className="testimonial-footer">
                         <div className="testimonial-link">
-                          <a href="#">@markbrown</a>
+                          <a href="#">@person3</a>
                         </div>
                       </div>
                     </div>

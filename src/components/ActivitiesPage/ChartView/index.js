@@ -27,7 +27,7 @@ class ChartView extends React.Component {
               const hours = Math.floor(time / fromHours)
               time -= hours * fromHours
               const minutes = Math.floor(time / fromMinutes)
-              const seconds = (time - minutes * fromMinutes)
+              const seconds = Math.round(time - minutes * fromMinutes)
               const formatted = (x) => (x < 10 ? '0' : '') + x
               return [
                 a.executable_name, a.duration / 60,

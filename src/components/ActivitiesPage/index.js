@@ -16,7 +16,22 @@ import {
 import {getActivitiesRequest} from '../../store/activities/actionCreators'
 import styles from './style.css'
 
+
+const TabTemplate = ({name, active, onClick}) => {
+  return (
+    <div className={active ? styles.tabActive : styles.tab}
+         key={name}
+    	 onClick={onClick}
+    >
+      <span className={styles.tabName}>{name}</span>
+    </div>
+  )
+}
+
 class _ActivitiesPage extends React.Component {
+  state = {
+	opened: 'timeline'
+  }
   componentDidMount(){
     this.getActivities()
   }
@@ -41,13 +56,31 @@ class _ActivitiesPage extends React.Component {
                 <div className={styles.commonView}>
 
                   <ActivitiesFilter/>
+                  
+                  <div className={styles.tabs}>
+                  	<TabTemplate name='Timeline Chart' active={this.state.opened==='timeline'} onClick={() => this.setState({opened: 'timeline'})}/>
+                  	<TabTemplate name='Bar Chart' active={this.state.opened==='bar'} onClick={() => this.setState({opened: 'bar'})}/>
+                  	<TabTemplate name='Table' active={this.state.opened==='table'} onClick={() => this.setState({opened: 'table'})}/>
+                  </div>
 
-                  <TimelineChart activities={this.props.activities}
-                                 start={moment(this.props.periodChosen.startDate, 'DD/MM/YYYY').toDate()}
-                                 end={moment(this.props.periodChosen.endDate, 'DD/MM/YYYY').toDate()}
-                  />
-                  <ChartView />
-                  <TableView />
+                  
+                  	<div className={styles.panel}>
+                    <div className={styles.chart}>
+            
+                          {this.state.opened === 'timeline' && <TimelineChart activities={this.props.activities}
+                                         start={moment(this.props.periodChosen.startDate, 'DD/MM/YYYY').toDate()}
+                                         end={moment(this.props.periodChosen.endDate, 'DD/MM/YYYY').toDate()}
+                          />}
+                          {this.state.opened === 'bar' && <ChartView />}
+                          {this.state.opened === 'table' && <TableView />}
+                    </div>
+                  </div>
+                  	
+                  	
+                  	
+                  	
+                  	
+                  	
                 </div>
                 )}
       </PageTemplate>

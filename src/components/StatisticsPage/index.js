@@ -35,8 +35,9 @@ class _StatisticsPage extends React.Component {
         {
           this.props.activeRequest ? <Spinner/> :
 
-          this.props.metricsGroups.map(group => (
+          this.props.metricsGroups.map((group, i) => (
             <GoalSection key={group.name}
+                         goalIndex={i}
                          goalName={group.name}
                          metrics={group.metrics}
             >

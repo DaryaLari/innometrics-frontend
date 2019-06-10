@@ -17,7 +17,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, outputDirectory),
     filename: 'js/[name].js',
-    // publicPath: '/innometrics/'
+    publicPath: '/'//'/innometrics/'
   },
   devServer: {
     historyApiFallback: true,

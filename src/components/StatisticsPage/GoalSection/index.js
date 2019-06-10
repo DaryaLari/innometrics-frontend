@@ -25,7 +25,7 @@ const TileTemplate = ({opened, onOpenCloseTab, name, value, trend}) => {
   )
 }
 
-const OpenedTabTemplate = ({children, onClose}) => {
+const OpenedTabTemplate = ({children, onClose, to}) => {
   return (
     <div className={styles.openedTabArea}>
       <div className={styles.chart}>
@@ -38,8 +38,8 @@ const OpenedTabTemplate = ({children, onClose}) => {
           close
         </i>
         <Link className={styles.moreButton}
-              to='/'
-        >  {/*TODO: solve navigation*/}
+              to={to}
+        >
           <i className={`${'material-icons'}`}
           >
             arrow_forward_ios
@@ -83,7 +83,9 @@ class GoalSection extends React.Component {
                ))}
              </div>
              {this.state.opened !== null && (
-               <OpenedTabTemplate onClose={() => this.onOpenCloseTab(null)}>
+               <OpenedTabTemplate onClose={() => this.onOpenCloseTab(null)}
+                                  to={`/metric/${this.props.goalIndex} metrics ${this.state.opened}`}
+               >
                  {
                    this.props.metrics[this.state.opened].value === 0 ?
                    <div className={styles.emptyChart}>

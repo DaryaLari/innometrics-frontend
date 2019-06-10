@@ -17,17 +17,21 @@ class TableView extends React.Component {
         loader={<Spinner/>}
         data={[
           [
-            { type: 'string', label: 'Id' },
+            // { type: 'string', label: 'Id' },
             { type: 'datetime', label: 'Start time' },
             { type: 'datetime', label: 'End time' },
-            { type: 'string', label: 'Name' }
+            { type: 'string', label: 'Name' },
+            { type: 'string', label: 'Browser Url' }
           ]]
-          .concat(this.props.activities.map(a => [
-            a._id,
+          .concat(this.props.activities.map(a => {
+            let brUrl = a.browser_url === undefined ? '-' : a.browser_url
+            return [
+            // a._id,
             moment(a.start_time, 'YYYY-MM-DD HH:mm:ss').toDate(),
             moment(a.end_time, 'YYYY-MM-DD HH:mm:ss').toDate(),
             a.executable_name,
-          ]))
+            brUrl
+          ]}))
         }
         options={{
         }}

@@ -3,9 +3,8 @@ import { getResponseError } from '../../helpers/errorProcessors'
 import {TYPES as ACTIVITIES_TYPES} from './actionTypes'
 import {getRequest} from '../../helpers/api'
 
-export const getActivitiesRequest = (project) => (dispatch, getState) => {
-  console.log(project)
-  const requestPath = (project === undefined) ? '/activity' : `/project/${project}/activity`
+export const getActivitiesRequest = () => (dispatch, getState) => {
+  const requestPath = '/activity'
 
   const filters = getState().form.periodPicker.values
   dispatch({type: ACTIVITIES_TYPES.GET_ACTIVITIES_REQUEST, payload: {filters: filters}})

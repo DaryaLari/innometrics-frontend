@@ -11,7 +11,6 @@ class _ActivitiesFilter extends React.Component {
     opened: false
   }
   onSubmit = () => {
-    console.log(this.props.tagsFormState)
   }
 
   componentDidMount = () => {
@@ -33,7 +32,7 @@ class _ActivitiesFilter extends React.Component {
           onSubmit={this.props.handleSubmit(this.onSubmit)}
         >
 
-          {this.state.opened && this.props.suggestions.map((activity, index) => (
+          {this.state.opened && this.props.suggestions.map((activity) => (
             <Field key={_.camelCase(activity)}
               name={_.camelCase(activity)}
               type='checkbox'

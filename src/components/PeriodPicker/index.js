@@ -9,11 +9,10 @@ import styles from './style.css'
 
 class _PeriodPicker extends React.Component {
   onSubmit = () => {
-    console.log('submit')
     this.props.getActivities()
   }
 
-  componentDidUpdate = (prevProps, prevState, snapshot) => {
+  componentDidUpdate = (prevProps) => {
     if(this.props.periodFormState != undefined && prevProps.periodFormState != undefined &&
        !_.isEqual(this.props.periodFormState.values, prevProps.periodFormState.values)){
       this.props.submit()
@@ -46,7 +45,7 @@ class _PeriodPicker extends React.Component {
             name='startDate'
             component={Input}
             validate={[required, date]}
-            normalize={(value, prevValue, allValues, prevAllValues) => {
+            normalize={(value, prevValue, allValues) => {
               if(moment(value, 'DD/MM/YYYY')
                 .isAfter(moment(allValues.endDate, 'DD/MM/YYYY'))
               ){
@@ -62,7 +61,7 @@ class _PeriodPicker extends React.Component {
             name='endDate'
             component={Input}
             validate={[required, date]}
-            normalize={(value, prevValue, allValues, prevAllValues) => {
+            normalize={(value, prevValue, allValues) => {
               if(moment(value, 'DD/MM/YYYY')
                 .isBefore(moment(allValues.startDate, 'DD/MM/YYYY'))
               ){

@@ -22,11 +22,8 @@ class _StatisticsPage extends React.Component {
                                         : this.props.getActivities()
   }
   render() {
-    // console.log(this.props.metricsGroups)
 
-    const testeeName = this.props.match.params.projectName ?
-                        `'${this.props.match.params.projectName}' team`
-                        : 'My'
+    const testeeName = 'My'
     return (
       <PageTemplate title={testeeName + ' performance'}
                     restHeader={<PeriodPicker onSubmit={this.getActivities}/>}
@@ -35,8 +32,9 @@ class _StatisticsPage extends React.Component {
         {
           this.props.activeRequest ? <Spinner/> :
 
-          this.props.metricsGroups.map(group => (
+          this.props.metricsGroups.map((group, i) => (
             <GoalSection key={group.name}
+                         goalIndex={i}
                          goalName={group.name}
                          metrics={group.metrics}
             >

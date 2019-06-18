@@ -9,33 +9,6 @@ class AsideNavigation extends React.Component {
   onOpenClose = () => {
     this.setState({opened : !this.state.opened})
   }
-  projectsNavigation = [
-    {
-      icon: 'developer_board',//'dashboard',
-      name: 'Dashboard',
-      link: this.props.match.url
-    },
-    {
-      icon: 'dvr',//'storage',
-      name: 'Activities',
-      link: this.props.match.url + '/activities'
-    },
-    {
-      icon: 'people',
-      name: 'Team members',
-      link: this.props.match.url + '/team'
-    },
-    {
-      icon: 'track_changes', // 'list_alt'
-      name: 'Manage goals',
-      link: this.props.match.url + '/goals'
-    },
-    {
-      icon: 'settings',
-      name: 'Settings',
-      link: this.props.match.url + '/settings'
-    }
-  ]
 
   personalNavigation = [
     {
@@ -47,26 +20,10 @@ class AsideNavigation extends React.Component {
       icon: 'dvr',//'storage',
       name: 'Activities',
       link: '/activities'
-    },
-    // {
-    //   icon: 'people',
-    //   name: 'Projects',
-    //   link: this.props.match.url + '/projects'
-    // },
-    // {
-    //   icon: 'track_changes', // 'list_alt'
-    //   name: 'Manage goals',
-    //   link: '/goals'
-    // },
-    // {
-    //   icon: 'settings',
-    //   name: 'Settings',
-    //   link: '/settings'
-    // }
+    }
   ]
   render() {
-    const navigation = this.props.match.path === '/projects/:projectName' ?
-                       this.projectsNavigation : this.personalNavigation
+    const navigation = this.personalNavigation
     return (
       <aside className={this.state.opened ? styles.asideOpened : styles.asideClosed}>
         <div className={styles.navContainer}>

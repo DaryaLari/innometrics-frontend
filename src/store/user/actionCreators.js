@@ -1,4 +1,3 @@
-import _ from 'lodash'
 import { getResponseError } from '../../helpers/errorProcessors'
 import {TYPES as USER_TYPES} from './actionTypes'
 import {postRequest} from '../../helpers/api'
@@ -35,7 +34,7 @@ export const registerRequest = () => (dispatch, getState) => {
   }
 
   postRequest('/user', params)
-      .then((result) => {
+      .then(() => {
         dispatch({type: USER_TYPES.REGISTER_SUCCESS})
         loginRequest()(dispatch, getState)
       })
@@ -44,11 +43,11 @@ export const registerRequest = () => (dispatch, getState) => {
       })
 }
 
-export const logoutRequest = () => (dispatch, getState) => {
+export const logoutRequest = () => (dispatch) => {
   dispatch({type: USER_TYPES.LOGOUT_REQUEST})
 
   postRequest('/logout', {})
-      .then((result) => {
+      .then(() => {
         dispatch({type: USER_TYPES.LOGOUT_SUCCESS})
       })
       .catch((error) => {

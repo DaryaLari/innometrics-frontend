@@ -3,7 +3,6 @@ import {store} from '../store'
 import { TYPES as USER_TYPES } from '../store/user/actionTypes'
 
 export const processApiError = (error) => {
-console.log(error.response)
   switch(_.get(error.response, 'status', 0)){
     case 0:
       return {status: 0, statusText: 'No Internet connection', data: { message: 'No Internet connection'}}

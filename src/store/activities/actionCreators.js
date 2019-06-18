@@ -4,7 +4,6 @@ import {TYPES as ACTIVITIES_TYPES} from './actionTypes'
 import {getRequest} from '../../helpers/api'
 
 export const getActivitiesRequest = (project) => (dispatch, getState) => {
-  console.log(project)
   const requestPath = (project === undefined) ? '/activity' : `/project/${project}/activity`
 
   const filters = getState().form.periodPicker.values

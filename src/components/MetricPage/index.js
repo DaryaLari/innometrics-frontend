@@ -1,16 +1,13 @@
-import moment from 'moment'
 import React from 'react'
 import Chart from 'react-google-charts'
 import {connect} from 'react-redux'
 import { withRouter } from 'react-router'
+import _ from 'lodash'
 import { getMetrics } from '../../helpers/metricsSelectors'
 import PageTemplate from '../PageTemplate'
 import PeriodPicker from '../PeriodPicker'
 import Spinner from '../Spinner'
-import {
-  getFilteredActivities,
-  getSelectedPeriod
-} from '../../helpers/selectors'
+import { getSelectedPeriod } from '../../helpers/selectors'
 import {getActivitiesRequest} from '../../store/activities/actionCreators'
 import styles from './style.css'
 
@@ -19,7 +16,7 @@ const TabTemplate = ({name, active, onClick}) => {
   return (
     <div className={active ? styles.tabActive : styles.tab}
          key={name}
-    	 onClick={onClick}
+         onClick={onClick}
     >
       <span className={styles.tabName}>{name}</span>
     </div>

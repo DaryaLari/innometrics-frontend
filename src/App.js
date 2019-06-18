@@ -8,9 +8,7 @@ const AuthorizationPage  = lazy(() => import('./components/AuthorizationPage'))
 const ActivitiesPage  = lazy(() => import('./components/ActivitiesPage'))
 const LandingPage = lazy(() => import('./components/LandingPage'))
 const AuthorizedRoute  = lazy(() => import('./components/AuthorizedRoute'))
-const ProjectsListPage  = lazy(() => import('./components/ProjectsListPage'))
 const StatisticsPage  = lazy(() => import('./components/StatisticsPage'))
-const ProjectsTeamPage  = lazy(() => import('./components/ProjectsTeamPage'))
 const MetricPage  = lazy(() => import('./components/MetricPage'))
 import styles from './style.css'
 
@@ -21,7 +19,6 @@ class App extends React.Component {
           <Header/>
           <main>
             <Route path='/(dashboard|activities|goals|settings|metric)' component={AsideNavigation}/>
-            {/*<Route path='/projects/:projectName' component={AsideNavigation}/>*/}
             <Suspense fallback={<Spinner/>}>
               <Switch>
                 <Route exact path='/' component={LandingPage}/>
@@ -30,10 +27,6 @@ class App extends React.Component {
                 <AuthorizedRoute exact path='/dashboard' component={StatisticsPage}/>
                 <AuthorizedRoute path='/activities' component={ActivitiesPage}/>
                 <AuthorizedRoute exact path='/metric/:metric' component={MetricPage}/>
-                {/*<AuthorizedRoute exact path='/projects' component={ProjectsListPage}/>*/}
-                {/*<AuthorizedRoute exact path='/projects/:projectName' component={StatisticsPage}/>*/}
-                {/*<AuthorizedRoute path='/projects/:projectName/activities' component={ActivitiesPage}/>*/}
-                {/*<AuthorizedRoute path='/projects/:projectName/team' component={ProjectsTeamPage}/>*/}
                 <Redirect to='/dashboard'/>
               </Switch>
             </Suspense>

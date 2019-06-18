@@ -2,10 +2,8 @@ import moment from 'moment'
 import React from 'react'
 import Chart from 'react-google-charts'
 import { connect } from 'react-redux'
-import _ from 'lodash'
 import { getFilteredActivities } from '../../../helpers/selectors'
 import Spinner from '../../Spinner'
-import styles from './style.css'
 
 class TableView extends React.Component {
   render(){

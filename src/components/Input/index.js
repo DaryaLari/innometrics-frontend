@@ -3,16 +3,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 import DatePicker from 'react-datepicker'
-// import Autosuggest from 'react-autosuggest'
 import styles from './style.css'
 import datePickerStyles from './datePicker.css'
-// import autoSuggestStyles from './autoSuggest.css'
 
 import 'react-datepicker/dist/react-datepicker-cssmodules.css'
 
 class Input extends React.Component {
   render() {
-    const {input, meta, type, label, labelStyle, required, error, containerProps, inputProps, autoSuggestProps, ...otherInputProps} = this.props
+    const {input, meta, type, label, labelStyle, required, error, containerProps, inputProps, ...otherInputProps} = this.props
     let _containerProps = containerProps
     let _inputProps = otherInputProps
     _.assign(_inputProps, inputProps)
@@ -45,7 +43,7 @@ class Input extends React.Component {
           )}
           {type === 'datePicker' ?
            <DatePicker {...input}
-                       onBlur={(value) => {input.onBlur(moment(input.value, 'DD/MM/YYYY').toDate())}}
+                       onBlur={() => {input.onBlur(moment(input.value, 'DD/MM/YYYY').toDate())}}
                        dateFormat='dd/MM/yyyy'
                        popperPlacement='bottom-start'
                        popperModifiers={{
@@ -57,10 +55,6 @@ class Input extends React.Component {
                        }}
                        className={datePickerStyles.input}
            />
-           // : type === 'autoSuggest' ?
-           //   <Autosuggest {...autoSuggestProps} theme={autoSuggestStyles}
-           //                inputProps={{className: styles.input, ..._inputProps}}
-           //   />
            : <input className={styles.input} {..._inputProps} type={type}/>
           }
           <div className={styles.messages}>

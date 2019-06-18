@@ -7,8 +7,6 @@ import styles from './style.css'
 
 class ChartView extends React.Component {
   render() {
-    console.log([['Activity', 'Duration', { role: 'annotation' }]]
-                  .concat(this.props.activities.map(a => [a.executable_name, a.duration, a.duration])))
     return (
       <div className={styles.chartView}>
         <Chart
@@ -49,53 +47,7 @@ class ChartView extends React.Component {
             // bar: { groupWidth: '30px' },
           }}
         />
-        {/*<ResponsiveContainer width={'100%'} aspect={3}>
-          <BarChart data={this.props.activities}
-                    margin={{ top: 25, right: 50, left: 50, bottom: 25 }}>
-            <CartesianGrid strokeDasharray='3 3' />
-            <XAxis dataKey='executable_name'
-                   label={{ offset: 0, value: 'Activity', position: 'bottom' }}
-                   height={25}
-                   axisLine={false}
-                   tickLine={false}
-                   interval={0}
-                   tick={<CustomTick amount={this.props.activities.length}/>}
-            />
-            <YAxis width={100}
-                   label={{ offset: 13, value: 'Duration', position: 'top' }}
-                   dataKey='duration'
-                   tickFormatter={(value) => moment().startOf('day')
-                                                     .seconds(value)
-                                                     .format('HH[h ]mm[m ]ss[s]')}
-            />
-            <Tooltip payload={this.props.activities}
-                     formatter={(value, name, props) => moment().startOf('day')
-                                                                .seconds(value)
-                                                                .format('HH[h ]mm[m ]ss[s]')}
-            />
-            <Bar dataKey='duration'
-                 barSize={30}
-                 fill='#8884d8'
-            />
-        </BarChart>
-        </ResponsiveContainer>*/}
       </div>
-    )
-  }
-}
-
-class CustomTick extends React.Component{
-  render(){
-    const {x, y, payload, ...rest} = this.props
-    let width = rest.width/rest.amount - 5
-    return (
-      <foreignObject className={styles.truncated}
-                     x={x-width/2} y={y-10}
-                     width={width} height={20}
-      >
-        <span title={payload.value}>{payload.value}</span>
-      </foreignObject>
-
     )
   }
 }

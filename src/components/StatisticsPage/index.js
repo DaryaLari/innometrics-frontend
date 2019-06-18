@@ -22,11 +22,8 @@ class _StatisticsPage extends React.Component {
                                         : this.props.getActivities()
   }
   render() {
-    // console.log(this.props.metricsGroups)
 
-    const testeeName = this.props.match.params.projectName ?
-                        `'${this.props.match.params.projectName}' team`
-                        : 'My'
+    const testeeName = 'My'
     return (
       <PageTemplate title={testeeName + ' performance'}
                     restHeader={<PeriodPicker onSubmit={this.getActivities}/>}

@@ -37,15 +37,11 @@ class _ActivitiesPage extends React.Component {
   }
 
   getActivities = () => {
-    this.props.match.params.projectName ?
-      this.props.getActivities(this.props.match.params.projectName)
-      : this.props.getActivities()
+    this.props.getActivities()
   }
 
   render() {
-    const testeeName = this.props.match.params.projectName ?
-                       `'${this.props.match.params.projectName}' team`
-                                                           : 'My'
+    const testeeName = 'My'
     return (
       <PageTemplate title={testeeName + ' activities'}
                     restHeader={<PeriodPicker onSubmit={this.getActivities}/>}
